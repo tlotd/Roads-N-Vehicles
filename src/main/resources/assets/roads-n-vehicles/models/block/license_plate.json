@@ -1,0 +1,108 @@
+{
+	"credit": "Made by Isla_Nublar for the TLOTD Mod (https://tlotd.net)",
+	"textures": {
+		"particle": "roads-n-vehicles:block/license_plate/default",
+		"license_plate": "roads-n-vehicles:block/license_plate/default"
+	},
+	"elements": [
+		{
+			"name": "plate main",
+			"from": [0, 6.375, 15.75],
+			"to": [16, 9.625, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 6, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 3.25], "texture": "#license_plate"},
+				"east": {"uv": [0, 0, 0.25, 3.25], "texture": "#license_plate"},
+				"south": {"uv": [0, 3.25, 16, 6.5], "texture": "#license_plate"},
+				"west": {"uv": [15.75, 0, 16, 3.25], "texture": "#license_plate"},
+				"up": {"uv": [0, 0, 16, 0.25], "texture": "#license_plate"},
+				"down": {"uv": [0, 3, 16, 3.25], "texture": "#license_plate"}
+			}
+		},
+		{
+			"name": "plate bot",
+			"from": [0, 6.375, 15.5],
+			"to": [16, 6.625, 15.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 6, 7]},
+			"faces": {
+				"north": {"uv": [0, 3, 16, 3.25], "texture": "#license_plate"},
+				"east": {"uv": [0, 3, 0.25, 3.25], "texture": "#license_plate"},
+				"west": {"uv": [15.75, 3, 16, 3.25], "texture": "#license_plate"},
+				"up": {"uv": [0, 3, 16, 3.25], "texture": "#license_plate"},
+				"down": {"uv": [0, 3, 16, 3.25], "texture": "#license_plate"}
+			}
+		},
+		{
+			"name": "plate top",
+			"from": [0, 9.375, 15.5],
+			"to": [16, 9.625, 15.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 7, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 0.25], "texture": "#license_plate"},
+				"east": {"uv": [0, 0, 0.25, 0.25], "texture": "#license_plate"},
+				"west": {"uv": [15.75, 0, 16, 0.25], "texture": "#license_plate"},
+				"up": {"uv": [0, 0, 16, 0.25], "texture": "#license_plate"},
+				"down": {"uv": [0, 0, 16, 0.25], "texture": "#license_plate"}
+			}
+		},
+		{
+			"name": "plate right",
+			"from": [0, 6.625, 15.5],
+			"to": [0.25, 9.375, 15.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 6, 7]},
+			"faces": {
+				"north": {"uv": [15.75, 0.25, 16, 3], "texture": "#license_plate"},
+				"east": {"uv": [15.75, 0.25, 16, 3], "texture": "#license_plate"},
+				"west": {"uv": [15.75, 0.25, 16, 3], "texture": "#license_plate"}
+			}
+		},
+		{
+			"name": "plate west",
+			"from": [15.75, 6.625, 15.5],
+			"to": [16, 9.375, 15.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 6, 7]},
+			"faces": {
+				"north": {"uv": [0, 0.25, 0.25, 3], "texture": "#license_plate"},
+				"east": {"uv": [0, 0.25, 0.25, 3], "texture": "#license_plate"},
+				"west": {"uv": [0, 0.25, 0.25, 3], "texture": "#license_plate"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 1.25, 6.75],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 1.25, 6.75],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 135, 0],
+			"translation": [-0.5, 3.25, 2.25],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 135, 0],
+			"translation": [-0.5, 3.25, 2.25],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 2, -3.75],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [0, 180, 0]
+		},
+		"head": {
+			"translation": [0, 0, -14.25]
+		},
+		"fixed": {
+			"translation": [0, 0, -15.75],
+			"scale": [2, 2, 2]
+		}
+	}
+}

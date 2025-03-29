@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "exit=false,facing=north": {"model": "roads-n-vehicles:block/delineator","y": 180},
+    "exit=false,facing=east": {"model": "roads-n-vehicles:block/delineator","y": 270},
+    "exit=false,facing=south": {"model": "roads-n-vehicles:block/delineator"},
+    "exit=false,facing=west": {"model": "roads-n-vehicles:block/delineator","y": 90},
+
+    "exit=true,facing=north": {"model": "roads-n-vehicles:block/delineator_exit","y": 180},
+    "exit=true,facing=east": {"model": "roads-n-vehicles:block/delineator_exit","y": 270},
+    "exit=true,facing=south": {"model": "roads-n-vehicles:block/delineator_exit"},
+    "exit=true,facing=west": {"model": "roads-n-vehicles:block/delineator_exit","y": 90}
+  }
+}

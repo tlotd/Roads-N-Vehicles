@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "roads-n-vehicles:block/asphalt_line_marking_cross"
+      },
+      {
+        "model": "roads-n-vehicles:block/asphalt_line_marking_cross",
+        "y": 90
+      },
+      {
+        "model": "roads-n-vehicles:block/asphalt_line_marking_cross",
+        "y": 180
+      },
+      {
+        "model": "roads-n-vehicles:block/asphalt_line_marking_cross",
+        "y": 270
+      }
+    ]
+  }
+}

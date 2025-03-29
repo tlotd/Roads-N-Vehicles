@@ -1,0 +1,7 @@
+{
+  "parent": "roads-n-vehicles:block/delineator",
+	"textures": {
+		"0": "roads-n-vehicles:block/delineator_exit",
+		"particle": "roads-n-vehicles:block/delineator_exit"
+	}
+}

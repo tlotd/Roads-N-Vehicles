@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "type=bottom": [
+      {"model":"roads-n-vehicles:block/asphalt_slab"},
+      {"model":"roads-n-vehicles:block/asphalt_slab","y":90},
+      {"model":"roads-n-vehicles:block/asphalt_slab","y":180},
+      {"model":"roads-n-vehicles:block/asphalt_slab","y":270}
+    ],
+    "type=double": [
+      {"model":"roads-n-vehicles:block/asphalt"},
+      {"model":"roads-n-vehicles:block/asphalt","y":90},
+      {"model":"roads-n-vehicles:block/asphalt","y":180},
+      {"model":"roads-n-vehicles:block/asphalt","y":270}
+    ],
+    "type=top": [
+      {"model":"roads-n-vehicles:block/asphalt_slab_top"},
+      {"model":"roads-n-vehicles:block/asphalt_slab_top","y":90},
+      {"model":"roads-n-vehicles:block/asphalt_slab_top","y":180},
+      {"model":"roads-n-vehicles:block/asphalt_slab_top","y":270}
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "roads-n-vehicles:guardrail",
+    "roads-n-vehicles:guardrail_outer_corner",
+    "roads-n-vehicles:guardrail_inner_corner"
+  ]
+}

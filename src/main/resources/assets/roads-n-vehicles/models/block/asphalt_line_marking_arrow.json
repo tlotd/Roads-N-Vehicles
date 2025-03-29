@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "roads-n-vehicles:block/asphalt_line_marking_arrow",
+    "north": "roads-n-vehicles:block/asphalt_line_marking_straight",
+    "west": "roads-n-vehicles:block/asphalt",
+    "south": "roads-n-vehicles:block/asphalt",
+    "down": "roads-n-vehicles:block/asphalt",
+    "east": "roads-n-vehicles:block/asphalt",
+    "particle": "roads-n-vehicles:block/asphalt"
+  }
+}

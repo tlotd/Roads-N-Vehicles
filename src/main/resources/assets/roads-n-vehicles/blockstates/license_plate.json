@@ -1,0 +1,128 @@
+{
+  "variants": {
+    "facing=north,plate=0": {"model": "roads-n-vehicles:block/license_plate","y": 180},
+    "facing=east,plate=0": {"model": "roads-n-vehicles:block/license_plate","y": 270},
+    "facing=south,plate=0": {"model": "roads-n-vehicles:block/license_plate"},
+    "facing=west,plate=0": {"model": "roads-n-vehicles:block/license_plate","y": 90},
+
+    "facing=north,plate=1,special=false": {"model": "roads-n-vehicles:block/license_plate_1","y": 180},
+    "facing=east,plate=1,special=false": {"model": "roads-n-vehicles:block/license_plate_1","y": 270},
+    "facing=south,plate=1,special=false": {"model": "roads-n-vehicles:block/license_plate_1"},
+    "facing=west,plate=1,special=false": {"model": "roads-n-vehicles:block/license_plate_1","y": 90},
+
+    "facing=north,plate=1,special=true": {"model": "roads-n-vehicles:block/license_plate_1_special","y": 180},
+    "facing=east,plate=1,special=true": {"model": "roads-n-vehicles:block/license_plate_1_special","y": 270},
+    "facing=south,plate=1,special=true": {"model": "roads-n-vehicles:block/license_plate_1_special"},
+    "facing=west,plate=1,special=true": {"model": "roads-n-vehicles:block/license_plate_1_special","y": 90},
+
+    "facing=north,plate=2,special=false": {"model": "roads-n-vehicles:block/license_plate_2","y": 180},
+    "facing=east,plate=2,special=false": {"model": "roads-n-vehicles:block/license_plate_2","y": 270},
+    "facing=south,plate=2,special=false": {"model": "roads-n-vehicles:block/license_plate_2"},
+    "facing=west,plate=2,special=false": {"model": "roads-n-vehicles:block/license_plate_2","y": 90},
+
+    "facing=north,plate=2,special=true": {"model": "roads-n-vehicles:block/license_plate_2_special","y": 180},
+    "facing=east,plate=2,special=true": {"model": "roads-n-vehicles:block/license_plate_2_special","y": 270},
+    "facing=south,plate=2,special=true": {"model": "roads-n-vehicles:block/license_plate_2_special"},
+    "facing=west,plate=2,special=true": {"model": "roads-n-vehicles:block/license_plate_2_special","y": 90},
+
+    "facing=north,plate=3,special=false": {"model": "roads-n-vehicles:block/license_plate_3","y": 180},
+    "facing=east,plate=3,special=false": {"model": "roads-n-vehicles:block/license_plate_3","y": 270},
+    "facing=south,plate=3,special=false": {"model": "roads-n-vehicles:block/license_plate_3"},
+    "facing=west,plate=3,special=false": {"model": "roads-n-vehicles:block/license_plate_3","y": 90},
+
+    "facing=north,plate=3,special=true": {"model": "roads-n-vehicles:block/license_plate_3_special","y": 180},
+    "facing=east,plate=3,special=true": {"model": "roads-n-vehicles:block/license_plate_3_special","y": 270},
+    "facing=south,plate=3,special=true": {"model": "roads-n-vehicles:block/license_plate_3_special"},
+    "facing=west,plate=3,special=true": {"model": "roads-n-vehicles:block/license_plate_3_special","y": 90},
+
+    "facing=north,plate=4": {"model": "roads-n-vehicles:block/license_plate_4","y": 180},
+    "facing=east,plate=4": {"model": "roads-n-vehicles:block/license_plate_4","y": 270},
+    "facing=south,plate=4": {"model": "roads-n-vehicles:block/license_plate_4"},
+    "facing=west,plate=4": {"model": "roads-n-vehicles:block/license_plate_4","y": 90},
+
+    "facing=north,plate=5": {"model": "roads-n-vehicles:block/license_plate_5","y": 180},
+    "facing=east,plate=5": {"model": "roads-n-vehicles:block/license_plate_5","y": 270},
+    "facing=south,plate=5": {"model": "roads-n-vehicles:block/license_plate_5"},
+    "facing=west,plate=5": {"model": "roads-n-vehicles:block/license_plate_5","y": 90},
+
+    "facing=north,plate=6": {"model": "roads-n-vehicles:block/license_plate_6","y": 180},
+    "facing=east,plate=6": {"model": "roads-n-vehicles:block/license_plate_6","y": 270},
+    "facing=south,plate=6": {"model": "roads-n-vehicles:block/license_plate_6"},
+    "facing=west,plate=6": {"model": "roads-n-vehicles:block/license_plate_6","y": 90},
+
+    "facing=north,plate=7": {"model": "roads-n-vehicles:block/license_plate_7","y": 180},
+    "facing=east,plate=7": {"model": "roads-n-vehicles:block/license_plate_7","y": 270},
+    "facing=south,plate=7": {"model": "roads-n-vehicles:block/license_plate_7"},
+    "facing=west,plate=7": {"model": "roads-n-vehicles:block/license_plate_7","y": 90},
+
+    "facing=north,plate=8": {"model": "roads-n-vehicles:block/license_plate_8","y": 180},
+    "facing=east,plate=8": {"model": "roads-n-vehicles:block/license_plate_8","y": 270},
+    "facing=south,plate=8": {"model": "roads-n-vehicles:block/license_plate_8"},
+    "facing=west,plate=8": {"model": "roads-n-vehicles:block/license_plate_8","y": 90},
+
+    "facing=north,plate=9": {"model": "roads-n-vehicles:block/license_plate_9","y": 180},
+    "facing=east,plate=9": {"model": "roads-n-vehicles:block/license_plate_9","y": 270},
+    "facing=south,plate=9": {"model": "roads-n-vehicles:block/license_plate_9"},
+    "facing=west,plate=9": {"model": "roads-n-vehicles:block/license_plate_9","y": 90},
+
+    "facing=north,plate=10": {"model": "roads-n-vehicles:block/license_plate_10","y": 180},
+    "facing=east,plate=10": {"model": "roads-n-vehicles:block/license_plate_10","y": 270},
+    "facing=south,plate=10": {"model": "roads-n-vehicles:block/license_plate_10"},
+    "facing=west,plate=10": {"model": "roads-n-vehicles:block/license_plate_10","y": 90},
+
+    "facing=north,plate=11": {"model": "roads-n-vehicles:block/license_plate_11","y": 180},
+    "facing=east,plate=11": {"model": "roads-n-vehicles:block/license_plate_11","y": 270},
+    "facing=south,plate=11": {"model": "roads-n-vehicles:block/license_plate_11"},
+    "facing=west,plate=11": {"model": "roads-n-vehicles:block/license_plate_11","y": 90},
+
+    "facing=north,plate=12": {"model": "roads-n-vehicles:block/license_plate_12","y": 180},
+    "facing=east,plate=12": {"model": "roads-n-vehicles:block/license_plate_12","y": 270},
+    "facing=south,plate=12": {"model": "roads-n-vehicles:block/license_plate_12"},
+    "facing=west,plate=12": {"model": "roads-n-vehicles:block/license_plate_12","y": 90},
+
+    "facing=north,plate=13": {"model": "roads-n-vehicles:block/license_plate_13","y": 180},
+    "facing=east,plate=13": {"model": "roads-n-vehicles:block/license_plate_13","y": 270},
+    "facing=south,plate=13": {"model": "roads-n-vehicles:block/license_plate_13"},
+    "facing=west,plate=13": {"model": "roads-n-vehicles:block/license_plate_13","y": 90},
+
+    "facing=north,plate=14": {"model": "roads-n-vehicles:block/license_plate_14","y": 180},
+    "facing=east,plate=14": {"model": "roads-n-vehicles:block/license_plate_14","y": 270},
+    "facing=south,plate=14": {"model": "roads-n-vehicles:block/license_plate_14"},
+    "facing=west,plate=14": {"model": "roads-n-vehicles:block/license_plate_14","y": 90},
+
+    "facing=north,plate=15": {"model": "roads-n-vehicles:block/license_plate_15","y": 180},
+    "facing=east,plate=15": {"model": "roads-n-vehicles:block/license_plate_15","y": 270},
+    "facing=south,plate=15": {"model": "roads-n-vehicles:block/license_plate_15"},
+    "facing=west,plate=15": {"model": "roads-n-vehicles:block/license_plate_15","y": 90},
+
+    "facing=north,plate=16": {"model": "roads-n-vehicles:block/license_plate_16","y": 180},
+    "facing=east,plate=16": {"model": "roads-n-vehicles:block/license_plate_16","y": 270},
+    "facing=south,plate=16": {"model": "roads-n-vehicles:block/license_plate_16"},
+    "facing=west,plate=16": {"model": "roads-n-vehicles:block/license_plate_16","y": 90},
+
+    "facing=north,plate=17": {"model": "roads-n-vehicles:block/license_plate_17","y": 180},
+    "facing=east,plate=17": {"model": "roads-n-vehicles:block/license_plate_17","y": 270},
+    "facing=south,plate=17": {"model": "roads-n-vehicles:block/license_plate_17"},
+    "facing=west,plate=17": {"model": "roads-n-vehicles:block/license_plate_17","y": 90},
+
+    "facing=north,plate=18": {"model": "roads-n-vehicles:block/license_plate_18","y": 180},
+    "facing=east,plate=18": {"model": "roads-n-vehicles:block/license_plate_18","y": 270},
+    "facing=south,plate=18": {"model": "roads-n-vehicles:block/license_plate_18"},
+    "facing=west,plate=18": {"model": "roads-n-vehicles:block/license_plate_18","y": 90},
+
+    "facing=north,plate=19": {"model": "roads-n-vehicles:block/license_plate_19","y": 180},
+    "facing=east,plate=19": {"model": "roads-n-vehicles:block/license_plate_19","y": 270},
+    "facing=south,plate=19": {"model": "roads-n-vehicles:block/license_plate_19"},
+    "facing=west,plate=19": {"model": "roads-n-vehicles:block/license_plate_19","y": 90},
+
+    "facing=north,plate=20": {"model": "roads-n-vehicles:block/license_plate_20","y": 180},
+    "facing=east,plate=20": {"model": "roads-n-vehicles:block/license_plate_20","y": 270},
+    "facing=south,plate=20": {"model": "roads-n-vehicles:block/license_plate_20"},
+    "facing=west,plate=20": {"model": "roads-n-vehicles:block/license_plate_20","y": 90},
+
+    "facing=north,plate=21": {"model": "roads-n-vehicles:block/license_plate_21","y": 180},
+    "facing=east,plate=21": {"model": "roads-n-vehicles:block/license_plate_21","y": 270},
+    "facing=south,plate=21": {"model": "roads-n-vehicles:block/license_plate_21"},
+    "facing=west,plate=21": {"model": "roads-n-vehicles:block/license_plate_21","y": 90}
+  }
+}

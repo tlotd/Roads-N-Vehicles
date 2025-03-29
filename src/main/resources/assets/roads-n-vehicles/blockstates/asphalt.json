@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "roads-n-vehicles:block/asphalt"
+      },
+      {
+        "model": "roads-n-vehicles:block/asphalt",
+        "y": 90
+      },
+      {
+        "model": "roads-n-vehicles:block/asphalt",
+        "y": 180
+      },
+      {
+        "model": "roads-n-vehicles:block/asphalt",
+        "y": 270
+      }
+    ]
+  }
+}

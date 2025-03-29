@@ -1,0 +1,7 @@
+{
+	"parent": "roads-n-vehicles:block/license_plate",
+	"textures": {
+		"particle": "roads-n-vehicles:block/license_plate/tlotd",
+		"license_plate": "roads-n-vehicles:block/license_plate/tlotd"
+	}
+}

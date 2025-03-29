@@ -1,0 +1,53 @@
+{
+  "variants": {
+    "facing=north,coat_of_arms=0": {"model": "roads-n-vehicles:block/coat_of_arms","y": 180},
+    "facing=east,coat_of_arms=0": {"model": "roads-n-vehicles:block/coat_of_arms","y": 270},
+    "facing=south,coat_of_arms=0": {"model": "roads-n-vehicles:block/coat_of_arms"},
+    "facing=west,coat_of_arms=0": {"model": "roads-n-vehicles:block/coat_of_arms","y": 90},
+
+    "facing=north,coat_of_arms=1": {"model": "roads-n-vehicles:block/coat_of_arms_1","y": 180},
+    "facing=east,coat_of_arms=1": {"model": "roads-n-vehicles:block/coat_of_arms_1","y": 270},
+    "facing=south,coat_of_arms=1": {"model": "roads-n-vehicles:block/coat_of_arms_1"},
+    "facing=west,coat_of_arms=1": {"model": "roads-n-vehicles:block/coat_of_arms_1","y": 90},
+
+    "facing=north,coat_of_arms=2": {"model": "roads-n-vehicles:block/coat_of_arms_2","y": 180},
+    "facing=east,coat_of_arms=2": {"model": "roads-n-vehicles:block/coat_of_arms_2","y": 270},
+    "facing=south,coat_of_arms=2": {"model": "roads-n-vehicles:block/coat_of_arms_2"},
+    "facing=west,coat_of_arms=2": {"model": "roads-n-vehicles:block/coat_of_arms_2","y": 90},
+
+    "facing=north,coat_of_arms=3": {"model": "roads-n-vehicles:block/coat_of_arms_3","y": 180},
+    "facing=east,coat_of_arms=3": {"model": "roads-n-vehicles:block/coat_of_arms_3","y": 270},
+    "facing=south,coat_of_arms=3": {"model": "roads-n-vehicles:block/coat_of_arms_3"},
+    "facing=west,coat_of_arms=3": {"model": "roads-n-vehicles:block/coat_of_arms_3","y": 90},
+
+    "facing=north,coat_of_arms=7": {"model": "roads-n-vehicles:block/coat_of_arms_7","y": 180},
+    "facing=east,coat_of_arms=7": {"model": "roads-n-vehicles:block/coat_of_arms_7","y": 270},
+    "facing=south,coat_of_arms=7": {"model": "roads-n-vehicles:block/coat_of_arms_7"},
+    "facing=west,coat_of_arms=7": {"model": "roads-n-vehicles:block/coat_of_arms_7","y": 90},
+
+    "facing=north,coat_of_arms=9": {"model": "roads-n-vehicles:block/coat_of_arms_9","y": 180},
+    "facing=east,coat_of_arms=9": {"model": "roads-n-vehicles:block/coat_of_arms_9","y": 270},
+    "facing=south,coat_of_arms=9": {"model": "roads-n-vehicles:block/coat_of_arms_9"},
+    "facing=west,coat_of_arms=9": {"model": "roads-n-vehicles:block/coat_of_arms_9","y": 90},
+
+    "facing=north,coat_of_arms=10": {"model": "roads-n-vehicles:block/coat_of_arms_10","y": 180},
+    "facing=east,coat_of_arms=10": {"model": "roads-n-vehicles:block/coat_of_arms_10","y": 270},
+    "facing=south,coat_of_arms=10": {"model": "roads-n-vehicles:block/coat_of_arms_10"},
+    "facing=west,coat_of_arms=10": {"model": "roads-n-vehicles:block/coat_of_arms_10","y": 90},
+
+    "facing=north,coat_of_arms=13": {"model": "roads-n-vehicles:block/coat_of_arms_13","y": 180},
+    "facing=east,coat_of_arms=13": {"model": "roads-n-vehicles:block/coat_of_arms_13","y": 270},
+    "facing=south,coat_of_arms=13": {"model": "roads-n-vehicles:block/coat_of_arms_13"},
+    "facing=west,coat_of_arms=13": {"model": "roads-n-vehicles:block/coat_of_arms_13","y": 90},
+
+    "facing=north,coat_of_arms=15": {"model": "roads-n-vehicles:block/coat_of_arms_15","y": 180},
+    "facing=east,coat_of_arms=15": {"model": "roads-n-vehicles:block/coat_of_arms_15","y": 270},
+    "facing=south,coat_of_arms=15": {"model": "roads-n-vehicles:block/coat_of_arms_15"},
+    "facing=west,coat_of_arms=15": {"model": "roads-n-vehicles:block/coat_of_arms_15","y": 90},
+
+    "facing=north,coat_of_arms=19": {"model": "roads-n-vehicles:block/coat_of_arms_19","y": 180},
+    "facing=east,coat_of_arms=19": {"model": "roads-n-vehicles:block/coat_of_arms_19","y": 270},
+    "facing=south,coat_of_arms=19": {"model": "roads-n-vehicles:block/coat_of_arms_19"},
+    "facing=west,coat_of_arms=19": {"model": "roads-n-vehicles:block/coat_of_arms_19","y": 90}
+  }
+}

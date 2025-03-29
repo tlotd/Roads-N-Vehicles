@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "roads-n-vehicles",
+	"version": "${version}",
+	"name": "TLOTD: Roads 'n' Vehicles",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"TLOTD",
+		"Isla_Nublar"
+	],
+	"contact": {
+		"homepage": "https://tlotd.net/",
+		"sources": "https://github.com/Isla-Nublar/tlotd-fabric-1.20.1"
+	},
+	"license": "CC-BY-NC-SA-4.0",
+	"icon": "assets/roads-n-vehicles/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles"
+		],
+		"client": [
+			"net.tlotd.roads_n_vehicles.TLOTDRoadsnVehiclesClient"
+		]
+	},
+	"mixins": [
+		"roads-n-vehicles.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"tlotd": ">=0.3.2"
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "roads-n-vehicles:block/no_vehicles_sign","y": 180},
+    "facing=east": {"model": "roads-n-vehicles:block/no_vehicles_sign","y": 270},
+    "facing=south": {"model": "roads-n-vehicles:block/no_vehicles_sign"},
+    "facing=west": {"model": "roads-n-vehicles:block/no_vehicles_sign","y": 90}
+  }
+}
