@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "type=bottom,facing=north": {"model":"roads-n-vehicles:block/asphalt_slab_yellow_line_marking_arrow"},
+    "type=bottom,facing=east": {"model":"roads-n-vehicles:block/asphalt_slab_yellow_line_marking_arrow","y":90},
+    "type=bottom,facing=south": {"model":"roads-n-vehicles:block/asphalt_slab_yellow_line_marking_arrow","y":180},
+    "type=bottom,facing=west": {"model":"roads-n-vehicles:block/asphalt_slab_yellow_line_marking_arrow","y":270},
+
+    "type=double,facing=north": {"model":"roads-n-vehicles:block/asphalt_yellow_line_marking_arrow"},
+    "type=double,facing=east": {"model":"roads-n-vehicles:block/asphalt_yellow_line_marking_arrow","y":90},
+    "type=double,facing=south": {"model":"roads-n-vehicles:block/asphalt_yellow_line_marking_arrow","y":180},
+    "type=double,facing=west": {"model":"roads-n-vehicles:block/asphalt_yellow_line_marking_arrow","y":270},
+
+    "type=top,facing=north": {"model":"roads-n-vehicles:block/asphalt_slab_top_yellow_line_marking_arrow"},
+    "type=top,facing=east": {"model":"roads-n-vehicles:block/asphalt_slab_top_yellow_line_marking_arrow","y":90},
+    "type=top,facing=south": {"model":"roads-n-vehicles:block/asphalt_slab_top_yellow_line_marking_arrow","y":180},
+    "type=top,facing=west": {"model":"roads-n-vehicles:block/asphalt_slab_top_yellow_line_marking_arrow","y":270}
+  }
+}

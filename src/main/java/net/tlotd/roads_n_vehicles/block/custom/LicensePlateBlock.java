@@ -52,7 +52,7 @@ public class LicensePlateBlock extends Block {
                 case "212aa6f5-69a9-47d9-9ad5-19b359744edf" -> {plate = 1;}
                 case "67148bd0-1a00-4bca-9d9e-ec246afbcf51" -> {plate = 2;}
                 case "53c68d22-726b-4a37-b92d-8d7c4670a87d" -> {plate = 3;}
-                case "660605b0-a3ac-404c-8f85-039cfddf36de" -> {plate = 4;}
+                case "660605b0-a3ac-404c-8f85-039cfddf36de" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 4;}} //AliaSophie
                 case "0b026440-781b-40c3-bfee-78a2ee71f042" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 5;}} //Teneba
                 case "d9ffb72a-f473-4ebc-936f-6f7d5d694145" -> {plate = 6;}
                 case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 7;}} //ISSO_21_
@@ -75,10 +75,14 @@ public class LicensePlateBlock extends Block {
                 }
             }
         } else {
+            special = true;
             switch (ctx.getPlayer().getUuid().toString()) {
-                case "212aa6f5-69a9-47d9-9ad5-19b359744edf" -> {plate = 1; special = true;}
-                case "67148bd0-1a00-4bca-9d9e-ec246afbcf51" -> {plate = 2; special = true;}
-                case "53c68d22-726b-4a37-b92d-8d7c4670a87d" -> {plate = 3; special = true;}
+                case "212aa6f5-69a9-47d9-9ad5-19b359744edf" -> {plate = 1;}
+                case "67148bd0-1a00-4bca-9d9e-ec246afbcf51" -> {plate = 2;}
+                case "53c68d22-726b-4a37-b92d-8d7c4670a87d" -> {plate = 3;}
+                case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 7;}} //ISSO_21_
+                case "d3018dca-9a16-43f0-8d72-19b93e33fa6b" -> {plate = 10;}
+                case "125cda9f-1a5b-40c5-b3a9-02c7988940f6" -> {plate = 13;}
                 default -> {
                 }
             }
@@ -142,19 +146,19 @@ public class LicensePlateBlock extends Block {
             tooltip.add(Text.literal("\uE000").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TLOTD").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE001").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Isla_Nublar").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE002").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" EinsDarki").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.literal("\uE003").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" AliaSophie").setStyle(style.withFont(DEFAULT_FONT_ID))));
             if (ModConfigs.FORMER_TLOTD_REWARDS) {
-                tooltip.add(Text.literal("\uE004").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Teneba").setStyle(style.withFont(DEFAULT_FONT_ID)))); //Teneba
+                tooltip.add(Text.literal("\uE003").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" AliaSophie").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                tooltip.add(Text.literal("\uE004").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Teneba").setStyle(style.withFont(DEFAULT_FONT_ID))));
             }
             tooltip.add(Text.literal("\uE005").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Alex1666").setStyle(style.withFont(DEFAULT_FONT_ID))));
             if (ModConfigs.FORMER_TLOTD_REWARDS) {
-                tooltip.add(Text.literal("\uE006").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" ISSO_21_").setStyle(style.withFont(DEFAULT_FONT_ID)))); //ISSO_21_
-                tooltip.add(Text.literal("\uE007").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Akitorlp").setStyle(style.withFont(DEFAULT_FONT_ID)))); //Akitorlp
+                tooltip.add(Text.literal("\uE006").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" ISSO_21_").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                tooltip.add(Text.literal("\uE007").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Akitorlp").setStyle(style.withFont(DEFAULT_FONT_ID))));
             }
             tooltip.add(Text.literal("\uE008").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Polarfoxtm").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE009").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Salsafox").setStyle(style.withFont(DEFAULT_FONT_ID))));
             if (ModConfigs.FORMER_TLOTD_REWARDS) {
-                tooltip.add(Text.literal("\uE00A").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" VANDAGR").setStyle(style.withFont(DEFAULT_FONT_ID)))); //VANDAGR
+                tooltip.add(Text.literal("\uE00A").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" VANDAGR").setStyle(style.withFont(DEFAULT_FONT_ID))));
             }
             tooltip.add(Text.literal("\uE00B").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TLOTDShido").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE00C").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" nischi2612").setStyle(style.withFont(DEFAULT_FONT_ID))));

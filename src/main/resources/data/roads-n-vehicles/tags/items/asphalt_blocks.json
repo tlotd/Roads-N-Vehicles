@@ -7,6 +7,17 @@
     "roads-n-vehicles:asphalt_line_marking_corner",
     "roads-n-vehicles:asphalt_line_marking_t-junction",
     "roads-n-vehicles:asphalt_line_marking_cross",
-    "roads-n-vehicles:asphalt_stairs"
+    "roads-n-vehicles:asphalt_yellow_line_marking_arrow",
+    "roads-n-vehicles:asphalt_yellow_line_marking_straight",
+    "roads-n-vehicles:asphalt_yellow_line_marking_corner",
+    "roads-n-vehicles:asphalt_yellow_line_marking_t-junction",
+    "roads-n-vehicles:asphalt_yellow_line_marking_cross",
+    "roads-n-vehicles:asphalt_stairs",
+    "roads-n-vehicles:asphalt_double_line_marking_straight",
+    "roads-n-vehicles:asphalt_double_line_marking_corner",
+    "roads-n-vehicles:asphalt_double_yellow_line_marking_straight",
+    "roads-n-vehicles:asphalt_double_yellow_line_marking_corner",
+    "roads-n-vehicles:asphalt_double_red_line_marking_straight",
+    "roads-n-vehicles:asphalt_double_red_line_marking_corner"
   ]
 }

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "type=bottom": [
+      {"model":"roads-n-vehicles:block/asphalt_slab_yellow_line_marking_cross"},
+      {"model":"roads-n-vehicles:block/asphalt_slab_yellow_line_marking_cross","y":90},
+      {"model":"roads-n-vehicles:block/asphalt_slab_yellow_line_marking_cross","y":180},
+      {"model":"roads-n-vehicles:block/asphalt_slab_yellow_line_marking_cross","y":270}
+    ],
+    "type=double": [
+      {"model":"roads-n-vehicles:block/asphalt_yellow_line_marking_cross"},
+      {"model":"roads-n-vehicles:block/asphalt_yellow_line_marking_cross","y":90},
+      {"model":"roads-n-vehicles:block/asphalt_yellow_line_marking_cross","y":180},
+      {"model":"roads-n-vehicles:block/asphalt_yellow_line_marking_cross","y":270}
+    ],
+    "type=top": [
+      {"model":"roads-n-vehicles:block/asphalt_slab_top_yellow_line_marking_cross"},
+      {"model":"roads-n-vehicles:block/asphalt_slab_top_yellow_line_marking_cross","y":90},
+      {"model":"roads-n-vehicles:block/asphalt_slab_top_yellow_line_marking_cross","y":180},
+      {"model":"roads-n-vehicles:block/asphalt_slab_top_yellow_line_marking_cross","y":270}
+    ]
+  }
+}

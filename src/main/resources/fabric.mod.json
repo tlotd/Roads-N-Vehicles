@@ -3,14 +3,14 @@
 	"id": "roads-n-vehicles",
 	"version": "${version}",
 	"name": "TLOTD: Roads 'n' Vehicles",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A small mod, that adds asphalt (with and without markings), guardrails, delineators and a whole bunch of european street signs.",
 	"authors": [
 		"TLOTD",
 		"Isla_Nublar"
 	],
 	"contact": {
 		"homepage": "https://tlotd.net/",
-		"sources": "https://github.com/Isla-Nublar/tlotd-fabric-1.20.1"
+		"sources": "https://github.com/tlotd/Roads-N-Vehicles"
 	},
 	"license": "CC-BY-NC-SA-4.0",
 	"icon": "assets/roads-n-vehicles/icon.png",

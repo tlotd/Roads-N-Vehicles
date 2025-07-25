@@ -17,42 +17,65 @@ public class ModBlocks {
 
     public static final Block ASPHALT = registerBlock("asphalt",
             new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_SLAB = registerBlock("asphalt_slab",
+            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_STAIRS = registerBlock("asphalt_stairs",
+            new StairsBlock(ModBlocks.ASPHALT.getDefaultState(), FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
 
     public static final Block ASPHALT_LINE_MARKING_ARROW = registerBlock("asphalt_line_marking_arrow",
             new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_LINE_MARKING_STRAIGHT = registerBlock("asphalt_line_marking_straight",
             new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_LINE_MARKING_CORNER = registerBlock("asphalt_line_marking_corner",
             new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_LINE_MARKING_T_JUNCTION = registerBlock("asphalt_line_marking_t-junction",
             new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_LINE_MARKING_CROSS = registerBlock("asphalt_line_marking_cross",
             new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
-    public static final Block ASPHALT_SLAB = registerBlock("asphalt_slab",
-            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_SLAB_LINE_MARKING_ARROW = registerBlock("asphalt_slab_line_marking_arrow",
             new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_SLAB_LINE_MARKING_STRAIGHT= registerBlock("asphalt_slab_line_marking_straight",
             new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_SLAB_LINE_MARKING_CORNER = registerBlock("asphalt_slab_line_marking_corner",
             new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_SLAB_LINE_MARKING_T_JUNCTION = registerBlock("asphalt_slab_line_marking_t-junction",
             new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
-
     public static final Block ASPHALT_SLAB_LINE_MARKING_CROSS = registerBlock("asphalt_slab_line_marking_cross",
             new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
 
-    public static final Block ASPHALT_STAIRS = registerBlock("asphalt_stairs",
-            new StairsBlock(ModBlocks.ASPHALT.getDefaultState(), FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_YELLOW_LINE_MARKING_ARROW = registerBlock("asphalt_yellow_line_marking_arrow",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_YELLOW_LINE_MARKING_STRAIGHT = registerBlock("asphalt_yellow_line_marking_straight",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_YELLOW_LINE_MARKING_CORNER = registerBlock("asphalt_yellow_line_marking_corner",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_YELLOW_LINE_MARKING_T_JUNCTION = registerBlock("asphalt_yellow_line_marking_t-junction",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_YELLOW_LINE_MARKING_CROSS = registerBlock("asphalt_yellow_line_marking_cross",
+            new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_ARROW = registerBlock("asphalt_slab_yellow_line_marking_arrow",
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_STRAIGHT= registerBlock("asphalt_slab_yellow_line_marking_straight",
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_CORNER = registerBlock("asphalt_slab_yellow_line_marking_corner",
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_T_JUNCTION = registerBlock("asphalt_slab_yellow_line_marking_t-junction",
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_CROSS = registerBlock("asphalt_slab_yellow_line_marking_cross",
+            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+
+    public static final Block ASPHALT_DOUBLE_LINE_MARKING_STRAIGHT = registerBlock("asphalt_double_line_marking_straight",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_DOUBLE_LINE_MARKING_CORNER = registerBlock("asphalt_double_line_marking_corner",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_DOUBLE_YELLOW_LINE_MARKING_STRAIGHT = registerBlock("asphalt_double_yellow_line_marking_straight",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_DOUBLE_YELLOW_LINE_MARKING_CORNER = registerBlock("asphalt_double_yellow_line_marking_corner",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_DOUBLE_RED_LINE_MARKING_STRAIGHT = registerBlock("asphalt_double_red_line_marking_straight",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block ASPHALT_DOUBLE_RED_LINE_MARKING_CORNER = registerBlock("asphalt_double_red_line_marking_corner",
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
 
     public static final Block TOWN_SIGN = registerBlock("town_sign",
             new TownSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
@@ -162,17 +185,32 @@ public class ModBlocks {
     public static final Block ROUNDABOUT_FLIPPED_SIGN = registerBlock("roundabout_flipped_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
+    public static final Block NO_LEFT_TURN_SIGN = registerBlock("no_left_turn_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block NO_RIGHT_TURN_SIGN = registerBlock("no_right_turn_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block NO_U_TURN_SIGN = registerBlock("no_u_turn_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+
     public static final Block STOP_SIGN = registerBlock("stop_sign",
             new BigSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
     public static final Block YIELD_SIGN = registerBlock("yield_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block YIELD_US_SIGN = registerBlock("yield_us_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
+    public static final Block DIAMOND_SIGN = registerBlock("diamond_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
     public static final Block PRIORITY_ROAD_SIGN = registerBlock("priority_road_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
     public static final Block END_OF_PRIORITY_ROAD_SIGN = registerBlock("end_of_priority_road_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
-    public static final Block DIAMOND_SIGN = registerBlock("diamond_sign",
+    public static final Block TURN_LEFT_US_SIGN = registerBlock("turn_left_us_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block TURN_RIGHT_US_SIGN = registerBlock("turn_right_us_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block NO_THROUGH_ROAD_US_SIGN = registerBlock("no_through_road_us_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
     public static final Block TRIANGLE_SIGN = registerBlock("triangle_sign",
@@ -235,6 +273,76 @@ public class ModBlocks {
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
     public static final Block GIVE_WAY_TO_ONCOMING_TRAFFIC_SIGN = registerBlock("give_way_to_oncoming_traffic_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+
+    public static final Block NO_LEFT_TURN_US_SIGN = registerBlock("no_left_turn_us_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block NO_RIGHT_TURN_US_SIGN = registerBlock("no_right_turn_us_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block NO_U_TURN_US_SIGN = registerBlock("no_u_turn_us_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block NO_ENTRY_US_SIGN = registerBlock("no_entry_us_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+
+    public static final Block US_ROUTE_1_SIGN = registerBlock("us_route_1_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block US_ROUTE_2_SIGN = registerBlock("us_route_2_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block US_ROUTE_3_SIGN = registerBlock("us_route_3_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block US_ROUTE_4_SIGN = registerBlock("us_route_4_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block US_ROUTE_5_SIGN = registerBlock("us_route_5_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block US_ROUTE_6_SIGN = registerBlock("us_route_6_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block US_ROUTE_7_SIGN = registerBlock("us_route_7_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block US_ROUTE_8_SIGN = registerBlock("us_route_8_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block US_ROUTE_9_SIGN = registerBlock("us_route_9_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+
+
+    public static final Block TALL_RECTANGULAR_SIGN = registerBlock("tall_rectangular_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_5_SIGN = registerBlock("speed_limit_us_5_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_10_SIGN = registerBlock("speed_limit_us_10_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_15_SIGN = registerBlock("speed_limit_us_15_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_20_SIGN = registerBlock("speed_limit_us_20_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_25_SIGN = registerBlock("speed_limit_us_25_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_30_SIGN = registerBlock("speed_limit_us_30_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_35_SIGN = registerBlock("speed_limit_us_35_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_40_SIGN = registerBlock("speed_limit_us_40_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_45_SIGN = registerBlock("speed_limit_us_45_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_50_SIGN = registerBlock("speed_limit_us_50_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_55_SIGN = registerBlock("speed_limit_us_55_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_60_SIGN = registerBlock("speed_limit_us_60_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_65_SIGN = registerBlock("speed_limit_us_65_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_70_SIGN = registerBlock("speed_limit_us_70_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_75_SIGN = registerBlock("speed_limit_us_75_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_80_SIGN = registerBlock("speed_limit_us_80_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_85_SIGN = registerBlock("speed_limit_us_85_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_90_SIGN = registerBlock("speed_limit_us_90_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block SPEED_LIMIT_US_95_SIGN = registerBlock("speed_limit_us_95_sign",
+            new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
     public static final Block GUARDRAIL = registerBlock("guardrail",
             new GuardrailBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "roads-n-vehicles:block/asphalt_yellow_line_marking_cross",
+    "side": "roads-n-vehicles:block/asphalt_yellow_line_marking_straight",
+    "top": "roads-n-vehicles:block/asphalt_yellow_line_marking_cross"
+  }
+}

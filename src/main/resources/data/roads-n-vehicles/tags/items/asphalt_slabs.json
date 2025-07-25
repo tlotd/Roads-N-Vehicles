@@ -6,6 +6,11 @@
     "roads-n-vehicles:asphalt_slab_line_marking_straight",
     "roads-n-vehicles:asphalt_slab_line_marking_corner",
     "roads-n-vehicles:asphalt_slab_line_marking_t-junction",
-    "roads-n-vehicles:asphalt_slab_line_marking_cross"
+    "roads-n-vehicles:asphalt_slab_line_marking_cross",
+    "roads-n-vehicles:asphalt_slab_yellow_line_marking_arrow",
+    "roads-n-vehicles:asphalt_slab_yellow_line_marking_straight",
+    "roads-n-vehicles:asphalt_slab_yellow_line_marking_corner",
+    "roads-n-vehicles:asphalt_slab_yellow_line_marking_t-junction",
+    "roads-n-vehicles:asphalt_slab_yellow_line_marking_cross"
   ]
 }
