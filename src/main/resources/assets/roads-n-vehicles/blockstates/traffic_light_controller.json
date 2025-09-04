@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "stage=0": {"model": "roads-n-vehicles:block/traffic_light_controller"},
+    "stage=1": {"model": "roads-n-vehicles:block/traffic_light_controller_red"},
+    "stage=2": {"model": "roads-n-vehicles:block/traffic_light_controller_red_yellow"},
+    "stage=3": {"model": "roads-n-vehicles:block/traffic_light_controller_green"},
+    "stage=4": {"model": "roads-n-vehicles:block/traffic_light_controller_yellow"}
+  }
+}

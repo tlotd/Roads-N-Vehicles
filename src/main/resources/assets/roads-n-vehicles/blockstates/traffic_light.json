@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north,stage=0": {"model": "roads-n-vehicles:block/traffic_light","y": 180},
+    "facing=east,stage=0": {"model": "roads-n-vehicles:block/traffic_light","y": 270},
+    "facing=south,stage=0": {"model": "roads-n-vehicles:block/traffic_light"},
+    "facing=west,stage=0": {"model": "roads-n-vehicles:block/traffic_light","y": 90},
+
+    "facing=north,stage=1": {"model": "roads-n-vehicles:block/traffic_light_red","y": 180},
+    "facing=east,stage=1": {"model": "roads-n-vehicles:block/traffic_light_red","y": 270},
+    "facing=south,stage=1": {"model": "roads-n-vehicles:block/traffic_light_red"},
+    "facing=west,stage=1": {"model": "roads-n-vehicles:block/traffic_light_red","y": 90},
+
+    "facing=north,stage=2": {"model": "roads-n-vehicles:block/traffic_light_red_yellow","y": 180},
+    "facing=east,stage=2": {"model": "roads-n-vehicles:block/traffic_light_red_yellow","y": 270},
+    "facing=south,stage=2": {"model": "roads-n-vehicles:block/traffic_light_red_yellow"},
+    "facing=west,stage=2": {"model": "roads-n-vehicles:block/traffic_light_red_yellow","y": 90},
+
+    "facing=north,stage=3": {"model": "roads-n-vehicles:block/traffic_light_green","y": 180},
+    "facing=east,stage=3": {"model": "roads-n-vehicles:block/traffic_light_green","y": 270},
+    "facing=south,stage=3": {"model": "roads-n-vehicles:block/traffic_light_green"},
+    "facing=west,stage=3": {"model": "roads-n-vehicles:block/traffic_light_green","y": 90},
+
+    "facing=north,stage=4": {"model": "roads-n-vehicles:block/traffic_light_yellow","y": 180},
+    "facing=east,stage=4": {"model": "roads-n-vehicles:block/traffic_light_yellow","y": 270},
+    "facing=south,stage=4": {"model": "roads-n-vehicles:block/traffic_light_yellow"},
+    "facing=west,stage=4": {"model": "roads-n-vehicles:block/traffic_light_yellow","y": 90}
+  }
+}

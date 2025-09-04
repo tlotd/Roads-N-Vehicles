@@ -200,6 +200,27 @@
 
   "block.roads-n-vehicles.delineator": "Delineator",
 
+  "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light": "Portable Traffic Delineator with Amber Flashing Light",
+  "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light_2": "Portable Traffic Delineator with Amber Flashing Light [Delay 1]",
+  "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light_3": "Portable Traffic Delineator with Amber Flashing Light [Delay 2]",
+  "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light_4": "Portable Traffic Delineator with Amber Flashing Light [Delay 3]",
+
+  "block.roads-n-vehicles.traffic_cone": "Traffic Cone",
+
+  "block.roads-n-vehicles.traffic_light": "Traffic Light",
+  "block.roads-n-vehicles.yellow_traffic_light": "Yellow Traffic Light",
+  "block.roads-n-vehicles.traffic_light_controller": "Traffic Light Controller",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip": "Takes Redstone signal to",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_2": "change nearest light above:",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_3": "1-3: Red",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_4": "4-7: Red & Yellow",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_5": "8-11: Green",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_6": "12-15: Yellow",
+
+  "block.roads-n-vehicles.fire_hydrant": "Fire Hydrant",
+  "block.roads-n-vehicles.fire_hydrant.tooltip": "When interacted with Bucket:",
+  "block.roads-n-vehicles.fire_hydrant.tooltip_2": "Fills it with Water",
+
   "item.roads-n-vehicles.muscle_car_keys": "Muscle Car Keys",
 
   "entity.roads-n-vehicles.muscle_car": "Muscle Car"

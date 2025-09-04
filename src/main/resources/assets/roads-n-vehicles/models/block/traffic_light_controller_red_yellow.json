@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "roads-n-vehicles:block/traffic_light_controller/top",
+    "side": "roads-n-vehicles:block/traffic_light_controller/red_yellow"
+  }
+}

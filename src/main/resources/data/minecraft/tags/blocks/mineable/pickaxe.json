@@ -174,6 +174,19 @@
     "roads-n-vehicles:guardrail_outer_corner",
     "roads-n-vehicles:guardrail_inner_corner",
 
-    "roads-n-vehicles:delineator"
+    "roads-n-vehicles:delineator",
+
+    "roads-n-vehicles:portable_traffic_delineator_with_amber_flashing_light",
+    "roads-n-vehicles:portable_traffic_delineator_with_amber_flashing_light_2",
+    "roads-n-vehicles:portable_traffic_delineator_with_amber_flashing_light_3",
+    "roads-n-vehicles:portable_traffic_delineator_with_amber_flashing_light_4",
+
+    "roads-n-vehicles:fire_hydrant",
+
+    "roads-n-vehicles:traffic_cone",
+
+    "roads-n-vehicles:traffic_light",
+    "roads-n-vehicles:yellow_traffic_light",
+    "roads-n-vehicles:traffic_light_controller"
   ]
 }

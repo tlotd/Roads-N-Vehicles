@@ -1,0 +1,106 @@
+{
+	"credit": "Made by Isla_Nublar for the TLOTD Mod (https://tlotd.net)",
+	"textures": {
+		"0": "roads-n-vehicles:block/traffic_cone_side",
+		"1": "roads-n-vehicles:block/traffic_cone_top",
+		"particle": "roads-n-vehicles:block/traffic_cone_side"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 1, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 2]},
+			"faces": {
+				"north": {"uv": [2, 15, 14, 16], "texture": "#0"},
+				"east": {"uv": [2, 15, 14, 16], "texture": "#0"},
+				"south": {"uv": [2, 15, 14, 16], "texture": "#0"},
+				"west": {"uv": [2, 15, 14, 16], "texture": "#0"},
+				"up": {"uv": [2, 2, 14, 14], "texture": "#1"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#1"}
+			}
+		},
+		{
+			"from": [4, 1, 4],
+			"to": [12, 5, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 1, 4]},
+			"faces": {
+				"north": {"uv": [4, 11, 12, 15], "texture": "#0"},
+				"east": {"uv": [4, 11, 12, 15], "texture": "#0"},
+				"south": {"uv": [4, 11, 12, 15], "texture": "#0"},
+				"west": {"uv": [4, 11, 12, 15], "texture": "#0"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#1"}
+			}
+		},
+		{
+			"from": [5, 5, 5],
+			"to": [11, 9, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 5, 5]},
+			"faces": {
+				"north": {"uv": [5, 7, 11, 11], "texture": "#0"},
+				"east": {"uv": [5, 7, 11, 11], "texture": "#0"},
+				"south": {"uv": [5, 7, 11, 11], "texture": "#0"},
+				"west": {"uv": [5, 7, 11, 11], "texture": "#0"},
+				"up": {"uv": [5, 5, 11, 11], "texture": "#1"}
+			}
+		},
+		{
+			"from": [6, 9, 6],
+			"to": [10, 13, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6, 10, 6]},
+			"faces": {
+				"north": {"uv": [6, 3, 10, 7], "texture": "#0"},
+				"east": {"uv": [6, 3, 10, 7], "texture": "#0"},
+				"south": {"uv": [6, 3, 10, 7], "texture": "#0"},
+				"west": {"uv": [6, 3, 10, 7], "texture": "#0"},
+				"up": {"uv": [6, 6, 10, 10], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7, 13, 7],
+			"to": [9, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 13, 7]},
+			"faces": {
+				"north": {"uv": [7, 0, 9, 3], "texture": "#0"},
+				"east": {"uv": [7, 0, 9, 3], "texture": "#0"},
+				"south": {"uv": [7, 0, 9, 3], "texture": "#0"},
+				"west": {"uv": [7, 0, 9, 3], "texture": "#0"},
+				"up": {"uv": [7, 7, 9, 9], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"translation": [0, 1.25, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"head": {
+			"translation": [0, 14.25, 0]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
+}

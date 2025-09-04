@@ -197,6 +197,18 @@ public class ModItemGroups {
                         entries.add(ModBlocks.GUARDRAIL_INNER_CORNER);
 
                         entries.add(ModBlocks.DELINEATOR);
+
+                        entries.add(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR);
+                        entries.add(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_2);
+                        entries.add(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_3);
+                        entries.add(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_4);
+
+                        entries.add(ModBlocks.TRAFFIC_CONE);
+                        entries.add(ModBlocks.TRAFFIC_LIGHT);
+                        entries.add(ModBlocks.YELLOW_TRAFFIC_LIGHT);
+                        entries.add(ModBlocks.TRAFFIC_LIGHT_CONTROLLER);
+
+                        entries.add(ModBlocks.FIRE_HYDRANT);
                     }).build());
 
     public static void registerItemGroups(){

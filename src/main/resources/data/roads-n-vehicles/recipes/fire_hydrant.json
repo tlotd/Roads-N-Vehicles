@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:iron_ingots"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    },
+    "R": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "pattern": [
+    "RWR",
+    "IWI",
+    "IWI"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:fire_hydrant"
+  },
+  "show_notification": true
+}

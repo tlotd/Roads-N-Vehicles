@@ -356,6 +356,28 @@ public class ModBlocks {
     public static final Block DELINEATOR = registerBlock("delineator",
             new DelineatorBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
+    public static final Block TRAFFIC_CONE = registerBlock("traffic_cone",
+            new TrafficConeBlock(FabricBlockSettings.create().mapColor(MapColor.ORANGE).requiresTool().strength(2.0F, 3.0F)));
+
+    public static final Block PORTABLE_TRAFFIC_DELINEATOR = registerBlock("portable_traffic_delineator_with_amber_flashing_light",
+            new PortableTrafficDelineatorBlock(FabricBlockSettings.create().mapColor(MapColor.ORANGE).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block PORTABLE_TRAFFIC_DELINEATOR_2 = registerBlock("portable_traffic_delineator_with_amber_flashing_light_2",
+            new PortableTrafficDelineatorBlock(FabricBlockSettings.create().mapColor(MapColor.ORANGE).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block PORTABLE_TRAFFIC_DELINEATOR_3 = registerBlock("portable_traffic_delineator_with_amber_flashing_light_3",
+            new PortableTrafficDelineatorBlock(FabricBlockSettings.create().mapColor(MapColor.ORANGE).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block PORTABLE_TRAFFIC_DELINEATOR_4 = registerBlock("portable_traffic_delineator_with_amber_flashing_light_4",
+            new PortableTrafficDelineatorBlock(FabricBlockSettings.create().mapColor(MapColor.ORANGE).requiresTool().strength(2.0F, 3.0F)));
+
+    public static final Block TRAFFIC_LIGHT = registerBlock("traffic_light",
+            new TrafficLightBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block YELLOW_TRAFFIC_LIGHT = registerBlock("yellow_traffic_light",
+            new TrafficLightBlock(FabricBlockSettings.create().mapColor(MapColor.YELLOW).requiresTool().strength(2.0F, 3.0F)));
+    public static final Block TRAFFIC_LIGHT_CONTROLLER = registerBlock("traffic_light_controller",
+            new TrafficLightControllerBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+
+    public static final Block FIRE_HYDRANT = registerBlock("fire_hydrant",
+            new FireHydrantBlock(FabricBlockSettings.create().mapColor(MapColor.RED).requiresTool().strength(2.0F, 3.0F)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(TLOTDRoadsnVehicles.MOD_ID, name), block);

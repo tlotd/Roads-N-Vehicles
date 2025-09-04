@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "roads-n-vehicles:block/portable_traffic_delineator_with_amber_flashing_light_4","y": 180},
+    "facing=east": {"model": "roads-n-vehicles:block/portable_traffic_delineator_with_amber_flashing_light_4","y": 270},
+    "facing=south": {"model": "roads-n-vehicles:block/portable_traffic_delineator_with_amber_flashing_light_4"},
+    "facing=west": {"model": "roads-n-vehicles:block/portable_traffic_delineator_with_amber_flashing_light_4","y": 90}
+  }
+}

@@ -200,6 +200,27 @@
 
   "block.roads-n-vehicles.delineator": "Leitpfosten",
 
+  "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light": "Leitbaken mit goldenem Blinklicht",
+  "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light_2": "Leitbaken mit goldenem Blinklicht [Verzögerung 1]",
+  "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light_3": "Leitbaken mit goldenem Blinklicht [Verzögerung 2]",
+  "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light_4": "Leitbaken mit goldenem Blinklicht [Verzögerung 3]",
+
+  "block.roads-n-vehicles.traffic_cone": "Leitkegel",
+
+  "block.roads-n-vehicles.traffic_light": "Ampel",
+  "block.roads-n-vehicles.yellow_traffic_light": "Gelbe Ampel",
+  "block.roads-n-vehicles.traffic_light_controller": "Ampelsteuereinheit",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip": "Nimmt ein Redstonesignal um nächste",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_2": "überliegende Ampel abzuändern:",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_3": "1-3: Rot",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_4": "4-7: Rot & Gelb",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_5": "8-11: Grün",
+  "block.roads-n-vehicles.traffic_light_controller.tooltip_6": "12-15: Gelb",
+
+  "block.roads-n-vehicles.fire_hydrant": "Hydrant",
+  "block.roads-n-vehicles.fire_hydrant.tooltip": "Wenn mit Eimer interagiert:",
+  "block.roads-n-vehicles.fire_hydrant.tooltip_2": "Füllt ihn mit Wasser",
+
   "item.roads-n-vehicles.muscle_car_keys": "Autoschlüssel",
 
   "entity.roads-n-vehicles.muscle_car": "Auto"
