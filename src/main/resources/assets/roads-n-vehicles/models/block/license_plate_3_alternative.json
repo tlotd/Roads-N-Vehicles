@@ -1,0 +1,7 @@
+{
+	"parent": "roads-n-vehicles:block/license_plate",
+	"textures": {
+		"particle": "roads-n-vehicles:block/license_plate/einsdarki_alternative",
+		"license_plate": "roads-n-vehicles:block/license_plate/einsdarki_alternative"
+	}
+}

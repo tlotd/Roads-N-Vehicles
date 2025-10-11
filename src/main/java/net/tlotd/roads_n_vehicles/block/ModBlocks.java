@@ -16,66 +16,66 @@ import net.tlotd.roads_n_vehicles.block.custom.SignBlock;
 public class ModBlocks {
 
     public static final Block ASPHALT = registerBlock("asphalt",
-            new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB = registerBlock("asphalt_slab",
-            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_STAIRS = registerBlock("asphalt_stairs",
-            new StairsBlock(ModBlocks.ASPHALT.getDefaultState(), FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new StairsBlock(ModBlocks.ASPHALT.getDefaultState(), FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
 
     public static final Block ASPHALT_LINE_MARKING_ARROW = registerBlock("asphalt_line_marking_arrow",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_LINE_MARKING_STRAIGHT = registerBlock("asphalt_line_marking_straight",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_LINE_MARKING_CORNER = registerBlock("asphalt_line_marking_corner",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_LINE_MARKING_T_JUNCTION = registerBlock("asphalt_line_marking_t-junction",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_LINE_MARKING_CROSS = registerBlock("asphalt_line_marking_cross",
-            new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_LINE_MARKING_ARROW = registerBlock("asphalt_slab_line_marking_arrow",
-            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_LINE_MARKING_STRAIGHT= registerBlock("asphalt_slab_line_marking_straight",
-            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_LINE_MARKING_CORNER = registerBlock("asphalt_slab_line_marking_corner",
-            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_LINE_MARKING_T_JUNCTION = registerBlock("asphalt_slab_line_marking_t-junction",
-            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_LINE_MARKING_CROSS = registerBlock("asphalt_slab_line_marking_cross",
-            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
 
     public static final Block ASPHALT_YELLOW_LINE_MARKING_ARROW = registerBlock("asphalt_yellow_line_marking_arrow",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_YELLOW_LINE_MARKING_STRAIGHT = registerBlock("asphalt_yellow_line_marking_straight",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_YELLOW_LINE_MARKING_CORNER = registerBlock("asphalt_yellow_line_marking_corner",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_YELLOW_LINE_MARKING_T_JUNCTION = registerBlock("asphalt_yellow_line_marking_t-junction",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_YELLOW_LINE_MARKING_CROSS = registerBlock("asphalt_yellow_line_marking_cross",
-            new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new Block(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_ARROW = registerBlock("asphalt_slab_yellow_line_marking_arrow",
-            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_STRAIGHT= registerBlock("asphalt_slab_yellow_line_marking_straight",
-            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_CORNER = registerBlock("asphalt_slab_yellow_line_marking_corner",
-            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_T_JUNCTION = registerBlock("asphalt_slab_yellow_line_marking_t-junction",
-            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new RotatableSlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_SLAB_YELLOW_LINE_MARKING_CROSS = registerBlock("asphalt_slab_yellow_line_marking_cross",
-            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new SlabBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
 
     public static final Block ASPHALT_DOUBLE_LINE_MARKING_STRAIGHT = registerBlock("asphalt_double_line_marking_straight",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_DOUBLE_LINE_MARKING_CORNER = registerBlock("asphalt_double_line_marking_corner",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_DOUBLE_YELLOW_LINE_MARKING_STRAIGHT = registerBlock("asphalt_double_yellow_line_marking_straight",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_DOUBLE_YELLOW_LINE_MARKING_CORNER = registerBlock("asphalt_double_yellow_line_marking_corner",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_DOUBLE_RED_LINE_MARKING_STRAIGHT = registerBlock("asphalt_double_red_line_marking_straight",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
     public static final Block ASPHALT_DOUBLE_RED_LINE_MARKING_CORNER = registerBlock("asphalt_double_red_line_marking_corner",
-            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F)));
+            new GlazedTerracottaBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).velocityMultiplier(1.25F)));
 
     public static final Block TOWN_SIGN = registerBlock("town_sign",
             new TownSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));

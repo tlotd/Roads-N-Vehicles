@@ -1,11 +1,14 @@
 {
-	"required": true,
-	"package": "net.tlotd.roads_n_vehicles.mixin",
-	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "net.tlotd.roads_n_vehicles.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "client.AbstractClientPlayerEntityMixin",
+    "client.CreativeInventoryScreenAccessor",
+    "client.CustomCreativeTabMixin",
+    "client.HandledScreenAccessor"
+  ]
 }

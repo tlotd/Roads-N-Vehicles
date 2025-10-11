@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
 import net.tlotd.roads_n_vehicles.block.ModBlocks;
@@ -17,7 +18,7 @@ public class ModItemGroups {
 
     public static final ItemGroup TLOTD_4_ROADS_N_VEHICLES_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(TLOTDRoadsnVehicles.MOD_ID, "4_items"),
-            FabricItemGroup.builder().displayName(Text.literal("\uE001 ").styled(style -> style.withFont(MODS_FONT_ID)).append(Text.translatable("itemgroup.roads-n-vehicles.items").styled(style -> style.withFont(DEFAULT_FONT_ID))))
+            FabricItemGroup.builder().displayName(Text.literal("\uE001 ").styled(style -> style.withFont(MODS_FONT_ID).withFormatting(Formatting.WHITE)).append(Text.translatable("itemgroup.roads-n-vehicles.items").styled(style -> style.withFont(DEFAULT_FONT_ID))))
                     .icon(() -> new ItemStack(ModBlocks.ROADWORKS_SIGN)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.ASPHALT);
                         entries.add(ModBlocks.ASPHALT_SLAB);

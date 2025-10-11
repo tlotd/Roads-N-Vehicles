@@ -44,6 +44,7 @@
   "block.roads-n-vehicles.town_sign.tooltip_3": "Hold [",
   "block.roads-n-vehicles.town_sign.tooltip_4": "] for list",
   "block.roads-n-vehicles.town_sign.tooltip_shift": "Works for:",
+  "block.roads-n-vehicles.town_sign.tooltip_custom": "Or any Command Defined",
 
   "block.roads-n-vehicles.coat_of_arms": "Coat of Arms",
   "block.roads-n-vehicles.coat_of_arms.tooltip": "Applies custom models",
@@ -51,6 +52,7 @@
   "block.roads-n-vehicles.coat_of_arms.tooltip_3": "Hold [",
   "block.roads-n-vehicles.coat_of_arms.tooltip_4": "] for list",
   "block.roads-n-vehicles.coat_of_arms.tooltip_shift": "Works for:",
+  "block.roads-n-vehicles.coat_of_arms.tooltip_custom": "Or any Command Defined",
 
   "block.roads-n-vehicles.license_plate": "License Plate",
   "block.roads-n-vehicles.license_plate.tooltip": "Applies custom models",
@@ -58,6 +60,7 @@
   "block.roads-n-vehicles.license_plate.tooltip_3": "Hold [",
   "block.roads-n-vehicles.license_plate.tooltip_4": "] for list",
   "block.roads-n-vehicles.license_plate.tooltip_shift": "Works for:",
+  "block.roads-n-vehicles.license_plate.tooltip_custom": "Or any Command Defined",
 
   "block.roads-n-vehicles.round_sign": "Round Sign",
 

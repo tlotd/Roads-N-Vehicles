@@ -6,10 +6,12 @@ import net.minecraft.block.FacingBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
@@ -25,7 +27,9 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
-import net.tlotd.roads_n_vehicles.config.ModConfigs;
+import net.tlotd.api.TlotdAPI;
+import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
+import net.tlotd.roads_n_vehicles.world.CustomTextureManager;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -36,54 +40,82 @@ public class LicensePlateBlock extends Block {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     public static final DirectionProperty FACING = FacingBlock.FACING;
     public static final IntProperty PLATE = IntProperty.of("plate", 0, 127);
-    public static final BooleanProperty SPECIAL = BooleanProperty.of("special");
+    public static final BooleanProperty ALTERNATIVE = BooleanProperty.of("alternative");
+    public static final BooleanProperty CUSTOM = BooleanProperty.of("custom");
+
+    private int getDefaultSkinFor(String uuid, boolean formerTLOTD) {
+        return switch (uuid) {
+            case "212aa6f5-69a9-47d9-9ad5-19b359744edf" -> 1;
+            case "67148bd0-1a00-4bca-9d9e-ec246afbcf51" -> 2;
+            case "53c68d22-726b-4a37-b92d-8d7c4670a87d" -> 3;
+            case "660605b0-a3ac-404c-8f85-039cfddf36de" -> formerTLOTD ? 4 : 0; //AliaSophie
+            case "0b026440-781b-40c3-bfee-78a2ee71f042" -> formerTLOTD ? 5 : 0; //Teneba
+            case "d9ffb72a-f473-4ebc-936f-6f7d5d694145" -> 6;
+            case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> formerTLOTD ? 7 : 0; //ISSO_21_
+            case "9d978ae8-0368-442b-b4c4-fd27ad9f4888" -> formerTLOTD ? 8 : 0; //Akitorlp
+            case "08c6cfba-40cd-43e2-a929-764e9fadc442" -> 9;
+            case "d3018dca-9a16-43f0-8d72-19b93e33fa6b" -> 10;
+            case "7c2b3137-729f-47af-b3f8-55a0994a8c61" -> formerTLOTD ? 11 : 0; //VANDAGR
+            case "2dc144f0-3e65-4e80-978b-d6356e5d3008" -> 12;
+            case "125cda9f-1a5b-40c5-b3a9-02c7988940f6" -> 13;
+            case "9b293ed4-2a42-4db7-b615-246d81dc5d0f" -> 14;
+            case "75fcce95-16a1-417b-801d-04ebb925d56b" -> 15;
+            case "c639c27d-b32b-4785-805e-ba4889006a8b" -> 16;
+            case "f31b18df-5db5-4e00-9adc-b66e89c69792" -> 17;
+            case "4488478f-78d4-4885-be12-1f2179874912" -> 18;
+            case "8365d4fc-c514-4c2e-a4e5-cf39fb26b0f0" -> 19;
+            case "1987a906-540f-4ae8-90df-43504c06a6e7" -> 20;
+            case "7af13cd9-4c28-4d48-a3f4-3cfbbce46438" -> 21;
+            //case "????????-????-????-????-????????????" -> 22; Jxst_Freezy (dont know his ign)
+            default -> 0;
+        };
+    }
+
+    private boolean hasDefaultAlternate(String uuid, boolean formerTLOTD) {
+        return switch (uuid) {
+            case "212aa6f5-69a9-47d9-9ad5-19b359744edf",
+                 "67148bd0-1a00-4bca-9d9e-ec246afbcf51",
+                 "53c68d22-726b-4a37-b92d-8d7c4670a87d",
+                 "d3018dca-9a16-43f0-8d72-19b93e33fa6b",
+                 "125cda9f-1a5b-40c5-b3a9-02c7988940f6" -> true;
+            case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> formerTLOTD;
+            default -> false;
+        };
+    }
 
     public LicensePlateBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false).with(PLATE, 0).with(SPECIAL, false));
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false).with(PLATE, 0).with(ALTERNATIVE, false).with(CUSTOM, false));
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         int plate = 0;
-        boolean special = false;
-        if (!Objects.requireNonNull(ctx.getPlayer()).isSneaking()) {
-            switch (ctx.getPlayer().getUuid().toString()) {
-                case "212aa6f5-69a9-47d9-9ad5-19b359744edf" -> {plate = 1;}
-                case "67148bd0-1a00-4bca-9d9e-ec246afbcf51" -> {plate = 2;}
-                case "53c68d22-726b-4a37-b92d-8d7c4670a87d" -> {plate = 3;}
-                case "660605b0-a3ac-404c-8f85-039cfddf36de" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 4;}} //AliaSophie
-                case "0b026440-781b-40c3-bfee-78a2ee71f042" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 5;}} //Teneba
-                case "d9ffb72a-f473-4ebc-936f-6f7d5d694145" -> {plate = 6;}
-                case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 7;}} //ISSO_21_
-                case "9d978ae8-0368-442b-b4c4-fd27ad9f4888" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 8;}} //Akitorlp
-                case "08c6cfba-40cd-43e2-a929-764e9fadc442" -> {plate = 9;}
-                case "d3018dca-9a16-43f0-8d72-19b93e33fa6b" -> {plate = 10;}
-                case "7c2b3137-729f-47af-b3f8-55a0994a8c61" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 11;}} //VANDAGR
-                case "2dc144f0-3e65-4e80-978b-d6356e5d3008" -> {plate = 12;}
-                case "125cda9f-1a5b-40c5-b3a9-02c7988940f6" -> {plate = 13;}
-                case "9b293ed4-2a42-4db7-b615-246d81dc5d0f" -> {plate = 14;}
-                case "75fcce95-16a1-417b-801d-04ebb925d56b" -> {plate = 15;}
-                case "c639c27d-b32b-4785-805e-ba4889006a8b" -> {plate = 16;}
-                case "f31b18df-5db5-4e00-9adc-b66e89c69792" -> {plate = 17;}
-                case "4488478f-78d4-4885-be12-1f2179874912" -> {plate = 18;}
-                case "8365d4fc-c514-4c2e-a4e5-cf39fb26b0f0" -> {plate = 19;}
-                case "1987a906-540f-4ae8-90df-43504c06a6e7" -> {plate = 20;}
-                case "7af13cd9-4c28-4d48-a3f4-3cfbbce46438" -> {plate = 21;}
-                //case "????????-????-????-????-????????????" -> {plate = 22;} Jxst_Freezy (dont know his ign)
-                default -> {
-                }
+        boolean alternative = false;
+        boolean formerTLOTD = false;
+        PlayerEntity player = ctx.getPlayer();
+        ServerWorld world = null;
+        boolean custom = false;
+        int customTextureId;
+        if (player != null && !ctx.getWorld().isClient && player.getServer() != null) {
+            world = player.getServer().getOverworld();
+        }
+        if (world != null) {
+            if (CompatModsCheck.TLOTD) {
+                custom = TlotdAPI.hasCustomTexture(ctx.getWorld().getServer(), Objects.requireNonNull(ctx.getPlayer()).getUuid());
+                customTextureId = TlotdAPI.getCustomTexture(ctx.getWorld().getServer(), Objects.requireNonNull(ctx.getPlayer()).getUuid());
+                formerTLOTD = TlotdAPI.formerTlotdRewards(player.getServer());
+            } else {
+                CustomTextureManager manager = CustomTextureManager.get(player.getServer());
+                custom = manager.hasTexture(player.getUuid());
+                customTextureId = manager.getTexture(player.getUuid());
             }
-        } else {
-            special = true;
-            switch (ctx.getPlayer().getUuid().toString()) {
-                case "212aa6f5-69a9-47d9-9ad5-19b359744edf" -> {plate = 1;}
-                case "67148bd0-1a00-4bca-9d9e-ec246afbcf51" -> {plate = 2;}
-                case "53c68d22-726b-4a37-b92d-8d7c4670a87d" -> {plate = 3;}
-                case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> {if (ModConfigs.FORMER_TLOTD_REWARDS) {plate = 7;}} //ISSO_21_
-                case "d3018dca-9a16-43f0-8d72-19b93e33fa6b" -> {plate = 10;}
-                case "125cda9f-1a5b-40c5-b3a9-02c7988940f6" -> {plate = 13;}
-                default -> {
+            if (custom) {
+                plate = customTextureId;
+            } else {
+                plate = getDefaultSkinFor(player.getUuidAsString(), formerTLOTD);
+                if (player.isSneaking() && (plate == 0 || hasDefaultAlternate(player.getUuidAsString(), formerTLOTD))) {
+                    alternative = true;
                 }
             }
         }
@@ -91,7 +123,8 @@ public class LicensePlateBlock extends Block {
                 .with(FACING, ctx.getHorizontalPlayerFacing())
                 .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).isOf(Fluids.WATER))
                 .with(PLATE, plate)
-                .with(SPECIAL, special);
+                .with(ALTERNATIVE, alternative)
+                .with(CUSTOM, custom);
     }
 
     @Override
@@ -115,7 +148,7 @@ public class LicensePlateBlock extends Block {
 
     @Override
     public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING, WATERLOGGED, PLATE,SPECIAL);
+        builder.add(FACING, WATERLOGGED, PLATE, ALTERNATIVE, CUSTOM);
     }
 
     public static final VoxelShape NORTH_SHAPE = Block.createCuboidShape(0, 6.375, 0, 16, 9.625, 0.5);
@@ -146,20 +179,14 @@ public class LicensePlateBlock extends Block {
             tooltip.add(Text.literal("\uE000").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TLOTD").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE001").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Isla_Nublar").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE002").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" EinsDarki").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            if (ModConfigs.FORMER_TLOTD_REWARDS) {
-                tooltip.add(Text.literal("\uE003").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" AliaSophie").setStyle(style.withFont(DEFAULT_FONT_ID))));
-                tooltip.add(Text.literal("\uE004").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Teneba").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            }
+            //tooltip.add(Text.literal("\uE003").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" AliaSophie").setStyle(style.withFont(DEFAULT_FONT_ID))));
+            //tooltip.add(Text.literal("\uE004").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Teneba").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE005").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Alex1666").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            if (ModConfigs.FORMER_TLOTD_REWARDS) {
-                tooltip.add(Text.literal("\uE006").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" ISSO_21_").setStyle(style.withFont(DEFAULT_FONT_ID))));
-                tooltip.add(Text.literal("\uE007").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Akitorlp").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            }
+            //tooltip.add(Text.literal("\uE006").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" ISSO_21_").setStyle(style.withFont(DEFAULT_FONT_ID))));
+            //tooltip.add(Text.literal("\uE007").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Akitorlp").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE008").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Polarfoxtm").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE009").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Salsafox").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            if (ModConfigs.FORMER_TLOTD_REWARDS) {
-                tooltip.add(Text.literal("\uE00A").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" VANDAGR").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            }
+            //tooltip.add(Text.literal("\uE00A").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" VANDAGR").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE00B").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TLOTDShido").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE00C").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" nischi2612").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE00D").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" SK_Chuuya").setStyle(style.withFont(DEFAULT_FONT_ID))));
@@ -171,6 +198,8 @@ public class LicensePlateBlock extends Block {
             tooltip.add(Text.literal("\uE013").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" NightHawk241199").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE014").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Red_ice").setStyle(style.withFont(DEFAULT_FONT_ID))));
             //tooltip.add(Text.literal("\uE015").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Jxst_Freezy").setStyle(style.withFont(DEFAULT_FONT_ID))));
+            tooltip.add(Text.literal("...").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_custom"));
         } else {
             tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip").formatted(Formatting.GRAY));
             tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_2").formatted(Formatting.GRAY));

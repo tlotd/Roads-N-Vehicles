@@ -44,6 +44,7 @@
   "block.roads-n-vehicles.town_sign.tooltip_3": "Halte [",
   "block.roads-n-vehicles.town_sign.tooltip_4": "] gedrückt für eine Liste",
   "block.roads-n-vehicles.town_sign.tooltip_shift": "Klappt für:",
+  "block.roads-n-vehicles.town_sign.tooltip_custom": "Oder jene Befehlsdefinierte",
 
   "block.roads-n-vehicles.coat_of_arms": "Ortswappen",
   "block.roads-n-vehicles.coat_of_arms.tooltip": "Wendet ein spezielles Model für",
@@ -51,6 +52,7 @@
   "block.roads-n-vehicles.coat_of_arms.tooltip_3": "Halte [",
   "block.roads-n-vehicles.coat_of_arms.tooltip_4": "] gedrückt für eine Liste",
   "block.roads-n-vehicles.coat_of_arms.tooltip_shift": "Klappt für:",
+  "block.roads-n-vehicles.coat_of_arms.tooltip_custom": "Oder jene Befehlsdefinierte",
 
   "block.roads-n-vehicles.license_plate": "Nummernschild",
   "block.roads-n-vehicles.license_plate.tooltip": "Wendet ein spezielles Model für",
@@ -58,6 +60,7 @@
   "block.roads-n-vehicles.license_plate.tooltip_3": "Halte [",
   "block.roads-n-vehicles.license_plate.tooltip_4": "] gedrückt für eine Liste",
   "block.roads-n-vehicles.license_plate.tooltip_shift": "Klappt für:",
+  "block.roads-n-vehicles.license_plate.tooltip_custom": "Oder jene Befehlsdefinierte",
 
   "block.roads-n-vehicles.round_sign": "Rundschild",
 

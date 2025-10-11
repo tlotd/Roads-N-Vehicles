@@ -8,6 +8,7 @@ import net.tlotd.roads_n_vehicles.entity.ModEntities;
 import net.tlotd.roads_n_vehicles.entity.custom.MuscleCarEntity;
 import net.tlotd.roads_n_vehicles.item.ModItemGroups;
 import net.tlotd.roads_n_vehicles.item.ModItems;
+import net.tlotd.roads_n_vehicles.util.ModCommands;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +21,7 @@ public class TLOTDRoadsnVehicles implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModCommands.registerCommands();
 		FabricDefaultAttributeRegistry.register(ModEntities.MUSCLE_CAR, MuscleCarEntity.createMuscleCarAttributes());
 	}
 }
