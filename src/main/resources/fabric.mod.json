@@ -9,7 +9,7 @@
 		"Isla_Nublar"
 	],
 	"contact": {
-		"homepage": "https://tlotd.net/",
+		"homepage": "https://modrinth.com/mod/roads-n-vehicles",
 		"sources": "https://github.com/tlotd/Roads-N-Vehicles"
 	},
 	"license": "CC-BY-NC-SA-4.0",
@@ -33,6 +33,25 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"tlotd": ">=0.3.2"
+		"tlotd": ">=0.4.1"
+	},
+	"breaks": {
+		"tlotd": "<0.4.1"
+	},
+	"custom": {
+		"modmenu": {
+			"parent": {
+				"id": "tlotd",
+				"name": "TLOTD",
+				"description": "Compatible with versions >=0.4.1 of our main mod: TLOTD.",
+				"icon": "assets/roads-n-vehicles/tlotd_icon.png"
+			},
+			"links": {
+				"modmenu.tlotd": "https://tlotd.net/u/tlotd",
+				"modmenu.modrinth": "https://modrinth.com/mod/roads-n-vehicles",
+				"modmenu.discord": "https://tlotd.net/discord",
+				"modmenu.reddit": "https://www.reddit.com/r/tlotd/"
+			}
+		}
 	}
 }

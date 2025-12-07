@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#c:iron_ingots",
+    {
+      "id": "#c:steel_ingots",
+      "required": false
+    },
+    {
+      "id": "#c:aluminium_ingots",
+      "required": false
+    }
+  ]
+}

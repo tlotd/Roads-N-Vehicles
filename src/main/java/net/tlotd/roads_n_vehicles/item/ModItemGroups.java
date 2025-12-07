@@ -10,6 +10,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
 import net.tlotd.roads_n_vehicles.block.ModBlocks;
+import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
 
 public class ModItemGroups {
 
@@ -139,8 +140,13 @@ public class ModItemGroups {
                         entries.add(ModBlocks.ROAD_NARROWING_SIGN);
                         entries.add(ModBlocks.ROAD_NARROWING_LEFT_SIGN);
                         entries.add(ModBlocks.ROAD_NARROWING_RIGHT_SIGN);
+                        entries.add(ModBlocks.WILD_ANIMALS_LEFT_SIGN);
+                        entries.add(ModBlocks.WILD_ANIMALS_RIGHT_SIGN);
+                        entries.add(ModBlocks.WILD_DINOSAURS_SIGN);
 
                         entries.add(ModBlocks.SQUARE_SIGN);
+                        entries.add(ModBlocks.DIRECTION_SIGN_LEFT_CURVE);
+                        entries.add(ModBlocks.DIRECTION_SIGN_RIGHT_CURVE);
                         entries.add(ModBlocks.NO_THROUGH_ROAD_SIGN);
                         entries.add(ModBlocks.PEDESTRIAN_CROSSING_LEFT_SIGN);
                         entries.add(ModBlocks.PEDESTRIAN_CROSSING_RIGHT_SIGN);
@@ -190,8 +196,41 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SPEED_LIMIT_US_90_SIGN);
                         entries.add(ModBlocks.SPEED_LIMIT_US_95_SIGN);
 
-                        entries.add(ModItems.MUSCLE_CAR_KEYS);
+                        entries.add(ModBlocks.VERTICAL_SIGN);
+                        entries.add(ModBlocks.GUIDING_BEACON_SIGN_LEFT);
+                        entries.add(ModBlocks.GUIDING_BEACON_SIGN_RIGHT);
+                        entries.add(ModBlocks.GUIDING_BEACON_SIGN_MIDDLE);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_SINGLE_STRIPED_LEFT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_DOUBLE_STRIPED_LEFT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_TRIPLE_STRIPED_LEFT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_SINGLE_STRIPED_RIGHT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_DOUBLE_STRIPED_RIGHT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_TRIPLE_STRIPED_RIGHT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_SINGLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_DOUBLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_TRIPLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_SINGLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_DOUBLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_TRIPLE_STRIPED);
+
+                        entries.add(ModBlocks.RAILWAY_CROSSBUCK_SIGN);
+
+                        if (CompatModsCheck.TLOTD) {
+                            entries.add(ModItems.VHS_CASSETTE_1);
+                            entries.add(ModItems.GAME_CARTRIDGE_1);
+                        }
+
+                        entries.add(ModItems.ENGINE_V8_BIG_BLOCK);
+                        entries.add(ModItems.TRANSMISSION);
+                        entries.add(ModItems.LEATHER_SEAT);
+                        entries.add(ModItems.WHEEL);
+                        entries.add(ModItems.SUSPENSION);
+                        entries.add(ModItems.CHASSIS);
                         entries.add(ModBlocks.LICENSE_PLATE);
+                        entries.add(ModItems.CAR_BODY_STALLION);
+                        entries.add(ModItems.CAR_BODY_FIRECHARGE);
+                        entries.add(ModItems.MUSCLE_CAR_STALLION);
+                        entries.add(ModItems.MUSCLE_CAR_FIRECHARGE);
 
                         entries.add(ModBlocks.GUARDRAIL);
                         entries.add(ModBlocks.GUARDRAIL_OUTER_CORNER);

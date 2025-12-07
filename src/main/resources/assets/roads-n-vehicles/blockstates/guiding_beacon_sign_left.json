@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "roads-n-vehicles:block/guiding_beacon_sign_left","y": 180},
+    "facing=east": {"model": "roads-n-vehicles:block/guiding_beacon_sign_left","y": 270},
+    "facing=south": {"model": "roads-n-vehicles:block/guiding_beacon_sign_left"},
+    "facing=west": {"model": "roads-n-vehicles:block/guiding_beacon_sign_left","y": 90}
+  }
+}

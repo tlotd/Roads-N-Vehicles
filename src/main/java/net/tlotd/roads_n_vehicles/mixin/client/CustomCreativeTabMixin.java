@@ -74,7 +74,7 @@ public abstract class CustomCreativeTabMixin {
             boolean topRow = group.getRow() == ItemGroup.Row.TOP;
             int column = group.getColumn();
             int tabX = x + column * 27;
-            int tabY = y + (topRow ? -28 : (bgHeight - 4));
+            int tabY = y + (topRow ? -28 : (bgHeight - 6));
             Identifier texture = (selectedTab == group)
                     ? (topRow ? TAB_TOP_SELECTED : TAB_BOTTOM_SELECTED)
                     : (topRow ? TAB_TOP_INACTIVE : TAB_BOTTOM_INACTIVE);

@@ -85,8 +85,13 @@
     "roads-n-vehicles:road_narrowing_sign",
     "roads-n-vehicles:road_narrowing_left_sign",
     "roads-n-vehicles:road_narrowing_right_sign",
+    "roads-n-vehicles:wild_animals_left_sign",
+    "roads-n-vehicles:wild_animals_right_sign",
+    "roads-n-vehicles:wild_dinosaurs_sign",
 
     "roads-n-vehicles:square_sign",
+    "roads-n-vehicles:direction_sign_left_curve",
+    "roads-n-vehicles:direction_sign_right_curve",
     "roads-n-vehicles:no_through_road_sign",
     "roads-n-vehicles:pedestrian_crossing_left_sign",
     "roads-n-vehicles:pedestrian_crossing_right_sign",
@@ -129,6 +134,24 @@
     "roads-n-vehicles:us_route_6_sign",
     "roads-n-vehicles:us_route_7_sign",
     "roads-n-vehicles:us_route_8_sign",
-    "roads-n-vehicles:us_route_9_sign"
+    "roads-n-vehicles:us_route_9_sign",
+
+    "roads-n-vehicles:vertical_sign",
+    "roads-n-vehicles:guiding_beacon_sign_left",
+    "roads-n-vehicles:guiding_beacon_sign_right",
+    "roads-n-vehicles:guiding_beacon_sign_middle",
+    "roads-n-vehicles:announcement_beacon_railroad_sign_single_striped_left",
+    "roads-n-vehicles:announcement_beacon_railroad_sign_double_striped_left",
+    "roads-n-vehicles:announcement_beacon_railroad_sign_triple_striped_left",
+    "roads-n-vehicles:announcement_beacon_railroad_sign_single_striped_right",
+    "roads-n-vehicles:announcement_beacon_railroad_sign_double_striped_right",
+    "roads-n-vehicles:announcement_beacon_railroad_sign_triple_striped_right",
+    "roads-n-vehicles:announcement_beacon_sign_single_striped",
+    "roads-n-vehicles:announcement_beacon_sign_double_striped",
+    "roads-n-vehicles:announcement_beacon_sign_triple_striped",
+    "roads-n-vehicles:announcement_beacon_motorway_sign_single_striped",
+    "roads-n-vehicles:announcement_beacon_motorway_sign_double_striped",
+    "roads-n-vehicles:announcement_beacon_motorway_sign_triple_striped",
+    "roads-n-vehicles:railway_crossbuck_sign"
   ]
 }

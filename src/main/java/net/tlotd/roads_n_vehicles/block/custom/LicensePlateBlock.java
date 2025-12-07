@@ -1,9 +1,7 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FacingBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,6 +27,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.tlotd.api.TlotdAPI;
 import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
+import net.tlotd.roads_n_vehicles.networking.ClientTextureCache;
 import net.tlotd.roads_n_vehicles.world.CustomTextureManager;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,7 +37,7 @@ import java.util.Objects;
 public class LicensePlateBlock extends Block {
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public static final DirectionProperty FACING = FacingBlock.FACING;
+    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final IntProperty PLATE = IntProperty.of("plate", 0, 127);
     public static final BooleanProperty ALTERNATIVE = BooleanProperty.of("alternative");
     public static final BooleanProperty CUSTOM = BooleanProperty.of("custom");
@@ -168,25 +167,40 @@ public class LicensePlateBlock extends Block {
 
     public static final Identifier DEFAULT_FONT_ID = new Identifier("minecraft", "default");
     public static final Identifier PLAYERS_FONT_ID = new Identifier("roads-n-vehicles", "players");
+    public static final Identifier MODS_FONT_ID = new Identifier("roads-n-vehicles", "mods");
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         if (Screen.hasShiftDown()) {
-
+            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_2").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.ponder", Text.translatable("key.keyboard.shift").formatted(Formatting.WHITE)).formatted(Formatting.DARK_GRAY));
             Style style = this.getName().getStyle();
-
             tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_shift").formatted(Formatting.GRAY));
             tooltip.add(Text.literal("\uE000").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TLOTD").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE001").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Isla_Nublar").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE002").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" EinsDarki").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            //tooltip.add(Text.literal("\uE003").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" AliaSophie").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            //tooltip.add(Text.literal("\uE004").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Teneba").setStyle(style.withFont(DEFAULT_FONT_ID))));
+            if (CompatModsCheck.TLOTD) {
+                if (TlotdAPI.formerTlotdRewardsClient()) {
+                    tooltip.add(Text.literal("\uE003").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" AliaSophie").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                    tooltip.add(Text.literal("\uE004").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Teneba").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                }
+            }
             tooltip.add(Text.literal("\uE005").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Alex1666").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            //tooltip.add(Text.literal("\uE006").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" ISSO_21_").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            //tooltip.add(Text.literal("\uE007").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Akitorlp").setStyle(style.withFont(DEFAULT_FONT_ID))));
+            if (CompatModsCheck.TLOTD) {
+                if (TlotdAPI.formerTlotdRewardsClient()) {
+                    tooltip.add(Text.literal("\uE006").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" ISSO_21_").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                    tooltip.add(Text.literal("\uE007").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Akitorlp").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                }
+            }
             tooltip.add(Text.literal("\uE008").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Polarfoxtm").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE009").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Salsafox").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            //tooltip.add(Text.literal("\uE00A").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" VANDAGR").setStyle(style.withFont(DEFAULT_FONT_ID))));
+            if (CompatModsCheck.TLOTD) {
+                if (TlotdAPI.formerTlotdRewardsClient()) {
+                    tooltip.add(Text.literal("\uE00A").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" VANDAGR").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                }
+            }
             tooltip.add(Text.literal("\uE00B").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TLOTDShido").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE00C").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" nischi2612").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE00D").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" SK_Chuuya").setStyle(style.withFont(DEFAULT_FONT_ID))));
@@ -195,15 +209,35 @@ public class LicensePlateBlock extends Block {
             tooltip.add(Text.literal("\uE010").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TheVexTv").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE011").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Glamin").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE012").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Jakx444").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.literal("\uE013").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" NightHawk241199").setStyle(style.withFont(DEFAULT_FONT_ID))));
+            if (CompatModsCheck.TLOTD) {
+                if (TlotdAPI.formerTlotdRewardsClient()) {
+                    tooltip.add(Text.literal("\uE013").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" GenosseNeuro").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                }
+            }
             tooltip.add(Text.literal("\uE014").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Red_ice").setStyle(style.withFont(DEFAULT_FONT_ID))));
             //tooltip.add(Text.literal("\uE015").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Jxst_Freezy").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.literal("...").formatted(Formatting.GRAY));
-            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_custom"));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_custom").formatted(Formatting.GRAY));
+            MinecraftClient client = MinecraftClient.getInstance();
+            if (client.player != null && client.getServer() != null) {
+                if (CompatModsCheck.TLOTD) {
+                    if (!TlotdAPI.getClientTextures().isEmpty()) {
+                        TlotdAPI.getClientTextures().forEach((uuid, entry) -> tooltip.add(Text.literal("\uE000 ").setStyle(style.withFont(MODS_FONT_ID)).append(Text.literal(entry.getPlayerName()).setStyle(style.withFont(DEFAULT_FONT_ID)))));
+                    } else {
+                        tooltip.add(Text.literal("...").formatted(Formatting.DARK_GRAY));
+                    }
+                } else {
+                    if (!ClientTextureCache.TEXTURES.isEmpty()) {
+                        ClientTextureCache.TEXTURES.forEach((uuid, entry) -> tooltip.add(Text.literal("\uE001 ").setStyle(style.withFont(MODS_FONT_ID)).append(Text.literal(entry.playerName).setStyle(style.withFont(DEFAULT_FONT_ID)))));
+                    } else {
+                        tooltip.add(Text.literal("...").formatted(Formatting.DARK_GRAY));
+                    }
+                }
+            }
         } else {
             tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip").formatted(Formatting.GRAY));
             tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_2").formatted(Formatting.GRAY));
-            tooltip.add(Text.literal("").append(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_3").formatted(Formatting.DARK_GRAY)).append(Text.translatable("key.keyboard.left.shift").formatted(Formatting.GRAY)).append(Text.translatable("block.roads-n-vehicles.license_plate.tooltip_4").formatted(Formatting.DARK_GRAY)));
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.ponder", Text.translatable("key.keyboard.shift").formatted(Formatting.GRAY)).formatted(Formatting.DARK_GRAY));
 
         }
         super.appendTooltip(stack, world, tooltip, options);

@@ -1,16 +1,12 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FacingBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
@@ -23,7 +19,7 @@ import net.minecraft.world.WorldAccess;
 public class TrafficConeBlock extends Block {
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public static final DirectionProperty FACING = FacingBlock.FACING;
+    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 
     public TrafficConeBlock(Settings settings) {
         super(settings);

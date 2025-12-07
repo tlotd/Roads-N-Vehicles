@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "roads-n-vehicles:item/car_body_stallion"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "roads-n-vehicles:block/vertical_sign",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "roads-n-vehicles:block/vertical_sign/announcement_beacon_double_striped"
+	}
+}

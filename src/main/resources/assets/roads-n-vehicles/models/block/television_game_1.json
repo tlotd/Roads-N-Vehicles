@@ -1,0 +1,9 @@
+{
+	"parent": "tlotd:block/template_television",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "tlotd:block/television",
+		"1": "roads-n-vehicles:block/television/game_1",
+		"particle": "minecraft:block/black_concrete"
+	}
+}

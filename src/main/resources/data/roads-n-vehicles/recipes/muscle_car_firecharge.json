@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "roads-n-vehicles:car_body_firecharge"
+    },
+    "H": {
+      "item": "minecraft:goat_horn"
+    },
+    "L": {
+      "item": "roads-n-vehicles:leather_seat"
+    },
+    "E": {
+      "item": "roads-n-vehicles:engine_v8_big_block"
+    },
+    "C": {
+      "item": "roads-n-vehicles:chassis"
+    },
+    "G": {
+      "item": "roads-n-vehicles:transmission"
+    }
+  },
+  "pattern": [
+    " B ",
+    "HLL",
+    "ECG"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:muscle_car_firecharge"
+  },
+  "show_notification": true
+}

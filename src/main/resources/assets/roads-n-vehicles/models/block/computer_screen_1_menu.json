@@ -1,0 +1,6 @@
+{
+	"parent": "tlotd:block/template_computer",
+	"textures": {
+		"4": "roads-n-vehicles:block/computer/screen_1_menu"
+	}
+}

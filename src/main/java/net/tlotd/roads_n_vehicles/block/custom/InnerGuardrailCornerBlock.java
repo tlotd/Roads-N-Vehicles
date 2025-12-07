@@ -1,9 +1,6 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FacingBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -22,7 +19,7 @@ import net.minecraft.world.WorldAccess;
 public class InnerGuardrailCornerBlock extends Block {
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public static final DirectionProperty FACING = FacingBlock.FACING;
+    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 
     public InnerGuardrailCornerBlock(Settings settings) {
         super(settings);

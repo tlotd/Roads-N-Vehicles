@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=south,screen=1,menu=false":{"model":"roads-n-vehicles:block/computer_screen_1"},
+    "facing=west,screen=1,menu=false":{"model":"roads-n-vehicles:block/computer_screen_1","y":90},
+    "facing=north,screen=1,menu=false":{"model":"roads-n-vehicles:block/computer_screen_1","y":180},
+    "facing=east,screen=1,menu=false":{"model":"roads-n-vehicles:block/computer_screen_1","y":270},
+
+    "facing=south,screen=1,menu=true":{"model":"roads-n-vehicles:block/computer_screen_1_menu"},
+    "facing=west,screen=1,menu=true":{"model":"roads-n-vehicles:block/computer_screen_1_menu","y":90},
+    "facing=north,screen=1,menu=true":{"model":"roads-n-vehicles:block/computer_screen_1_menu","y":180},
+    "facing=east,screen=1,menu=true":{"model":"roads-n-vehicles:block/computer_screen_1_menu","y":270}
+  }
+}

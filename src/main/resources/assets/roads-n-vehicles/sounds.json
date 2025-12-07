@@ -1,0 +1,4 @@
+{
+  "entity_car_idle":{"subtitle":"sounds.roads-n-vehicles.entity_car_idle","sounds":["roads-n-vehicles:entity/car_idle"]},
+  "entity_car_horn":{"subtitle":"sounds.roads-n-vehicles.entity_car_horn","sounds":["roads-n-vehicles:entity/car_horn"]}
+}

@@ -11,6 +11,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
+import net.tlotd.roads_n_vehicles.networking.ServerTextureSync;
 import net.tlotd.roads_n_vehicles.world.CustomTextureManager;
 
 import java.util.Collection;
@@ -73,6 +74,7 @@ public class ModCommands {
                                                             for (GameProfile profile : profiles) {
                                                                 manager.setTexture(profile.getId(), id);
                                                             }
+                                                            ServerTextureSync.syncAll(ctx.getSource().getWorld());
                                                             source.sendFeedback(() ->
                                                                     Text.literal("Set custom texture ID to " + id + " for " + profiles.size() + " player(s)."), true);
                                                             return 1;

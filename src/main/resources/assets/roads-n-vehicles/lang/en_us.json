@@ -1,5 +1,14 @@
 {
+  "modmenu.tlotd": "TLOTD",
+
   "itemgroup.roads-n-vehicles.items": "TLOTD: Roads 'n' Vehicles",
+
+  "key.keyboard.shift": "Shift",
+
+  "text.roads-n-vehicles.vehicle_speed": "%2$smph",
+
+  "sounds.roads-n-vehicles.entity_car_idle": "Car idles",
+  "sounds.roads-n-vehicles.entity_car_horn": "Car horn blares",
 
   "block.roads-n-vehicles.asphalt": "Asphalt",
 
@@ -41,26 +50,23 @@
   "block.roads-n-vehicles.town_sign": "Town Sign",
   "block.roads-n-vehicles.town_sign.tooltip": "Applies custom models",
   "block.roads-n-vehicles.town_sign.tooltip_2": "for a few select towns",
-  "block.roads-n-vehicles.town_sign.tooltip_3": "Hold [",
-  "block.roads-n-vehicles.town_sign.tooltip_4": "] for list",
+  "block.roads-n-vehicles.town_sign.ponder": "Hold [%1$s] for a list",
   "block.roads-n-vehicles.town_sign.tooltip_shift": "Works for:",
-  "block.roads-n-vehicles.town_sign.tooltip_custom": "Or any Command Defined",
+  "block.roads-n-vehicles.town_sign.tooltip_custom": "Or any command defined:",
 
   "block.roads-n-vehicles.coat_of_arms": "Coat of Arms",
   "block.roads-n-vehicles.coat_of_arms.tooltip": "Applies custom models",
   "block.roads-n-vehicles.coat_of_arms.tooltip_2": "for a few select towns",
-  "block.roads-n-vehicles.coat_of_arms.tooltip_3": "Hold [",
-  "block.roads-n-vehicles.coat_of_arms.tooltip_4": "] for list",
+  "block.roads-n-vehicles.coat_of_arms.ponder": "Hold [%1$s] for a list",
   "block.roads-n-vehicles.coat_of_arms.tooltip_shift": "Works for:",
-  "block.roads-n-vehicles.coat_of_arms.tooltip_custom": "Or any Command Defined",
+  "block.roads-n-vehicles.coat_of_arms.tooltip_custom": "Or any command defined:",
 
   "block.roads-n-vehicles.license_plate": "License Plate",
   "block.roads-n-vehicles.license_plate.tooltip": "Applies custom models",
   "block.roads-n-vehicles.license_plate.tooltip_2": "for a few select players",
-  "block.roads-n-vehicles.license_plate.tooltip_3": "Hold [",
-  "block.roads-n-vehicles.license_plate.tooltip_4": "] for list",
+  "block.roads-n-vehicles.license_plate.ponder": "Hold [%1$s] for a list",
   "block.roads-n-vehicles.license_plate.tooltip_shift": "Works for:",
-  "block.roads-n-vehicles.license_plate.tooltip_custom": "Or any Command Defined",
+  "block.roads-n-vehicles.license_plate.tooltip_custom": "Or any command defined:",
 
   "block.roads-n-vehicles.round_sign": "Round Sign",
 
@@ -146,8 +152,13 @@
   "block.roads-n-vehicles.road_narrowing_sign": "Road Narrowing Sign",
   "block.roads-n-vehicles.road_narrowing_left_sign": "Road Narrowing Sign (Left)",
   "block.roads-n-vehicles.road_narrowing_right_sign": "Road Narrowing Sign (Right)",
+  "block.roads-n-vehicles.wild_animals_left_sign": "Wild Animals Sign (Left)",
+  "block.roads-n-vehicles.wild_animals_right_sign": "Wild Animals Sign (Right)",
+  "block.roads-n-vehicles.wild_dinosaurs_sign": "Wild Dinosaurs Sign",
 
   "block.roads-n-vehicles.square_sign": "Square Sign",
+  "block.roads-n-vehicles.direction_sign_left_curve": "Direction Sign Left Curve",
+  "block.roads-n-vehicles.direction_sign_right_curve": "Direction Sign Right Curve",
   "block.roads-n-vehicles.no_through_road_sign": "No Through Road Sign",
   "block.roads-n-vehicles.pedestrian_crossing_left_sign": "Pedestrian Crossing Sign (Left)",
   "block.roads-n-vehicles.pedestrian_crossing_right_sign": "Pedestrian Crossing Sign (Right)",
@@ -197,6 +208,25 @@
   "block.roads-n-vehicles.us_route_8_sign": "US Route 8 Sign",
   "block.roads-n-vehicles.us_route_9_sign": "US Route 9 Sign",
 
+  "block.roads-n-vehicles.vertical_sign": "Vertical Sign",
+  "block.roads-n-vehicles.guiding_beacon_sign_left": "Guiding Beacon Sign (Left)",
+  "block.roads-n-vehicles.guiding_beacon_sign_right": "Guiding Beacon Sign (Right)",
+  "block.roads-n-vehicles.guiding_beacon_sign_middle": "Guiding Beacon Sign (Middle)",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_single_striped_left": "Announcement Beacon Railroad Sign - Single Striped (Left)",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_double_striped_left": "Announcement Beacon Railroad Sign - Double Striped (Left)",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_triple_striped_left": "Announcement Beacon Railroad Sign - Triple Striped (Left)",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_single_striped_right": "Announcement Beacon Railroad Sign - Single Striped (Right)",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_double_striped_right": "Announcement Beacon Railroad Sign - Double Striped (Right)",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_triple_striped_right": "Announcement Beacon Railroad Sign - Triple Striped (Right)",
+  "block.roads-n-vehicles.announcement_beacon_sign_single_striped": "Announcement Beacon Sign - Single Striped",
+  "block.roads-n-vehicles.announcement_beacon_sign_double_striped": "Announcement Beacon Sign - Double Striped",
+  "block.roads-n-vehicles.announcement_beacon_sign_triple_striped": "Announcement Beacon Sign - Triple Striped",
+  "block.roads-n-vehicles.announcement_beacon_motorway_sign_single_striped": "Announcement Beacon Motorway Sign - Single Striped",
+  "block.roads-n-vehicles.announcement_beacon_motorway_sign_double_striped": "Announcement Beacon Motorway Sign - Double Striped",
+  "block.roads-n-vehicles.announcement_beacon_motorway_sign_triple_striped": "Announcement Beacon Motorway Sign - Triple Striped",
+
+  "block.roads-n-vehicles.railway_crossbuck_sign": "Railway Crossbuck Sign",
+
   "block.roads-n-vehicles.guardrail": "Guardrail",
   "block.roads-n-vehicles.guardrail_outer_corner": "Guardrail",
   "block.roads-n-vehicles.guardrail_inner_corner": "Guardrail",
@@ -224,7 +254,26 @@
   "block.roads-n-vehicles.fire_hydrant.tooltip": "When interacted with Bucket:",
   "block.roads-n-vehicles.fire_hydrant.tooltip_2": "Fills it with Water",
 
-  "item.roads-n-vehicles.muscle_car_keys": "Muscle Car Keys",
+  "block.roads-n-vehicles.television": "Television",
+  "block.roads-n-vehicles.television_on.tooltip": "Television",
+
+  "item.roads-n-vehicles.vhs_cassette_1": "VHS Cassette",
+  "item.roads-n-vehicles.vhs_cassette_1.desc": "TopGear - Aston Martin DB5",
+
+  "item.roads-n-vehicles.game_cartridge_1": "Game Cartridge",
+  "item.roads-n-vehicles.game_cartridge_1.desc": "Greater Truck Abduction",
+  "item.roads-n-vehicles.game_cartridge_1.app": "gta",
+
+  "item.roads-n-vehicles.engine_v8_big_block": "Engine",
+  "item.roads-n-vehicles.transmission": "Transmission",
+  "item.roads-n-vehicles.leather_seat": "Leather Seat",
+  "item.roads-n-vehicles.wheel": "Wheel",
+  "item.roads-n-vehicles.suspension": "Suspension",
+  "item.roads-n-vehicles.chassis": "Chassis",
+  "item.roads-n-vehicles.car_body_stallion": "Car Body - Stallion",
+  "item.roads-n-vehicles.car_body_firecharge": "Car Body - Firecharge",
+  "item.roads-n-vehicles.muscle_car_stallion": "Muscle Car - Stallion",
+  "item.roads-n-vehicles.muscle_car_firecharge": "Muscle Car - Firecharge",
 
   "entity.roads-n-vehicles.muscle_car": "Muscle Car"
 }

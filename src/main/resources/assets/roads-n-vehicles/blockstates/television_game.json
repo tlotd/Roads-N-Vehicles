@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south,channel=1": { "model": "roads-n-vehicles:block/television_game_1", "y": 0 },
+    "facing=west,channel=1": { "model": "roads-n-vehicles:block/television_game_1", "y": 90 },
+    "facing=north,channel=1": { "model": "roads-n-vehicles:block/television_game_1", "y": 180 },
+    "facing=east,channel=1": { "model": "roads-n-vehicles:block/television_game_1", "y": 270 }
+  }
+}

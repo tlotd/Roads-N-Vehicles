@@ -1,6 +1,11 @@
 {
   "itemgroup.roads-n-vehicles.items": "TLOTD: Straßen & Fahrzeuge",
 
+  "text.roads-n-vehicles.vehicle_speed": "%1$skm/h",
+
+  "sounds.roads-n-vehicles.entity_car_idle": "Auto brummt",
+  "sounds.roads-n-vehicles.entity_car_horn": "Autohupe ertöhnt",
+
   "block.roads-n-vehicles.asphalt": "Asphalt",
 
   "block.roads-n-vehicles.asphalt_line_marking_arrow": "Asphaltpfeil",
@@ -41,24 +46,21 @@
   "block.roads-n-vehicles.town_sign": "Ortsschild",
   "block.roads-n-vehicles.town_sign.tooltip": "Wendet ein spezielles Model für",
   "block.roads-n-vehicles.town_sign.tooltip_2": "ein paar ausgewählte Städte an",
-  "block.roads-n-vehicles.town_sign.tooltip_3": "Halte [",
-  "block.roads-n-vehicles.town_sign.tooltip_4": "] gedrückt für eine Liste",
+  "block.roads-n-vehicles.town_sign.ponder": "Halte [%1$s] gedrückt für eine Liste",
   "block.roads-n-vehicles.town_sign.tooltip_shift": "Klappt für:",
   "block.roads-n-vehicles.town_sign.tooltip_custom": "Oder jene Befehlsdefinierte",
 
   "block.roads-n-vehicles.coat_of_arms": "Ortswappen",
   "block.roads-n-vehicles.coat_of_arms.tooltip": "Wendet ein spezielles Model für",
   "block.roads-n-vehicles.coat_of_arms.tooltip_2": "ein paar ausgewählte Städte an",
-  "block.roads-n-vehicles.coat_of_arms.tooltip_3": "Halte [",
-  "block.roads-n-vehicles.coat_of_arms.tooltip_4": "] gedrückt für eine Liste",
+  "block.roads-n-vehicles.coat_of_arms.ponder": "Halte [%1$s] gedrückt für eine Liste",
   "block.roads-n-vehicles.coat_of_arms.tooltip_shift": "Klappt für:",
   "block.roads-n-vehicles.coat_of_arms.tooltip_custom": "Oder jene Befehlsdefinierte",
 
   "block.roads-n-vehicles.license_plate": "Nummernschild",
   "block.roads-n-vehicles.license_plate.tooltip": "Wendet ein spezielles Model für",
   "block.roads-n-vehicles.license_plate.tooltip_2": "ein paar ausgewählte Spieler an",
-  "block.roads-n-vehicles.license_plate.tooltip_3": "Halte [",
-  "block.roads-n-vehicles.license_plate.tooltip_4": "] gedrückt für eine Liste",
+  "block.roads-n-vehicles.license_plate.ponder": "Halte [%1$s] gedrückt für eine Liste",
   "block.roads-n-vehicles.license_plate.tooltip_shift": "Klappt für:",
   "block.roads-n-vehicles.license_plate.tooltip_custom": "Oder jene Befehlsdefinierte",
 
@@ -146,8 +148,13 @@
   "block.roads-n-vehicles.road_narrowing_sign": "Verengtes Fahrbahnschild",
   "block.roads-n-vehicles.road_narrowing_left_sign": "Schild mit Einseitig Verengter Fahrbahn Links",
   "block.roads-n-vehicles.road_narrowing_right_sign": "Schild mit Einseitig Verengter Fahrbahn Rechts",
+  "block.roads-n-vehicles.wild_animals_left_sign": "Wildwechselschild - Links",
+  "block.roads-n-vehicles.wild_animals_right_sign": "Wildwechselschild - Rechts",
+  "block.roads-n-vehicles.wild_dinosaurs_sign": "Wildsaurierschild",
 
   "block.roads-n-vehicles.square_sign": "Rechtecksschild",
+  "block.roads-n-vehicles.direction_sign_left_curve": "Richtungstafel in Kurven - Links",
+  "block.roads-n-vehicles.direction_sign_right_curve": "Richtungstafel in Kurven - Rechts",
   "block.roads-n-vehicles.no_through_road_sign": "Sackgassenschild",
   "block.roads-n-vehicles.pedestrian_crossing_left_sign": "Fußgängerüberwegsschild - Links",
   "block.roads-n-vehicles.pedestrian_crossing_right_sign": "Fußgängerüberwegsschild - Rechts",
@@ -197,6 +204,25 @@
   "block.roads-n-vehicles.us_route_8_sign": "US Route 8 Schild",
   "block.roads-n-vehicles.us_route_9_sign": "US Route 9 Schild",
 
+  "block.roads-n-vehicles.vertical_sign": "Verticales Schild",
+  "block.roads-n-vehicles.guiding_beacon_sign_left": "Leitbake - Links",
+  "block.roads-n-vehicles.guiding_beacon_sign_right": "Leitbake - Rechts",
+  "block.roads-n-vehicles.guiding_beacon_sign_middle": "Leitbake - Mitte",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_single_striped_left": "Ankündigungsbake Bahnübergang - Einstreifig Links",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_double_striped_left": "Ankündigungsbake Bahnübergang - Zweistreifig Links",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_triple_striped_left": "Ankündigungsbake Bahnübergang - Dreistreifig Links",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_single_striped_right": "Ankündigungsbake Bahnübergang - Einstreifig Rechts",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_double_striped_right": "Ankündigungsbake Bahnübergang - Zweistreifig Rechts",
+  "block.roads-n-vehicles.announcement_beacon_railroad_sign_triple_striped_right": "Ankündigungsbake Bahnübergang - Dreistreifig Rechts",
+  "block.roads-n-vehicles.announcement_beacon_sign_single_striped": "Ankündigungsbake - Einstreifig",
+  "block.roads-n-vehicles.announcement_beacon_sign_double_striped": "Ankündigungsbake - Zweistreifig",
+  "block.roads-n-vehicles.announcement_beacon_sign_triple_striped": "Ankündigungsbake - Dreistreifig",
+  "block.roads-n-vehicles.announcement_beacon_motorway_sign_single_striped": "Ankündigungsbake Autobahn - Einstreifig",
+  "block.roads-n-vehicles.announcement_beacon_motorway_sign_double_striped": "Ankündigungsbake Autobahn - Zweistreifig",
+  "block.roads-n-vehicles.announcement_beacon_motorway_sign_triple_striped": "Ankündigungsbake Autobahn - Dreistreifig",
+
+  "block.roads-n-vehicles.railway_crossbuck_sign": "Andreaskreuzschild",
+
   "block.roads-n-vehicles.guardrail": "Schutzplanke",
   "block.roads-n-vehicles.guardrail_outer_corner": "Schutzplanke",
   "block.roads-n-vehicles.guardrail_inner_corner": "Schutzplanke",
@@ -224,7 +250,26 @@
   "block.roads-n-vehicles.fire_hydrant.tooltip": "Wenn mit Eimer interagiert:",
   "block.roads-n-vehicles.fire_hydrant.tooltip_2": "Füllt ihn mit Wasser",
 
-  "item.roads-n-vehicles.muscle_car_keys": "Autoschlüssel",
+  "block.roads-n-vehicles.television": "Fernseher",
+  "block.roads-n-vehicles.television_on.tooltip": "Fernseher",
+
+  "item.roads-n-vehicles.vhs_cassette_1": "VHS-Kassette",
+  "item.roads-n-vehicles.vhs_cassette_1.desc": "TopGear - Aston Martin DB5",
+
+  "item.roads-n-vehicles.game_cartridge_1": "Spielkassette",
+  "item.roads-n-vehicles.game_cartridge_1.desc": "Greater Truck Abduction",
+  "item.roads-n-vehicles.game_cartridge_1.app": "gta",
+
+  "item.roads-n-vehicles.engine_v8_big_block": "Motor",
+  "item.roads-n-vehicles.transmission": "Getriebe",
+  "item.roads-n-vehicles.leather_seat": "Ledersitz",
+  "item.roads-n-vehicles.wheel": "Rad",
+  "item.roads-n-vehicles.suspension": "Feder",
+  "item.roads-n-vehicles.chassis": "Fahrwerk",
+  "item.roads-n-vehicles.car_body_stallion": "Karosserie - Stallion",
+  "item.roads-n-vehicles.car_body_firecharge": "Karosserie - Firecharge",
+  "item.roads-n-vehicles.muscle_car_stallion": "Auto - Stallion",
+  "item.roads-n-vehicles.muscle_car_firecharge": "Auto - Firecharge",
 
   "entity.roads-n-vehicles.muscle_car": "Auto"
 }

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "roads-n-vehicles:announcement_beacon_railroad_sign_double_striped_left"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

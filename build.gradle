@@ -21,13 +21,11 @@ repositories {
 
 dependencies {
 
-	modCompileOnly files("libs/tlotd-mc1.20.1-v0.4.0-api.jar")
-
+	modCompileOnly files("libs/tlotd-0.4.1+1.20.1-api.jar")
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	

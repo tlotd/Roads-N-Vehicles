@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#c:iron_blocks",
+    {
+      "id": "#c:steel_blocks",
+      "required": false
+    },
+    {
+      "id": "#c:aluminium_blocks",
+      "required": false
+    }
+  ]
+}

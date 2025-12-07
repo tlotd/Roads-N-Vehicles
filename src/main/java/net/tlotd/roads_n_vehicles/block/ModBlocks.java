@@ -247,8 +247,18 @@ public class ModBlocks {
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
     public static final Block ROAD_NARROWING_RIGHT_SIGN = registerBlock("road_narrowing_right_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block WILD_ANIMALS_LEFT_SIGN = registerBlock("wild_animals_left_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block WILD_ANIMALS_RIGHT_SIGN = registerBlock("wild_animals_right_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block WILD_DINOSAURS_SIGN = registerBlock("wild_dinosaurs_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
     public static final Block SQUARE_SIGN = registerBlock("square_sign",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block DIRECTION_SIGN_LEFT_CURVE = registerBlock("direction_sign_left_curve",
+            new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block DIRECTION_SIGN_RIGHT_CURVE = registerBlock("direction_sign_right_curve",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
     public static final Block NO_THROUGH_ROAD_SIGN = registerBlock("no_through_road_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
@@ -302,7 +312,6 @@ public class ModBlocks {
     public static final Block US_ROUTE_9_SIGN = registerBlock("us_route_9_sign",
             new SignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
-
     public static final Block TALL_RECTANGULAR_SIGN = registerBlock("tall_rectangular_sign",
             new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
     public static final Block SPEED_LIMIT_US_5_SIGN = registerBlock("speed_limit_us_5_sign",
@@ -344,6 +353,42 @@ public class ModBlocks {
     public static final Block SPEED_LIMIT_US_95_SIGN = registerBlock("speed_limit_us_95_sign",
             new TallRectangularSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
+    public static final Block VERTICAL_SIGN = registerBlock("vertical_sign",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block GUIDING_BEACON_SIGN_LEFT = registerBlock("guiding_beacon_sign_left",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block GUIDING_BEACON_SIGN_RIGHT = registerBlock("guiding_beacon_sign_right",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block GUIDING_BEACON_SIGN_MIDDLE = registerBlock("guiding_beacon_sign_middle",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_RAILROAD_SIGN_SINGLE_STRIPED_LEFT = registerBlock("announcement_beacon_railroad_sign_single_striped_left",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_RAILROAD_SIGN_DOUBLE_STRIPED_LEFT = registerBlock("announcement_beacon_railroad_sign_double_striped_left",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_RAILROAD_SIGN_TRIPLE_STRIPED_LEFT = registerBlock("announcement_beacon_railroad_sign_triple_striped_left",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_RAILROAD_SIGN_SINGLE_STRIPED_RIGHT = registerBlock("announcement_beacon_railroad_sign_single_striped_right",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_RAILROAD_SIGN_DOUBLE_STRIPED_RIGHT = registerBlock("announcement_beacon_railroad_sign_double_striped_right",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_RAILROAD_SIGN_TRIPLE_STRIPED_RIGHT = registerBlock("announcement_beacon_railroad_sign_triple_striped_right",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_SIGN_SINGLE_STRIPED = registerBlock("announcement_beacon_sign_single_striped",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_SIGN_DOUBLE_STRIPED = registerBlock("announcement_beacon_sign_double_striped",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_SIGN_TRIPLE_STRIPED = registerBlock("announcement_beacon_sign_triple_striped",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_SINGLE_STRIPED = registerBlock("announcement_beacon_motorway_sign_single_striped",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_DOUBLE_STRIPED = registerBlock("announcement_beacon_motorway_sign_double_striped",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+    public static final Block ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_TRIPLE_STRIPED = registerBlock("announcement_beacon_motorway_sign_triple_striped",
+            new VerticalSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+
+    public static final Block RAILWAY_CROSSBUCK_SIGN = registerBlock("railway_crossbuck_sign",
+            new RailwayCrossbuckSignBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+
     public static final Block GUARDRAIL = registerBlock("guardrail",
             new GuardrailBlock(FabricBlockSettings.create().mapColor(MapColor.GRAY).requiresTool().strength(2.0F, 3.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
 
@@ -378,8 +423,22 @@ public class ModBlocks {
     public static final Block FIRE_HYDRANT = registerBlock("fire_hydrant",
             new FireHydrantBlock(FabricBlockSettings.create().mapColor(MapColor.RED).requiresTool().strength(2.0F, 3.0F)));
 
+    public static final Block TELEVISION = registerBlockWithoutItem("television",
+            new TelevisionBlock(FabricBlockSettings.create().mapColor(MapColor.BLACK).requiresTool().strength(2.0F, 2.0F)));
+    public static final Block TELEVISION_ON = registerBlockWithoutItem("television_on",
+            new TelevisionBlock(FabricBlockSettings.create().mapColor(MapColor.BLACK).requiresTool().strength(2.0F, 2.0F).luminance(10)));
+    public static final Block TELEVISION_GAME = registerBlockWithoutItem("television_game",
+            new TelevisionBlock(FabricBlockSettings.create().mapColor(MapColor.BLACK).requiresTool().strength(2.0F, 2.0F).luminance(10)));
+
+    public static final Block COMPUTER_ON = registerBlockWithoutItem("computer_on",
+            new ComputerBlock(FabricBlockSettings.create().mapColor(MapColor.WHITE).requiresTool().strength(2.0F, 2.0F).luminance(10)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, new Identifier(TLOTDRoadsnVehicles.MOD_ID, name), block);
+    }
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(TLOTDRoadsnVehicles.MOD_ID, name), block);
     }
 

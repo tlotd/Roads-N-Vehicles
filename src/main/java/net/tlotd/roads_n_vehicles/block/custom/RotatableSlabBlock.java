@@ -1,9 +1,6 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FacingBlock;
-import net.minecraft.block.SlabBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.enums.SlabType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -15,7 +12,7 @@ import net.minecraft.util.math.Direction;
 
 public class RotatableSlabBlock extends SlabBlock {
 
-    public static final DirectionProperty FACING = FacingBlock.FACING;
+    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 
     @Override
     public void appendProperties(StateManager.Builder<Block, BlockState> builder) {

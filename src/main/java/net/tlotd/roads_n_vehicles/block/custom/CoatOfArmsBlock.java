@@ -2,6 +2,7 @@ package net.tlotd.roads_n_vehicles.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,6 +21,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.tlotd.api.TlotdAPI;
 import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
+import net.tlotd.roads_n_vehicles.networking.ClientTextureCache;
 import net.tlotd.roads_n_vehicles.world.CustomTextureManager;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,7 +38,7 @@ public class CoatOfArmsBlock extends SignBlock {
             case "212aa6f5-69a9-47d9-9ad5-19b359744edf" -> 1;
             case "67148bd0-1a00-4bca-9d9e-ec246afbcf51" -> 2;
             case "53c68d22-726b-4a37-b92d-8d7c4670a87d" -> 3;
-            case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> formerTLOTD ? 7 : 0; //ISSO_21_
+            case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> formerTLOTD ? 7 : 0;
             case "08c6cfba-40cd-43e2-a929-764e9fadc442" -> 9;
             case "d3018dca-9a16-43f0-8d72-19b93e33fa6b" -> 10;
             case "125cda9f-1a5b-40c5-b3a9-02c7988940f6" -> 13;
@@ -92,25 +94,51 @@ public class CoatOfArmsBlock extends SignBlock {
 
     public static final Identifier DEFAULT_FONT_ID = new Identifier("minecraft", "default");
     public static final Identifier PLAYERS_FONT_ID = new Identifier("roads-n-vehicles", "players");
+    public static final Identifier MODS_FONT_ID = new Identifier("roads-n-vehicles", "mods");
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
         if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip").formatted(Formatting.GRAY));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_2").formatted(Formatting.GRAY));
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.ponder", Text.translatable("key.keyboard.shift").formatted(Formatting.WHITE)).formatted(Formatting.DARK_GRAY));
             Style style = this.getName().getStyle();
             tooltip.add(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_shift").formatted(Formatting.GRAY));
             tooltip.add(Text.literal("\uE000").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TLOTD - Worldspawn").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE001").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Isla_Nublar - Drachenheide").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE002").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" EinsDarki - Little Tokyo").setStyle(style.withFont(DEFAULT_FONT_ID))));
+            if (CompatModsCheck.TLOTD) {
+                if (TlotdAPI.formerTlotdRewardsClient()) {
+                    tooltip.add(Text.literal("\uE006").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" ISSO_21_ - Löwenburg").setStyle(style.withFont(DEFAULT_FONT_ID))));
+                }
+            }
             tooltip.add(Text.literal("\uE008").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Polarfoxtm - Zorkcrad").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE009").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Salsafox - New California Republic").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE00E").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" akashic_system - Firmament").setStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Text.literal("\uE012").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Jakx444 - New Haven").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.literal("...").formatted(Formatting.GRAY));
-            tooltip.add(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_custom"));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_custom").formatted(Formatting.GRAY));
+            MinecraftClient client = MinecraftClient.getInstance();
+            if (client.player != null && client.getServer() != null) {
+                if (CompatModsCheck.TLOTD) {
+                    if (!TlotdAPI.getClientTextures().isEmpty()) {
+                        TlotdAPI.getClientTextures().forEach((uuid, entry) -> tooltip.add(Text.literal("\uE000 ").setStyle(style.withFont(MODS_FONT_ID)).append(Text.literal(entry.getPlayerName()).setStyle(style.withFont(DEFAULT_FONT_ID)))));
+                    } else {
+                        tooltip.add(Text.literal("...").formatted(Formatting.DARK_GRAY));
+                    }
+                } else {
+                    if (!ClientTextureCache.TEXTURES.isEmpty()) {
+                        ClientTextureCache.TEXTURES.forEach((uuid, entry) -> tooltip.add(Text.literal("\uE001 ").setStyle(style.withFont(MODS_FONT_ID)).append(Text.literal(entry.playerName).setStyle(style.withFont(DEFAULT_FONT_ID)))));
+                    } else {
+                        tooltip.add(Text.literal("...").formatted(Formatting.DARK_GRAY));
+                    }
+                }
+            }
         } else {
             tooltip.add(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip").formatted(Formatting.GRAY));
             tooltip.add(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_2").formatted(Formatting.GRAY));
-            tooltip.add(Text.literal("").append(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_3").formatted(Formatting.DARK_GRAY)).append(Text.translatable("key.keyboard.left.shift").formatted(Formatting.GRAY)).append(Text.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_4").formatted(Formatting.DARK_GRAY)));
+            tooltip.add(Text.literal(""));
+            tooltip.add(Text.translatable("block.roads-n-vehicles.license_plate.ponder", Text.translatable("key.keyboard.shift").formatted(Formatting.GRAY)).formatted(Formatting.DARK_GRAY));
         }
         super.appendTooltip(stack, world, tooltip, options);
     }
