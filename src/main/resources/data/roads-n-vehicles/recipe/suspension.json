@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:metal_ingots"
+    },
+    "S": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "pattern": [
+    "#",
+    "S",
+    "#"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:suspension"
+  },
+  "show_notification": true
+}

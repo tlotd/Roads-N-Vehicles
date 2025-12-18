@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:metal_ingots"
+    },
+    "S": {
+      "item": "minecraft:slime_block"
+    },
+    "B": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "pattern": [
+    "BSB",
+    "S#S",
+    "BSB"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:wheel"
+  },
+  "show_notification": true
+}

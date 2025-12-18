@@ -1,36 +1,32 @@
 package net.tlotd.roads_n_vehicles.item.custom;
 
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public class VHSCassetteItem extends Item {
 
-    public VHSCassetteItem(Settings settings) {
-        super(settings);
+    public VHSCassetteItem(Item.Properties properties) {
+        super(properties);
     }
 
-    public static final Identifier DEFAULT_FONT_ID = new Identifier("minecraft", "default");
-    public static final Identifier MODS_FONT_ID = new Identifier("vulpes-tinea", "mods");
+    public static final ResourceLocation DEFAULT_FONT_ID = ResourceLocation.fromNamespaceAndPath("minecraft", "default");
+    public static final ResourceLocation MODS_FONT_ID = ResourceLocation.fromNamespaceAndPath("roads-n-vehicles", "mods");
 
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(this.getDescription().formatted(Formatting.GRAY));
-        if (context.isCreative()){
-            Style style = this.getName().getStyle();
-            tooltip.add(Text.literal("\uE000").setStyle(style.withFont(MODS_FONT_ID)).append(Text.literal(" TLOTD").setStyle(style.withFont(DEFAULT_FONT_ID).withFormatting(Formatting.GRAY))));
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(this.getDescription());
+        if (flag.isCreative()){
+            tooltip.add(Component.literal("\uE000").withStyle(style -> style.withFont(MODS_FONT_ID)).append(Component.literal(" TLOTD").withStyle(style -> style.withFont(DEFAULT_FONT_ID).withColor(ChatFormatting.WHITE))));
         }
     }
 
-    public MutableText getDescription() {
-        return Text.translatable(this.getTranslationKey() + ".desc");
+    public @NotNull Component getDescription() {
+        return Component.translatable(this.getDescriptionId() + ".desc").withStyle(ChatFormatting.GRAY);
     }
 }

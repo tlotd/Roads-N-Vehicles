@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "roads-n-vehicles:signs"
+  },
+  "result": { "id": "roads-n-vehicles:announcement_beacon_railroad_sign_triple_striped_left" }
+}
