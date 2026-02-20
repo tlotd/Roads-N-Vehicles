@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "tag": "roads-n-vehicles:asphalt_slabs"
-  },
-  "result": "roads-n-vehicles:asphalt_slab_line_marking_cross"
-}

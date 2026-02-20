@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "#roads-n-vehicles:signs",
+  "result": {
+    "id":"roads-n-vehicles:pedestrian_crossing_left_warning_sign",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:metal_ingots",
+    "S": "minecraft:slime_ball"
+  },
+  "pattern": [
+    "#",
+    "S",
+    "#"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:suspension",
+    "count": 1
+  },
+  "show_notification": true
+}

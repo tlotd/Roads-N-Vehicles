@@ -1,52 +1,54 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.redstone.Orientation;
+import org.jspecify.annotations.Nullable;
 
 public class TrafficLightControllerBlock extends Block {
 
-    public static final IntProperty STAGE = IntProperty.of("stage", 0, 4);
+    public static final IntegerProperty STAGE = IntegerProperty.create("stage", 0, 4);
 
-    public TrafficLightControllerBlock(Settings settings) {
-        super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(STAGE, 0));
+    public TrafficLightControllerBlock(BlockBehaviour.Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(STAGE, 0));
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState()
-                .with(STAGE, 0);
+    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
+        return this.defaultBlockState().setValue(STAGE, 0);
     }
 
     @Override
-    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(STAGE);
     }
 
     @Override
-    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-        if (world.isClient) return;
-        int power = world.getReceivedRedstonePower(pos);
+    protected void neighborChanged(BlockState blockState, Level level, BlockPos blockPos, Block block, @Nullable Orientation orientation, boolean bl) {
+        if (level.isClientSide()) return;
+        int power = level.getBestNeighborSignal(blockPos);
         int lightState = mapPowerToLight(power);
         for (int i = 1; i <= 10; i++) {
-            BlockPos checkPos = pos.up(i);
-            BlockState checkState = world.getBlockState(checkPos);
+            BlockPos checkPos = blockPos.above(i);
+            BlockState checkState = level.getBlockState(checkPos);
             if (checkState.getBlock() instanceof TrafficLightBlock) {
-                world.setBlockState(checkPos, checkState.with(TrafficLightBlock.STAGE, lightState), Block.NOTIFY_ALL);
-                world.setBlockState(pos, state.with(TrafficLightControllerBlock.STAGE, lightState), Block.NOTIFY_ALL);
+                level.setBlock(
+                        checkPos,
+                        checkState.setValue(TrafficLightBlock.STAGE, lightState),
+                        Block.UPDATE_ALL
+                );
+                level.setBlock(
+                        blockPos,
+                        blockState.setValue(TrafficLightControllerBlock.STAGE, lightState),
+                        Block.UPDATE_ALL
+                );
                 break;
             }
         }
@@ -58,17 +60,5 @@ public class TrafficLightControllerBlock extends Block {
         if (power <= 7) return 2;
         if (power <= 11) return 3;
         return 4;
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.literal(""));
-        tooltip.add(Text.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip").formatted(Formatting.GRAY));
-        tooltip.add(Text.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_2").formatted(Formatting.GRAY));
-        tooltip.add(Text.literal(" ").append(Text.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_3")).formatted(Formatting.BLUE));
-        tooltip.add(Text.literal(" ").append(Text.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_4")).formatted(Formatting.BLUE));
-        tooltip.add(Text.literal(" ").append(Text.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_5")).formatted(Formatting.BLUE));
-        tooltip.add(Text.literal(" ").append(Text.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_6")).formatted(Formatting.BLUE));
-        super.appendTooltip(stack, world, tooltip, options);
     }
 }

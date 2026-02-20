@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:iron_bars",
+    "minecraft:iron_ingot"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:guardrail",
+    "count": 1
+  },
+  "show_notification": true
+}

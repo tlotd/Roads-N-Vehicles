@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:metal_ingots",
+    "P": "#c:glass_panes",
+    "L": "roads-n-vehicles:license_plate",
+    "G": "minecraft:green_dye"
+  },
+  "pattern": [
+    "P#P",
+    "LGL",
+    "###"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:car_body_stallion",
+    "count": 1
+  },
+  "show_notification": true
+}

@@ -1,107 +1,47 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.block.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.tlotd.api.TlotdAPI;
-import net.tlotd.roads_n_vehicles.block.ModBlocks;
-import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
-public class TelevisionBlock extends Block {
+public class TelevisionBlock extends SignBlock {
 
-    public static final IntProperty CHANNEL = IntProperty.of("channel", 0, 127);
-    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+    public static final IntegerProperty CHANNEL = IntegerProperty.create("channel", 0, 127);
 
-    @Override
-    public MutableText getName() {
-        if (this.getDefaultState().isOf(ModBlocks.TELEVISION)) {
-            return Text.translatable("block.tlotd.television");
-        } else {
-            return Text.translatable("block.tlotd.television_on");
-        }
+    public TelevisionBlock(BlockBehaviour.Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(CHANNEL, 1).setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState()
-                .with(FACING, ctx.getHorizontalPlayerFacing())
-                .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).isOf(Fluids.WATER))
-                .with(CHANNEL,1);
+    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
+        BlockPos blockPos = blockPlaceContext.getClickedPos();
+        Direction direction = blockPlaceContext.getHorizontalDirection();
+        FluidState fluidState = blockPlaceContext.getLevel().getFluidState(blockPos);
+        assert blockPlaceContext.getPlayer() != null;
+        return this.defaultBlockState().setValue(CHANNEL, 1).setValue(FACING, direction).setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
     }
 
     @Override
-    public FluidState getFluidState(BlockState state) {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
-    }
-
-    @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (state.get(WATERLOGGED)) {
-            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-        }
-
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-    }
-
-    @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
-    }
-
-    @Override
-    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, @NotNull BlockState> builder) {
         builder.add(FACING, WATERLOGGED, CHANNEL);
     }
 
-    public TelevisionBlock(Settings settings) {
-        super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState()
-                .with(FACING, Direction.NORTH)
-                .with(WATERLOGGED, false)
-                .with(CHANNEL, 1));
-    }
+    private static final VoxelShape Z_SHAPE = Block.box(3, 0, 0, 13, 12, 16);
+    private static final VoxelShape X_SHAPE = Block.box(0, 0, 3, 16, 12, 13);
 
-    public static final VoxelShape Z_SHAPE = Block.createCuboidShape(3, 0, 0, 13, 12, 16);
-    public static final VoxelShape X_SHAPE = Block.createCuboidShape(0, 0, 3, 16, 12, 13);
-
-    @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return switch (state.get(FACING)) {
-            case EAST, WEST -> Z_SHAPE;
-            default -> X_SHAPE;
-        };
-    }
-
-    @Override
-    public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
-    }
-
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!CompatModsCheck.TLOTD) return ActionResult.PASS;
-        if (world.isClient) return ActionResult.SUCCESS;
-        world.setBlockState(pos, TlotdAPI.handleTelevisionUse(state, world, pos, player));
-        return ActionResult.SUCCESS;
+    protected @NotNull VoxelShape getShape(@NotNull BlockState blockState, @NotNull BlockGetter blockGetter, @NotNull BlockPos blockPos, @NotNull CollisionContext collisionContext) {
+        return getVoxelShape(blockState, Z_SHAPE, Z_SHAPE, X_SHAPE, X_SHAPE, Z_SHAPE);
     }
 }

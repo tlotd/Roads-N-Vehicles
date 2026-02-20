@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:license_plate",
+    "count": 1
+  },
+  "show_notification": true
+}

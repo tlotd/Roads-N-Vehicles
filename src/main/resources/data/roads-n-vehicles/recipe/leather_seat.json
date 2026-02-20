@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:leathers",
+    "S": "minecraft:saddle"
+  },
+  "pattern": [
+    " #",
+    " #",
+    "S#"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:leather_seat",
+    "count": 1
+  },
+  "show_notification": true
+}

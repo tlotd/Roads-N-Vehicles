@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "#roads-n-vehicles:asphalt_blocks",
+  "result": {
+    "id":"roads-n-vehicles:asphalt_double_yellow_line_marking_corner",
+    "count": 1
+  }
+}

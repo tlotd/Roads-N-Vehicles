@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "tag": "roads-n-vehicles:signs"
-  },
-  "result": "roads-n-vehicles:us_route_8_sign"
-}

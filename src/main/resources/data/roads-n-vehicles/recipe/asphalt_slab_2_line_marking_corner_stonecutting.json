@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+"ingredient": "#roads-n-vehicles:asphalt_blocks",
+  "result": {
+    "id":"roads-n-vehicles:asphalt_slab_line_marking_corner",
+    "count": 1
+  }
+}

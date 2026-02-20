@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "tlotd"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "#c:iron_ingots",
+    "B": "#tlotd:circuit_boards",
+    "C": "minecraft:comparator",
+    "L": "minecraft:lightning_rod"
+  },
+  "pattern": [
+    "ILI",
+    "IBI",
+    "ICI"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:traffic_light_controller",
+    "count": 1
+  },
+  "show_notification": true
+}

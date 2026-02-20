@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "#roads-n-vehicles:signs",
+  "result": {
+    "id":"roads-n-vehicles:direction_sign_right_curve",
+    "count": 1
+  }
+}
