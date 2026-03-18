@@ -1,47 +1,70 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.block.*;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.BlockRotation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.WorldAccess;
 
-public class DelineatorBlock extends SignBlock {
+import java.util.Objects;
 
-    public static final BooleanProperty EXIT = BooleanProperty.create("exit");
+public class DelineatorBlock extends Block {
 
-    public DelineatorBlock(BlockBehaviour.Properties properties) {
-        super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false).setValue(EXIT, false));
+    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+    public static final BooleanProperty EXIT = BooleanProperty.of("exit");
+
+    public DelineatorBlock(Settings settings) {
+        super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false).with(EXIT, false));
     }
 
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
-        BlockPos blockPos = blockPlaceContext.getClickedPos();
-        Direction direction = blockPlaceContext.getHorizontalDirection();
-        FluidState fluidState = blockPlaceContext.getLevel().getFluidState(blockPos);
-        assert blockPlaceContext.getPlayer() != null;
-        boolean exitState = blockPlaceContext.getPlayer().isShiftKeyDown();
-        return this.defaultBlockState().setValue(EXIT, exitState).setValue(FACING, direction).setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        boolean exit = Objects.requireNonNull(ctx.getPlayer()).isSneaking();
+        return this.getDefaultState()
+                .with(FACING, ctx.getHorizontalPlayerFacing())
+                .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).isOf(Fluids.WATER))
+                .with(EXIT, exit);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, @NotNull BlockState> builder) {
+    public FluidState getFluidState(BlockState state) {
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+    }
+
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (state.get(WATERLOGGED)) {
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        }
+
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    @Override
+    public BlockState rotate(BlockState state, BlockRotation rotation) {
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    }
+
+    @Override
+    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING, WATERLOGGED, EXIT);
     }
 
-    private static final VoxelShape BASE_SHAPE = Block.box(7, 0, 7, 9, 16, 9);
+    public static final VoxelShape SHAPE = Block.createCuboidShape(7, 0, 7, 9, 16, 9);
 
-    protected @NotNull VoxelShape getShape(@NotNull BlockState blockState, @NotNull BlockGetter blockGetter, @NotNull BlockPos blockPos, @NotNull CollisionContext collisionContext) {
-        return BASE_SHAPE;
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
     }
 }

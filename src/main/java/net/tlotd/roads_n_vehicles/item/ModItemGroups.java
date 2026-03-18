@@ -1,265 +1,318 @@
 package net.tlotd.roads_n_vehicles.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.ChatFormatting;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.FontDescription;
-import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
 import net.tlotd.roads_n_vehicles.block.ModBlocks;
 import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
 
 public class ModItemGroups {
 
-    public static final FontDescription DEFAULT_FONT =
-            new FontDescription.Resource(Identifier.withDefaultNamespace("default"));
-    public static final FontDescription MODS_FONT =
-            new FontDescription.Resource(Identifier.fromNamespaceAndPath("roads-n-vehicles", "mods"));
+    public static final Identifier DEFAULT_FONT_ID = new Identifier("minecraft", "default");
+    public static final Identifier MODS_FONT_ID = new Identifier("roads-n-vehicles", "mods");
 
-    public static final CreativeModeTab TLOTD_4_ROADS_N_VEHICLES_GROUP = Registry.register(
-                    BuiltInRegistries.CREATIVE_MODE_TAB,
-                    Identifier.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID,"4_items"),
-                    FabricItemGroup.builder()
-                            .title(Component.literal("\uE001 ").withStyle(style -> style.withFont(MODS_FONT).withColor(ChatFormatting.WHITE)).append(Component.translatable("itemgroup.roads-n-vehicles.items").withStyle(style -> style.withFont(DEFAULT_FONT))))
-                            .icon(() -> new ItemStack(ModBlocks.ROADWORKS_SIGN))
-                            .displayItems((parameters, output) -> {
-                                output.accept(ModBlocks.ASPHALT);
-                                output.accept(ModBlocks.ASPHALT_SLAB);
-                                output.accept(ModBlocks.ASPHALT_STAIRS);
+    public static final ItemGroup TLOTD_4_ROADS_N_VEHICLES_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(TLOTDRoadsnVehicles.MOD_ID, "4_items"),
+            FabricItemGroup.builder().displayName(Text.literal("\uE001 ").styled(style -> style.withFont(MODS_FONT_ID).withFormatting(Formatting.WHITE)).append(Text.translatable("itemgroup.roads-n-vehicles.items").styled(style -> style.withFont(DEFAULT_FONT_ID))))
+                    .icon(() -> new ItemStack(ModBlocks.ROADWORKS_SIGN)).entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.ASPHALT);
+                        entries.add(ModBlocks.ASPHALT_SLAB);
+                        entries.add(ModBlocks.ASPHALT_STAIRS);
 
-                                output.accept(ModBlocks.ASPHALT_LINE_MARKING_ARROW);
-                                output.accept(ModBlocks.ASPHALT_LINE_MARKING_STRAIGHT);
-                                output.accept(ModBlocks.ASPHALT_LINE_MARKING_CORNER);
-                                output.accept(ModBlocks.ASPHALT_LINE_MARKING_T_JUNCTION);
-                                output.accept(ModBlocks.ASPHALT_LINE_MARKING_CROSS);
-                                output.accept(ModBlocks.ASPHALT_SLAB_LINE_MARKING_ARROW);
-                                output.accept(ModBlocks.ASPHALT_SLAB_LINE_MARKING_STRAIGHT);
-                                output.accept(ModBlocks.ASPHALT_SLAB_LINE_MARKING_CORNER);
-                                output.accept(ModBlocks.ASPHALT_SLAB_LINE_MARKING_T_JUNCTION);
-                                output.accept(ModBlocks.ASPHALT_SLAB_LINE_MARKING_CROSS);
+                        entries.add(ModBlocks.ASPHALT_LINE_MARKING_ARROW);
+                        entries.add(ModBlocks.ASPHALT_LINE_MARKING_STRAIGHT);
+                        entries.add(ModBlocks.ASPHALT_LINE_MARKING_CORNER);
+                        entries.add(ModBlocks.ASPHALT_LINE_MARKING_T_JUNCTION);
+                        entries.add(ModBlocks.ASPHALT_LINE_MARKING_CROSS);
+                        entries.add(ModBlocks.ASPHALT_SLAB_LINE_MARKING_ARROW);
+                        entries.add(ModBlocks.ASPHALT_SLAB_LINE_MARKING_STRAIGHT);
+                        entries.add(ModBlocks.ASPHALT_SLAB_LINE_MARKING_CORNER);
+                        entries.add(ModBlocks.ASPHALT_SLAB_LINE_MARKING_T_JUNCTION);
+                        entries.add(ModBlocks.ASPHALT_SLAB_LINE_MARKING_CROSS);
 
-                                output.accept(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_ARROW);
-                                output.accept(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_STRAIGHT);
-                                output.accept(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_CORNER);
-                                output.accept(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_T_JUNCTION);
-                                output.accept(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_CROSS);
-                                output.accept(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_ARROW);
-                                output.accept(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_STRAIGHT);
-                                output.accept(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_CORNER);
-                                output.accept(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_T_JUNCTION);
-                                output.accept(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_CROSS);
+                        entries.add(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_ARROW);
+                        entries.add(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_STRAIGHT);
+                        entries.add(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_CORNER);
+                        entries.add(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_T_JUNCTION);
+                        entries.add(ModBlocks.ASPHALT_YELLOW_LINE_MARKING_CROSS);
+                        entries.add(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_ARROW);
+                        entries.add(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_STRAIGHT);
+                        entries.add(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_CORNER);
+                        entries.add(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_T_JUNCTION);
+                        entries.add(ModBlocks.ASPHALT_SLAB_YELLOW_LINE_MARKING_CROSS);
 
-                                output.accept(ModBlocks.ASPHALT_DOUBLE_LINE_MARKING_STRAIGHT);
-                                output.accept(ModBlocks.ASPHALT_DOUBLE_LINE_MARKING_CORNER);
-                                output.accept(ModBlocks.ASPHALT_DOUBLE_YELLOW_LINE_MARKING_STRAIGHT);
-                                output.accept(ModBlocks.ASPHALT_DOUBLE_YELLOW_LINE_MARKING_CORNER);
-                                output.accept(ModBlocks.ASPHALT_DOUBLE_RED_LINE_MARKING_STRAIGHT);
-                                output.accept(ModBlocks.ASPHALT_DOUBLE_RED_LINE_MARKING_CORNER);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_LINE_MARKING_STRAIGHT);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_LINE_MARKING_CORNER);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_LINE_MARKING_T_JUNCTION);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_LINE_MARKING_CROSS);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_YELLOW_LINE_MARKING_STRAIGHT);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_YELLOW_LINE_MARKING_CORNER);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_YELLOW_LINE_MARKING_T_JUNCTION);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_YELLOW_LINE_MARKING_CROSS);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_RED_LINE_MARKING_STRAIGHT);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_RED_LINE_MARKING_CORNER);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_RED_LINE_MARKING_T_JUNCTION);
+                        entries.add(ModBlocks.ASPHALT_DOUBLE_RED_LINE_MARKING_CROSS);
 
-                                output.accept(ModBlocks.TOWN_SIGN);
-                                output.accept(ModBlocks.COAT_OF_ARMS);
+                        entries.add(ModBlocks.MANHOLE_COVER);
 
-                                output.accept(ModBlocks.ROUND_SIGN);
+                        entries.add(ModBlocks.IRON_ROD);
+                        entries.add(ModBlocks.GUARDRAIL);
+                        entries.add(ModBlocks.GUARDRAIL_OUTER_CORNER);
+                        entries.add(ModBlocks.GUARDRAIL_INNER_CORNER);
+                        entries.add(ModBlocks.DELINEATOR);
 
-                                output.accept(ModBlocks.SPEED_LIMIT_10_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_20_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_30_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_40_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_50_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_60_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_70_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_80_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_90_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_100_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_110_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_120_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_130_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_140_SIGN);
+                        entries.add(ModBlocks.TOWN_SIGN);
+                        entries.add(ModBlocks.COAT_OF_ARMS);
 
-                                output.accept(ModBlocks.SPEED_LIMIT_10_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_20_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_30_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_40_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_50_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_60_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_70_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_80_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_90_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_100_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_110_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_120_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_130_END_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_140_END_SIGN);
+                        entries.add(ModBlocks.ROUND_SIGN);
 
-                                output.accept(ModBlocks.END_OF_ALL_PREVIOUSLY_SIGNED_RESTRICTIONS_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_10_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_20_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_30_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_40_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_50_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_60_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_70_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_80_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_90_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_100_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_110_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_120_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_130_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_140_SIGN);
 
-                                output.accept(ModBlocks.NO_VEHICLES_SIGN);
-                                output.accept(ModBlocks.NO_ENTRY_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_10_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_20_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_30_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_40_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_50_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_60_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_70_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_80_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_90_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_100_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_110_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_120_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_130_END_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_140_END_SIGN);
 
-                                output.accept(ModBlocks.NO_STOPPING_SIGN);
-                                output.accept(ModBlocks.NO_PARKING_SIGN);
+                        entries.add(ModBlocks.END_OF_ALL_PREVIOUSLY_SIGNED_RESTRICTIONS_SIGN);
 
-                                output.accept(ModBlocks.GO_STRAIGHT_SIGN);
-                                output.accept(ModBlocks.GO_LEFT_SIGN);
-                                output.accept(ModBlocks.GO_RIGHT_SIGN);
-                                output.accept(ModBlocks.TURN_LEFT_SIGN);
-                                output.accept(ModBlocks.TURN_RIGHT_SIGN);
-                                output.accept(ModBlocks.GO_STRAIGHT_OR_LEFT_SIGN);
-                                output.accept(ModBlocks.GO_STRAIGHT_OR_RIGHT_SIGN);
-                                output.accept(ModBlocks.GO_LEFT_OR_RIGHT_SIGN);
-                                output.accept(ModBlocks.PASS_LEFT_SIGN);
-                                output.accept(ModBlocks.PASS_RIGHT_SIGN);
-                                output.accept(ModBlocks.ROUNDABOUT_SIGN);
-                                output.accept(ModBlocks.ROUNDABOUT_FLIPPED_SIGN);
-                                output.accept(ModBlocks.NO_LEFT_TURN_SIGN);
-                                output.accept(ModBlocks.NO_RIGHT_TURN_SIGN);
-                                output.accept(ModBlocks.NO_U_TURN_SIGN);
+                        entries.add(ModBlocks.NO_VEHICLES_SIGN);
+                        entries.add(ModBlocks.NO_ENTRY_SIGN);
+                        entries.add(ModBlocks.MOTOR_VEHICLES_PROHIBITED_SIGN);
+                        entries.add(ModBlocks.NO_OVERTAKING_SIGN);
+                        entries.add(ModBlocks.NO_HEAVY_OVERTAKING_SIGN);
+                        entries.add(ModBlocks.END_NO_OVERTAKING_SIGN);
+                        entries.add(ModBlocks.END_NO_HEAVY_OVERTAKING_SIGN);
+                        entries.add(ModBlocks.NO_STOPPING_SIGN);
+                        entries.add(ModBlocks.NO_PARKING_SIGN);
 
-                                output.accept(ModBlocks.STOP_SIGN);
-                                output.accept(ModBlocks.YIELD_SIGN);
-                                output.accept(ModBlocks.YIELD_US_SIGN);
-                                output.accept(ModBlocks.DIAMOND_SIGN);
-                                output.accept(ModBlocks.PRIORITY_ROAD_SIGN);
-                                output.accept(ModBlocks.END_OF_PRIORITY_ROAD_SIGN);
-                                output.accept(ModBlocks.TURN_LEFT_US_SIGN);
-                                output.accept(ModBlocks.TURN_RIGHT_US_SIGN);
-                                output.accept(ModBlocks.NO_THROUGH_ROAD_US_SIGN);
+                        entries.add(ModBlocks.GO_STRAIGHT_SIGN);
+                        entries.add(ModBlocks.GO_LEFT_SIGN);
+                        entries.add(ModBlocks.GO_RIGHT_SIGN);
+                        entries.add(ModBlocks.TURN_LEFT_SIGN);
+                        entries.add(ModBlocks.TURN_RIGHT_SIGN);
+                        entries.add(ModBlocks.GO_STRAIGHT_OR_LEFT_SIGN);
+                        entries.add(ModBlocks.GO_STRAIGHT_OR_RIGHT_SIGN);
+                        entries.add(ModBlocks.GO_LEFT_OR_RIGHT_SIGN);
+                        entries.add(ModBlocks.PASS_LEFT_SIGN);
+                        entries.add(ModBlocks.PASS_RIGHT_SIGN);
+                        entries.add(ModBlocks.ROUNDABOUT_SIGN);
+                        entries.add(ModBlocks.ROUNDABOUT_FLIPPED_SIGN);
+                        entries.add(ModBlocks.NO_LEFT_TURN_SIGN);
+                        entries.add(ModBlocks.NO_RIGHT_TURN_SIGN);
+                        entries.add(ModBlocks.NO_U_TURN_SIGN);
 
-                                output.accept(ModBlocks.TRIANGLE_SIGN);
-                                output.accept(ModBlocks.RIGHT_OF_WAY_SIGN);
-                                output.accept(ModBlocks.PRIORITY_RIGHT_SIGN);
-                                output.accept(ModBlocks.DANGER_SIGN);
-                                output.accept(ModBlocks.ROADWORKS_SIGN);
-                                output.accept(ModBlocks.RAILROAD_CROSSING_SIGN);
-                                output.accept(ModBlocks.UNEVEN_ROAD_SIGN);
-                                output.accept(ModBlocks.ONCOMING_TRAFFIC_SIGN);
-                                output.accept(ModBlocks.ASCEND_SIGN);
-                                output.accept(ModBlocks.DECEND_SIGN);
-                                output.accept(ModBlocks.CURVE_LEFT_SIGN);
-                                output.accept(ModBlocks.CURVE_RIGHT_SIGN);
-                                output.accept(ModBlocks.DOUBLE_CURVE_LEFT_SIGN);
-                                output.accept(ModBlocks.DOUBLE_CURVE_RIGHT_SIGN);
-                                output.accept(ModBlocks.ROAD_NARROWING_SIGN);
-                                output.accept(ModBlocks.ROAD_NARROWING_LEFT_SIGN);
-                                output.accept(ModBlocks.ROAD_NARROWING_RIGHT_SIGN);
-                                output.accept(ModBlocks.WILD_ANIMALS_LEFT_SIGN);
-                                output.accept(ModBlocks.WILD_ANIMALS_RIGHT_SIGN);
-                                output.accept(ModBlocks.WILD_DINOSAURS_SIGN);
+                        entries.add(ModBlocks.STOP_SIGN);
+                        entries.add(ModBlocks.YIELD_SIGN);
+                        entries.add(ModBlocks.YIELD_US_SIGN);
+                        entries.add(ModBlocks.DIAMOND_SIGN);
+                        entries.add(ModBlocks.PRIORITY_ROAD_SIGN);
+                        entries.add(ModBlocks.END_OF_PRIORITY_ROAD_SIGN);
+                        entries.add(ModBlocks.TURN_LEFT_US_SIGN);
+                        entries.add(ModBlocks.TURN_RIGHT_US_SIGN);
+                        entries.add(ModBlocks.NO_THROUGH_ROAD_US_SIGN);
 
-                                output.accept(ModBlocks.SQUARE_SIGN);
-                                output.accept(ModBlocks.DIRECTION_SIGN_LEFT_CURVE);
-                                output.accept(ModBlocks.DIRECTION_SIGN_RIGHT_CURVE);
-                                output.accept(ModBlocks.NO_THROUGH_ROAD_SIGN);
-                                output.accept(ModBlocks.PEDESTRIAN_CROSSING_LEFT_SIGN);
-                                output.accept(ModBlocks.PEDESTRIAN_CROSSING_RIGHT_SIGN);
-                                output.accept(ModBlocks.EXPRESSWAY_SIGN);
-                                output.accept(ModBlocks.MOTORWAY_SIGN);
-                                output.accept(ModBlocks.EXPRESSWAY_END_SIGN);
-                                output.accept(ModBlocks.MOTORWAY_END_SIGN);
-                                output.accept(ModBlocks.PARKING_SIGN);
-                                output.accept(ModBlocks.PARKING_GARAGE_SIGN);
+                        entries.add(ModBlocks.TRIANGLE_SIGN);
+                        entries.add(ModBlocks.RIGHT_OF_WAY_SIGN);
+                        entries.add(ModBlocks.PRIORITY_RIGHT_SIGN);
+                        entries.add(ModBlocks.DANGER_SIGN);
+                        entries.add(ModBlocks.ROADWORKS_SIGN);
+                        entries.add(ModBlocks.RAILROAD_CROSSING_SIGN);
+                        entries.add(ModBlocks.UNEVEN_ROAD_SIGN);
+                        entries.add(ModBlocks.ONCOMING_TRAFFIC_SIGN);
+                        entries.add(ModBlocks.ASCEND_SIGN);
+                        entries.add(ModBlocks.DECEND_SIGN);
+                        entries.add(ModBlocks.CURVE_LEFT_SIGN);
+                        entries.add(ModBlocks.CURVE_RIGHT_SIGN);
+                        entries.add(ModBlocks.DOUBLE_CURVE_LEFT_SIGN);
+                        entries.add(ModBlocks.DOUBLE_CURVE_RIGHT_SIGN);
+                        entries.add(ModBlocks.ROAD_NARROWING_SIGN);
+                        entries.add(ModBlocks.ROAD_NARROWING_LEFT_SIGN);
+                        entries.add(ModBlocks.ROAD_NARROWING_RIGHT_SIGN);
+                        entries.add(ModBlocks.WILD_ANIMALS_LEFT_SIGN);
+                        entries.add(ModBlocks.WILD_ANIMALS_RIGHT_SIGN);
+                        entries.add(ModBlocks.WILD_DINOSAURS_SIGN);
 
-                                output.accept(ModBlocks.PRIORITY_OVER_ONCOMING_TRAFFIC_SIGN);
-                                output.accept(ModBlocks.GIVE_WAY_TO_ONCOMING_TRAFFIC_SIGN);
+                        entries.add(ModBlocks.TRAFFIC_SIGNALS_SIGN);
+                        entries.add(ModBlocks.PEDESTRIAN_CROSSING_LEFT_WARNING_SIGN);
+                        entries.add(ModBlocks.PEDESTRIAN_CROSSING_RIGHT_WARNING_SIGN);
+                        entries.add(ModBlocks.CROSSWIND_LEFT_SIGN);
+                        entries.add(ModBlocks.CROSSWIND_RIGHT_SIGN);
+                        entries.add(ModBlocks.ROCKFALL_LEFT_SIGN);
+                        entries.add(ModBlocks.ROCKFALL_RIGHT_SIGN);
+                        entries.add(ModBlocks.AIRCRAFT_LEFT_SIGN);
+                        entries.add(ModBlocks.AIRCRAFT_RIGHT_SIGN);
+                        entries.add(ModBlocks.SLIPPERINESS_SIGN);
+                        entries.add(ModBlocks.ICY_ROAD_SIGN);
+                        entries.add(ModBlocks.GRITTY_ROAD_EDGE_SIGN);
+                        entries.add(ModBlocks.TRAFFIC_JAMS_SIGN);
+                        entries.add(ModBlocks.RIVERBANK_SIGN);
 
-                                output.accept(ModBlocks.NO_LEFT_TURN_US_SIGN);
-                                output.accept(ModBlocks.NO_RIGHT_TURN_US_SIGN);
-                                output.accept(ModBlocks.NO_U_TURN_US_SIGN);
-                                output.accept(ModBlocks.NO_ENTRY_US_SIGN);
+                        entries.add(ModBlocks.SQUARE_SIGN);
+                        entries.add(ModBlocks.DIRECTION_SIGN_LEFT_CURVE);
+                        entries.add(ModBlocks.DIRECTION_SIGN_RIGHT_CURVE);
+                        entries.add(ModBlocks.NO_THROUGH_ROAD_SIGN);
+                        entries.add(ModBlocks.PEDESTRIAN_CROSSING_LEFT_SIGN);
+                        entries.add(ModBlocks.PEDESTRIAN_CROSSING_RIGHT_SIGN);
+                        entries.add(ModBlocks.EXPRESSWAY_SIGN);
+                        entries.add(ModBlocks.MOTORWAY_SIGN);
+                        entries.add(ModBlocks.EXPRESSWAY_END_SIGN);
+                        entries.add(ModBlocks.MOTORWAY_END_SIGN);
+                        entries.add(ModBlocks.PARKING_SIGN);
+                        entries.add(ModBlocks.PARKING_GARAGE_SIGN);
 
-                                output.accept(ModBlocks.US_ROUTE_1_SIGN);
-                                output.accept(ModBlocks.US_ROUTE_2_SIGN);
-                                output.accept(ModBlocks.US_ROUTE_3_SIGN);
-                                output.accept(ModBlocks.US_ROUTE_4_SIGN);
-                                output.accept(ModBlocks.US_ROUTE_5_SIGN);
-                                output.accept(ModBlocks.US_ROUTE_6_SIGN);
-                                output.accept(ModBlocks.US_ROUTE_7_SIGN);
-                                output.accept(ModBlocks.US_ROUTE_8_SIGN);
-                                output.accept(ModBlocks.US_ROUTE_9_SIGN);
+                        entries.add(ModBlocks.PRIORITY_OVER_ONCOMING_TRAFFIC_SIGN);
+                        entries.add(ModBlocks.GIVE_WAY_TO_ONCOMING_TRAFFIC_SIGN);
 
-                                output.accept(ModBlocks.TALL_RECTANGULAR_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_5_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_10_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_15_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_20_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_25_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_30_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_35_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_40_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_45_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_50_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_55_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_60_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_65_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_70_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_75_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_80_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_85_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_90_SIGN);
-                                output.accept(ModBlocks.SPEED_LIMIT_US_95_SIGN);
+                        entries.add(ModBlocks.NO_LEFT_TURN_US_SIGN);
+                        entries.add(ModBlocks.NO_RIGHT_TURN_US_SIGN);
+                        entries.add(ModBlocks.NO_U_TURN_US_SIGN);
+                        entries.add(ModBlocks.NO_ENTRY_US_SIGN);
 
-                                output.accept(ModBlocks.VERTICAL_SIGN);
-                                output.accept(ModBlocks.GUIDING_BEACON_SIGN_LEFT);
-                                output.accept(ModBlocks.GUIDING_BEACON_SIGN_RIGHT);
-                                output.accept(ModBlocks.GUIDING_BEACON_SIGN_MIDDLE);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_SINGLE_STRIPED_LEFT);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_DOUBLE_STRIPED_LEFT);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_TRIPLE_STRIPED_LEFT);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_SINGLE_STRIPED_RIGHT);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_DOUBLE_STRIPED_RIGHT);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_TRIPLE_STRIPED_RIGHT);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_SINGLE_STRIPED);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_DOUBLE_STRIPED);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_TRIPLE_STRIPED);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_SINGLE_STRIPED);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_DOUBLE_STRIPED);
-                                output.accept(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_TRIPLE_STRIPED);
+                        entries.add(ModBlocks.US_ROUTE_1_SIGN);
+                        entries.add(ModBlocks.US_ROUTE_2_SIGN);
+                        entries.add(ModBlocks.US_ROUTE_3_SIGN);
+                        entries.add(ModBlocks.US_ROUTE_4_SIGN);
+                        entries.add(ModBlocks.US_ROUTE_5_SIGN);
+                        entries.add(ModBlocks.US_ROUTE_6_SIGN);
+                        entries.add(ModBlocks.US_ROUTE_7_SIGN);
+                        entries.add(ModBlocks.US_ROUTE_8_SIGN);
+                        entries.add(ModBlocks.US_ROUTE_9_SIGN);
 
-                                output.accept(ModBlocks.RAILWAY_CROSSBUCK_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_1_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_2_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_3_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_4_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_5_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_6_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_7_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_8_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_9_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_1_HIGHWAY_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_2_HIGHWAY_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_3_HIGHWAY_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_4_HIGHWAY_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_5_HIGHWAY_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_6_HIGHWAY_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_7_HIGHWAY_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_8_HIGHWAY_SIGN);
+                        entries.add(ModBlocks.SMALL_ROUTE_NUMBER_9_HIGHWAY_SIGN);
 
-                                if (CompatModsCheck.TLOTD) {
-                                    output.accept(ModItems.VHS_CASSETTE_1);
-                                    output.accept(ModItems.GAME_CARTRIDGE_1);
-                                }
+                        entries.add(ModBlocks.HORIZONTAL_SIGN);
+                        entries.add(ModBlocks.ONE_WAY_STREET_SIGN_LEFT);
+                        entries.add(ModBlocks.ONE_WAY_STREET_SIGN_RIGHT);
 
-                                output.accept(ModItems.ENGINE_V8_BIG_BLOCK);
-                                output.accept(ModItems.TRANSMISSION);
-                                output.accept(ModItems.LEATHER_SEAT);
-                                output.accept(ModItems.WHEEL);
-                                output.accept(ModItems.SUSPENSION);
-                                output.accept(ModItems.CHASSIS);
-                                output.accept(ModBlocks.LICENSE_PLATE);
-                                output.accept(ModItems.CAR_BODY_STALLION);
-                                output.accept(ModItems.CAR_BODY_FIRECHARGE);
-                                output.accept(ModItems.MUSCLE_CAR_STALLION);
-                                output.accept(ModItems.MUSCLE_CAR_FIRECHARGE);
+                        entries.add(ModBlocks.TALL_RECTANGULAR_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_5_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_10_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_15_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_20_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_25_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_30_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_35_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_40_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_45_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_50_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_55_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_60_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_65_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_70_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_75_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_80_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_85_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_90_SIGN);
+                        entries.add(ModBlocks.SPEED_LIMIT_US_95_SIGN);
 
-                                output.accept(ModBlocks.GUARDRAIL);
-                                output.accept(ModBlocks.GUARDRAIL_OUTER_CORNER);
-                                output.accept(ModBlocks.GUARDRAIL_INNER_CORNER);
+                        entries.add(ModBlocks.VERTICAL_SIGN);
+                        entries.add(ModBlocks.GUIDING_BEACON_SIGN_LEFT);
+                        entries.add(ModBlocks.GUIDING_BEACON_SIGN_RIGHT);
+                        entries.add(ModBlocks.GUIDING_BEACON_SIGN_MIDDLE);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_SINGLE_STRIPED_LEFT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_DOUBLE_STRIPED_LEFT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_TRIPLE_STRIPED_LEFT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_SINGLE_STRIPED_RIGHT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_DOUBLE_STRIPED_RIGHT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_RAILROAD_SIGN_TRIPLE_STRIPED_RIGHT);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_SINGLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_DOUBLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_SIGN_TRIPLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_SINGLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_DOUBLE_STRIPED);
+                        entries.add(ModBlocks.ANNOUNCEMENT_BEACON_MOTORWAY_SIGN_TRIPLE_STRIPED);
 
-                                output.accept(ModBlocks.DELINEATOR);
+                        entries.add(ModBlocks.RAILWAY_CROSSBUCK_SIGN);
 
-                                output.accept(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR);
-                                output.accept(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_2);
-                                output.accept(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_3);
-                                output.accept(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_4);
+                        if (CompatModsCheck.TLOTD) {
+                            entries.add(ModItems.VHS_CASSETTE_1);
+                            entries.add(ModItems.GAME_CARTRIDGE_1);
+                        }
 
-                                output.accept(ModBlocks.TRAFFIC_CONE);
-                                output.accept(ModBlocks.TRAFFIC_LIGHT);
-                                output.accept(ModBlocks.YELLOW_TRAFFIC_LIGHT);
-                                output.accept(ModBlocks.TRAFFIC_LIGHT_CONTROLLER);
+                        entries.add(ModItems.ENGINE_V8_BIG_BLOCK);
+                        entries.add(ModItems.TRANSMISSION);
+                        entries.add(ModItems.LEATHER_SEAT);
+                        entries.add(ModItems.WHEEL);
+                        entries.add(ModItems.SUSPENSION);
+                        entries.add(ModItems.CHASSIS);
+                        entries.add(ModBlocks.LICENSE_PLATE);
+                        entries.add(ModItems.CAR_BODY_STALLION);
+                        entries.add(ModItems.CAR_BODY_FIRECHARGE);
+                        entries.add(ModItems.MUSCLE_CAR_STALLION);
+                        entries.add(ModItems.MUSCLE_CAR_FIRECHARGE);
 
-                                output.accept(ModBlocks.FIRE_HYDRANT);
-                            })
-                            .build()
-    );
+                        entries.add(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR);
+                        entries.add(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_2);
+                        entries.add(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_3);
+                        entries.add(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_4);
+
+                        entries.add(ModBlocks.TRAFFIC_CONE);
+                        entries.add(ModBlocks.TRAFFIC_LIGHT);
+                        entries.add(ModBlocks.YELLOW_TRAFFIC_LIGHT);
+                        entries.add(ModBlocks.TRAFFIC_LIGHT_CONTROLLER);
+
+                        entries.add(ModBlocks.FIRE_HYDRANT);
+                    }).build());
 
     public static void registerItemGroups(){
         TLOTDRoadsnVehicles.LOGGER.info("Registering Item Groups for " + TLOTDRoadsnVehicles.MOD_ID);
+        if (CompatModsCheck.TLOTD) {
+            RegistryKey<ItemGroup> TLOTD_1_MATERIALS_GROUP = RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier("tlotd", "1_materials"));
+            ItemGroupEvents.modifyEntriesEvent(TLOTD_1_MATERIALS_GROUP)
+                    .register(entries -> {
+                        entries.addAfter(Registries.ITEM.get(new Identifier("tlotd", "vhs_cassette_9")), ModItems.VHS_CASSETTE_1);
+                        entries.addAfter(Registries.ITEM.get(new Identifier("tlotd", "game_cartridge_3")), ModItems.GAME_CARTRIDGE_1);
+                    });
+        }
     }
 }

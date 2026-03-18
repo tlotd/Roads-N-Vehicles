@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "tlotd"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": {
+      "item": "tlotd:game_cartridge"
+    },
+    "#": {
+      "tag": "roads-n-vehicles:cars"
+    }
+  },
+  "pattern": [
+    "#",
+    "C"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:game_cartridge_1"
+  },
+  "show_notification": true
+}

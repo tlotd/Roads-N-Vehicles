@@ -1,6 +1,11 @@
 {
   "modmenu.tlotd": "TLOTD",
 
+  "jade.roads-n-vehicles.traffic_light.stage_1": "STOP!",
+  "jade.roads-n-vehicles.traffic_light.stage_2": "Prepare to GO.",
+  "jade.roads-n-vehicles.traffic_light.stage_3": "GO!",
+  "jade.roads-n-vehicles.traffic_light.stage_4": "Prepare to STOP.",
+
   "itemgroup.roads-n-vehicles.items": "TLOTD: Roads 'n' Vehicles",
 
   "key.keyboard.shift": "Shift",
@@ -9,6 +14,9 @@
 
   "sounds.roads-n-vehicles.entity_car_idle": "Car idles",
   "sounds.roads-n-vehicles.entity_car_horn": "Car horn blares",
+
+  "entity.roads-n-vehicles.muscle_car_stallion": "Muscle Car - Stallion",
+  "entity.roads-n-vehicles.muscle_car_firecharge": "Muscle Car - Firecharge",
 
   "block.roads-n-vehicles.asphalt": "Asphalt",
 
@@ -42,10 +50,20 @@
 
   "block.roads-n-vehicles.asphalt_double_line_marking_straight": "Double Line Asphalt Marking",
   "block.roads-n-vehicles.asphalt_double_line_marking_corner": "Double Corner Asphalt Marking",
+  "block.roads-n-vehicles.asphalt_double_line_marking_t-junction": "Double Junction Asphalt Marking",
+  "block.roads-n-vehicles.asphalt_double_line_marking_cross": "Double Cross Asphalt Marking",
   "block.roads-n-vehicles.asphalt_double_yellow_line_marking_straight": "Double Yellow Line Asphalt Marking",
   "block.roads-n-vehicles.asphalt_double_yellow_line_marking_corner": "Double Yellow Corner Asphalt Marking",
+  "block.roads-n-vehicles.asphalt_double_yellow_line_marking_t-junction": "Double Yellow Junction Asphalt Marking",
+  "block.roads-n-vehicles.asphalt_double_yellow_line_marking_cross": "Double Yellow Cross Asphalt Marking",
   "block.roads-n-vehicles.asphalt_double_red_line_marking_straight": "Double Red Line Asphalt Marking",
   "block.roads-n-vehicles.asphalt_double_red_line_marking_corner": "Double Red Corner Asphalt Marking",
+  "block.roads-n-vehicles.asphalt_double_red_line_marking_t-junction": "Double Red Junction Asphalt Marking",
+  "block.roads-n-vehicles.asphalt_double_red_line_marking_cross": "Double Red Cross Asphalt Marking",
+
+  "block.roads-n-vehicles.manhole_cover": "Manhole Cover",
+
+  "block.roads-n-vehicles.iron_rod": "Iron Rod",
 
   "block.roads-n-vehicles.town_sign": "Town Sign",
   "block.roads-n-vehicles.town_sign.tooltip": "Applies custom models",
@@ -104,7 +122,11 @@
 
   "block.roads-n-vehicles.no_vehicles_sign": "No Vehicles Sign",
   "block.roads-n-vehicles.no_entry_sign": "No Entry Sign",
-
+  "block.roads-n-vehicles.motor_vehicles_prohibited_sign": "Motor Vehicles Prohibited Sign",
+  "block.roads-n-vehicles.no_overtaking_sign": "No Overtaking Sign",
+  "block.roads-n-vehicles.no_heavy_overtaking_sign": "No Heavy Overtaking Sign",
+  "block.roads-n-vehicles.end_no_overtaking_sign": "End No Overtaking Sign",
+  "block.roads-n-vehicles.end_no_heavy_overtaking_sign": "End No Heavy Overtaking Sign",
   "block.roads-n-vehicles.no_stopping_sign": "No Stopping Sign",
   "block.roads-n-vehicles.no_parking_sign": "No Parking Sign",
 
@@ -155,6 +177,21 @@
   "block.roads-n-vehicles.wild_animals_left_sign": "Wild Animals Sign (Left)",
   "block.roads-n-vehicles.wild_animals_right_sign": "Wild Animals Sign (Right)",
   "block.roads-n-vehicles.wild_dinosaurs_sign": "Wild Dinosaurs Sign",
+
+  "block.roads-n-vehicles.traffic_signals_sign": "Traffic Signals Sign",
+  "block.roads-n-vehicles.pedestrian_crossing_left_warning_sign": "Pedestrian Crossing Warning Sign (Left)",
+  "block.roads-n-vehicles.pedestrian_crossing_right_warning_sign": "Pedestrian Crossing Warning Sign (Right)",
+  "block.roads-n-vehicles.crosswind_left_sign": "Crosswind Sign (Left)",
+  "block.roads-n-vehicles.crosswind_right_sign": "Crosswind Sign (Right)",
+  "block.roads-n-vehicles.rockfall_left_sign": "Rockfall Sign (Left)",
+  "block.roads-n-vehicles.rockfall_right_sign": "Rockfall Sign (Right)",
+  "block.roads-n-vehicles.aircraft_left_sign": "Aircraft Sign (Left)",
+  "block.roads-n-vehicles.aircraft_right_sign": "Aircraft Sign (Right)",
+  "block.roads-n-vehicles.slipperiness_sign": "Slipperiness Sign",
+  "block.roads-n-vehicles.icy_road_sign": "Icy Road Sign",
+  "block.roads-n-vehicles.gritty_road_edge_sign": "Gritty Road Edge Sign",
+  "block.roads-n-vehicles.traffic_jams_sign": "Traffic Jams Sign",
+  "block.roads-n-vehicles.riverbank_sign": "Riverbank Sign",
 
   "block.roads-n-vehicles.square_sign": "Square Sign",
   "block.roads-n-vehicles.direction_sign_left_curve": "Direction Sign Left Curve",
@@ -207,6 +244,30 @@
   "block.roads-n-vehicles.us_route_7_sign": "US Route 7 Sign",
   "block.roads-n-vehicles.us_route_8_sign": "US Route 8 Sign",
   "block.roads-n-vehicles.us_route_9_sign": "US Route 9 Sign",
+
+  "block.roads-n-vehicles.small_route_number_sign": "Small Route Number Sign",
+  "block.roads-n-vehicles.small_route_number_1_sign": "Small Route Number 1 Sign",
+  "block.roads-n-vehicles.small_route_number_2_sign": "Small Route Number 2 Sign",
+  "block.roads-n-vehicles.small_route_number_3_sign": "Small Route Number 3 Sign",
+  "block.roads-n-vehicles.small_route_number_4_sign": "Small Route Number 4 Sign",
+  "block.roads-n-vehicles.small_route_number_5_sign": "Small Route Number 5 Sign",
+  "block.roads-n-vehicles.small_route_number_6_sign": "Small Route Number 6 Sign",
+  "block.roads-n-vehicles.small_route_number_7_sign": "Small Route Number 7 Sign",
+  "block.roads-n-vehicles.small_route_number_8_sign": "Small Route Number 8 Sign",
+  "block.roads-n-vehicles.small_route_number_9_sign": "Small Route Number 9 Sign",
+  "block.roads-n-vehicles.small_route_number_1_highway_sign": "Small Route Number 1 Highway Sign",
+  "block.roads-n-vehicles.small_route_number_2_highway_sign": "Small Route Number 2 Highway Sign",
+  "block.roads-n-vehicles.small_route_number_3_highway_sign": "Small Route Number 3 Highway Sign",
+  "block.roads-n-vehicles.small_route_number_4_highway_sign": "Small Route Number 4 Highway Sign",
+  "block.roads-n-vehicles.small_route_number_5_highway_sign": "Small Route Number 5 Highway Sign",
+  "block.roads-n-vehicles.small_route_number_6_highway_sign": "Small Route Number 6 Highway Sign",
+  "block.roads-n-vehicles.small_route_number_7_highway_sign": "Small Route Number 7 Highway Sign",
+  "block.roads-n-vehicles.small_route_number_8_highway_sign": "Small Route Number 8 Highway Sign",
+  "block.roads-n-vehicles.small_route_number_9_highway_sign": "Small Route Number 9 Highway Sign",
+
+  "block.roads-n-vehicles.horizontal_sign": "Horizontal Sign",
+  "block.roads-n-vehicles.one-way_street_sign_left": "One-Way Street Sign (Left)",
+  "block.roads-n-vehicles.one-way_street_sign_right": "One-Way Street Sign (Right)",
 
   "block.roads-n-vehicles.vertical_sign": "Vertical Sign",
   "block.roads-n-vehicles.guiding_beacon_sign_left": "Guiding Beacon Sign (Left)",

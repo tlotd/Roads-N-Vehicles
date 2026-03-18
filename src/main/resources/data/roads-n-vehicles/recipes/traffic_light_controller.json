@@ -1,0 +1,38 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:not",
+      "value": {
+        "condition": "fabric:all_mods_loaded",
+        "values": [
+          "tlotd"
+        ]
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:iron_ingots"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "R": {
+      "item": "minecraft:repeater"
+    },
+    "C": {
+      "item": "minecraft:comparator"
+    }
+  },
+  "pattern": [
+    "ILI",
+    "IRI",
+    "ICI"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:traffic_light_controller"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "half=top,open=false": {"model": "roads-n-vehicles:block/manhole_cover"},
+    "half=top,open=true": {"model": "roads-n-vehicles:block/manhole_cover_open"},
+    "half=bottom,open=false": {"model": "roads-n-vehicles:block/manhole_cover_bottom"},
+    "half=bottom,open=true": {"model": "roads-n-vehicles:block/manhole_cover_bottom_open"}
+  }
+}

@@ -1,11 +1,11 @@
 package net.tlotd.roads_n_vehicles.mixin.client;
 
-import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
+import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-@Mixin(CreativeModeInventoryScreen.class)
+@Mixin(CreativeInventoryScreen.class)
 public interface CreativeInventoryScreenAccessor {
-    @Accessor("scrollOffs")
-    float getScrollOffs();
+    @Accessor("scrollPosition")
+    float getScrollPosition();
 }

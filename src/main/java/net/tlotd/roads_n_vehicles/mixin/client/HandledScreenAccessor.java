@@ -1,17 +1,13 @@
 package net.tlotd.roads_n_vehicles.mixin.client;
 
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-@Mixin(AbstractContainerScreen.class)
+@Mixin(HandledScreen.class)
 public interface HandledScreenAccessor {
-    @Accessor("leftPos")
-    int getLeftPos();
-    @Accessor("topPos")
-    int getTopPos();
-    @Accessor("imageWidth")
-    int getImageWidth();
-    @Accessor("imageHeight")
-    int getImageHeight();
+    @Accessor("x") int getX();
+    @Accessor("y") int getY();
+    @Accessor("backgroundWidth") int getBackgroundWidth();
+    @Accessor("backgroundHeight") int getBackgroundHeight();
 }

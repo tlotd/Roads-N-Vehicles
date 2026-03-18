@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "tag": "roads-n-vehicles:asphalt_blocks"
+  },
+  "result": "roads-n-vehicles:asphalt_slab_line_marking_t-junction"
+}

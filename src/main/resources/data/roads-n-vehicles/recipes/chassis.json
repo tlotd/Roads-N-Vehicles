@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:metal_blocks"
+    },
+    "W": {
+      "item": "roads-n-vehicles:wheel"
+    },
+    "S": {
+      "item": "roads-n-vehicles:suspension"
+    }
+  },
+  "pattern": [
+    "WSW",
+    "S#S",
+    "WSW"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:chassis"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "roads-n-vehicles:block/triangle_sign",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "roads-n-vehicles:block/triangle_sign/rockfall_left"
+	}
+}

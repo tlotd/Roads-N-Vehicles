@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "roads-n-vehicles:block/asphalt_double_yellow_line_marking_cross",
+    "north": "roads-n-vehicles:block/asphalt_double_yellow_line_marking_straight",
+    "west": "roads-n-vehicles:block/asphalt_double_yellow_line_marking_straight",
+    "south": "roads-n-vehicles:block/asphalt_double_yellow_line_marking_straight",
+    "down": "roads-n-vehicles:block/asphalt",
+    "east": "roads-n-vehicles:block/asphalt_double_yellow_line_marking_straight",
+    "particle": "roads-n-vehicles:block/asphalt"
+  }
+}

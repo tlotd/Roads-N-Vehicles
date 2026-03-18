@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "#roads-n-vehicles:signs",
-  "result": {
-    "id":"roads-n-vehicles:yield_sign",
-    "count": 1
-  }
-}

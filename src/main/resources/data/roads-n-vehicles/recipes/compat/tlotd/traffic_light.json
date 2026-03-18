@@ -1,0 +1,42 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "tlotd"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:iron_ingots"
+    },
+    "C": {
+      "tag": "tlotd:circuit_boards"
+    },
+    "T": {
+      "item": "tlotd:cathode_ray_tube"
+    },
+    "R": {
+      "item": "minecraft:red_stained_glass"
+    },
+    "Y": {
+      "item": "minecraft:yellow_stained_glass"
+    },
+    "G": {
+      "item": "minecraft:green_stained_glass"
+    }
+  },
+  "pattern": [
+    "RTI",
+    "YTC",
+    "GTI"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:traffic_light",
+    "count": 2
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#c:metal_rods",
+    "minecraft:iron_bars"
+  ]
+}
