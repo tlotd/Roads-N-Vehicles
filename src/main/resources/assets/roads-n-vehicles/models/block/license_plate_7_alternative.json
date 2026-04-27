@@ -1,7 +1,0 @@
-{
-	"parent": "roads-n-vehicles:block/license_plate",
-	"textures": {
-		"particle": "roads-n-vehicles:block/license_plate/isso_21__alternative",
-		"license_plate": "roads-n-vehicles:block/license_plate/isso_21__alternative"
-	}
-}

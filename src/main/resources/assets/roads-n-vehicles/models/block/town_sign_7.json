@@ -1,8 +1,0 @@
-{
-	"parent": "roads-n-vehicles:block/town_sign",
-	"texture_size": [32, 32],
-	"textures": {
-		"1": "roads-n-vehicles:block/town_sign/loewenburg",
-		"2": "roads-n-vehicles:block/town_sign/loewenburg_end"
-	}
-}

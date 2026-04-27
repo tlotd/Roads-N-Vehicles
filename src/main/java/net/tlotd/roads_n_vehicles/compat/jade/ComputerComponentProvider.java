@@ -1,11 +1,11 @@
 package net.tlotd.roads_n_vehicles.compat.jade;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Vec2f;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec2;
 import net.tlotd.api.TlotdAPI;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
 import net.tlotd.roads_n_vehicles.block.ModBlocks;
@@ -25,23 +25,27 @@ import static net.tlotd.roads_n_vehicles.block.custom.ComputerBlock.SCREEN;
 public enum ComputerComponentProvider implements IBlockComponentProvider {
     INSTANCE;
 
+//    @Override
+//    public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
+//        if (accessor.getBlock().equals(ModBlocks.COMPUTER_ON)) {
+//            Optional<TlotdAPI.VideoGame> currentEntry = getAllVideoGames().stream().filter(e -> e.computerBlock() == accessor.getBlock() && e.gameID() == accessor.getBlockState().get(SCREEN)).findFirst();
+//            Item game = ModItems.GAME_CARTRIDGE_1;
+//            if (currentEntry.isPresent()) {
+//                ResourceLocation signalId = currentEntry.get().signalItem();
+//                game = BuiltInRegistries.ITEM.get(signalId);
+//            }
+//            IElementHelper elements = tooltip.getElementHelper();
+//            IElement game_element = elements.item(new ItemStack(game), 0.5f).translate(new Vec2(0, -1));
+//            tooltip.add(game_element);
+//            tooltip.append(Component.literal(" ").append(Component.translatable(game.getDescriptionId() + ".desc")));
+//        }
+//    }
     @Override
-    public void appendTooltip(ITooltip tooltip, BlockAccessor accessor, IPluginConfig config) {
-        if (accessor.getBlock().equals(ModBlocks.COMPUTER_ON)) {
-            Optional<TlotdAPI.VideoGame> currentEntry = getAllVideoGames().stream().filter(e -> e.computerBlock() == accessor.getBlock() && e.gameID() == accessor.getBlockState().get(SCREEN)).findFirst();
-            Item game = ModItems.GAME_CARTRIDGE_1;
-            if (currentEntry.isPresent()) {
-                Identifier signalId = currentEntry.get().signalItem();
-                game = Registries.ITEM.get(signalId);
-            }
-            IElementHelper elements = tooltip.getElementHelper();
-            IElement game_element = elements.item(new ItemStack(game), 0.5f).translate(new Vec2f(0, -1));
-            tooltip.add(game_element);
-            tooltip.append(Text.literal(" ").append(Text.translatable(game.getTranslationKey() + ".desc")));
-        }
+    public void appendTooltip(ITooltip iTooltip, BlockAccessor blockAccessor, IPluginConfig iPluginConfig) {
     }
+
     @Override
-    public Identifier getUid() {
-        return new Identifier(TLOTDRoadsnVehicles.MOD_ID, "computer");
+    public ResourceLocation getUid() {
+        return new ResourceLocation(TLOTDRoadsnVehicles.MOD_ID, "computer");
     }
 }

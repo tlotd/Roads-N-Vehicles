@@ -1,20 +1,41 @@
 package net.tlotd.roads_n_vehicles.entity.client;
 
-import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.util.Identifier;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.resources.ResourceLocation;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
-import net.tlotd.roads_n_vehicles.entity.custom.MuscleCarEntity;
+import net.tlotd.roads_n_vehicles.entity.custom.StallionEntity;
 
-public class MuscleCarStallionRenderer extends MobEntityRenderer<MuscleCarEntity, MuscleCarStallionModel<MuscleCarEntity>> {
-    private static final Identifier TEXTURE = new Identifier(TLOTDRoadsnVehicles.MOD_ID, "textures/entity/muscle_car_stallion/green.png");
+public class MuscleCarStallionRenderer extends EntityRenderer<StallionEntity> {
 
-    public MuscleCarStallionRenderer(EntityRendererFactory.Context context) {
-        super(context, new MuscleCarStallionModel<>(context.getPart(ModModelLayers.MUSCLE_CAR_STALLION)), 1);
+    private final MuscleCarStallionModel<StallionEntity> model;
+
+    public MuscleCarStallionRenderer(EntityRendererProvider.Context context) {
+        super(context);
+        this.model = new MuscleCarStallionModel<>(context.bakeLayer(ModModelLayers.MUSCLE_CAR_STALLION));
     }
 
     @Override
-    public Identifier getTexture(MuscleCarEntity entity) {
-        return TEXTURE;
+    public void render(StallionEntity entity, float yaw, float tickDelta,
+                       PoseStack matrices, MultiBufferSource vertexConsumers, int light) {
+        matrices.pushPose();
+        matrices.translate(0.0D, 1.5D, 0.0D);
+        matrices.mulPose(Axis.YP.rotationDegrees(180.0F - yaw));
+        matrices.scale(-1.0F, -1.0F, 1.0F);
+        VertexConsumer buffer = vertexConsumers.getBuffer(model.renderType(getTextureLocation(entity)));
+        model.renderToBuffer(matrices, buffer, light, OverlayTexture.NO_OVERLAY,
+                1.0F, 1.0F, 1.0F, 1.0F);
+        matrices.popPose();
+        super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(StallionEntity entity) {
+        return new ResourceLocation(TLOTDRoadsnVehicles.MOD_ID, "textures/entity/muscle_car/stallion.png");
     }
 }

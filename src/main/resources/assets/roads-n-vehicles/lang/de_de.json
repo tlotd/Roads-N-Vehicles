@@ -57,11 +57,13 @@
   "block.roads-n-vehicles.iron_rod": "Eisenstange",
 
   "block.roads-n-vehicles.town_sign": "Ortsschild",
-  "block.roads-n-vehicles.town_sign.tooltip": "Wendet ein spezielles Model für",
-  "block.roads-n-vehicles.town_sign.tooltip_2": "ein paar ausgewählte Städte an",
-  "block.roads-n-vehicles.town_sign.ponder": "Halte [%1$s] gedrückt für eine Liste",
-  "block.roads-n-vehicles.town_sign.tooltip_shift": "Klappt für:",
-  "block.roads-n-vehicles.town_sign.tooltip_custom": "Oder jene Befehlsdefinierte",
+  "block.roads-n-vehicles.town_sign.ponder": "Halte [%1$s] gedrückt für eine Erklärung",
+  "block.roads-n-vehicles.town_sign.ponder_1": "Stadtname und Gebietsname können",
+  "block.roads-n-vehicles.town_sign.ponder_2": "durch umbennenen des Schilds in",
+  "block.roads-n-vehicles.town_sign.ponder_3": "folgender Form angepasst werden:",
+  "block.roads-n-vehicles.town_sign.ponder_4": "Stadtname",
+  "block.roads-n-vehicles.town_sign.ponder_5": "Gebietsname",
+  "block.roads-n-vehicles.town_sign.tooltip": "Momentanes Schild wird anzeigen:",
 
   "block.roads-n-vehicles.coat_of_arms": "Ortswappen",
   "block.roads-n-vehicles.coat_of_arms.tooltip": "Wendet ein spezielles Model für",
@@ -71,11 +73,16 @@
   "block.roads-n-vehicles.coat_of_arms.tooltip_custom": "Oder jene Befehlsdefinierte",
 
   "block.roads-n-vehicles.license_plate": "Nummernschild",
-  "block.roads-n-vehicles.license_plate.tooltip": "Wendet ein spezielles Model für",
-  "block.roads-n-vehicles.license_plate.tooltip_2": "ein paar ausgewählte Spieler an",
-  "block.roads-n-vehicles.license_plate.ponder": "Halte [%1$s] gedrückt für eine Liste",
-  "block.roads-n-vehicles.license_plate.tooltip_shift": "Klappt für:",
-  "block.roads-n-vehicles.license_plate.tooltip_custom": "Oder jene Befehlsdefinierte",
+  "block.roads-n-vehicles.license_plate.ponder": "Halte [%1$s] gedrückt für eine Erklärung",
+  "block.roads-n-vehicles.license_plate.ponder_1": "Kann durch Umbenennen des Kennzeichens",
+  "block.roads-n-vehicles.license_plate.ponder_2": "angepasst werden. Verschiedene Ausdrücke",
+  "block.roads-n-vehicles.license_plate.ponder_3": "in Klammern ergeben unterschiedliche Symbole.",
+  "block.roads-n-vehicles.license_plate.ponder_4": "Zulässig sind alle internationalen",
+  "block.roads-n-vehicles.license_plate.ponder_5": "Kfz-Kennzeichen von EU-Ländern.",
+  "block.roads-n-vehicles.license_plate.ponder_6": "[D]NA{EMPTY}ME 42",
+  "block.roads-n-vehicles.license_plate.ponder_7": "\uE108NA\uE12AME 42",
+  "block.roads-n-vehicles.license_plate.dashes": "---------",
+  "block.roads-n-vehicles.license_plate.tooltip": "Momentanes Schild wird anzeigen:",
 
   "block.roads-n-vehicles.round_sign": "Rundschild",
 
@@ -178,6 +185,8 @@
   "block.roads-n-vehicles.rockfall_right_sign": "Steinschlagschild - Rechts",
   "block.roads-n-vehicles.aircraft_left_sign": "Flugbetriebsschild - Links",
   "block.roads-n-vehicles.aircraft_right_sign": "Flugbetriebsschild - Rechts",
+  "block.roads-n-vehicles.airship_left_sign": "Luftschiffbetriebsschild - Links",
+  "block.roads-n-vehicles.airship_right_sign": "Luftschiffbetriebsschild - Rechts",
   "block.roads-n-vehicles.slipperiness_sign": "Schleudergefahr-Schild",
   "block.roads-n-vehicles.icy_road_sign": "Eisglätteschild",
   "block.roads-n-vehicles.gritty_road_edge_sign": "Splittschild",
@@ -326,6 +335,8 @@
   "item.roads-n-vehicles.car_body_firecharge": "Karosserie - Firecharge",
   "item.roads-n-vehicles.muscle_car_stallion": "Auto - Stallion",
   "item.roads-n-vehicles.muscle_car_firecharge": "Auto - Firecharge",
+
+  "item.roads-n-vehicles.muscle_car.broken.tooltip": "NUR DEKORATIV (NOCH KEINE STEUERUNG)",
 
   "entity.roads-n-vehicles.muscle_car": "Auto"
 }

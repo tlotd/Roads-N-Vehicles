@@ -150,6 +150,8 @@
     "roads-n-vehicles:crosswind_right_sign",
     "roads-n-vehicles:aircraft_left_sign",
     "roads-n-vehicles:aircraft_right_sign",
+    "roads-n-vehicles:airship_left_sign",
+    "roads-n-vehicles:airship_right_sign",
     "roads-n-vehicles:slipperiness_sign",
     "roads-n-vehicles:icy_road_sign",
     "roads-n-vehicles:gritty_road_edge_sign",

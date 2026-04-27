@@ -1,0 +1,6 @@
+{
+	"parent": "roads-n-vehicles:block/town_sign",
+	"textures": {
+		"dragon": "roads-n-vehicles:block/town_sign_dragon"
+	}
+}

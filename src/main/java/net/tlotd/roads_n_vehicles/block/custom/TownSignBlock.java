@@ -1,175 +1,100 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.block.*;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.WorldAccess;
-import net.tlotd.api.TlotdAPI;
-import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
-import net.tlotd.roads_n_vehicles.networking.ClientTextureCache;
-import net.tlotd.roads_n_vehicles.world.CustomTextureManager;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.tlotd.roads_n_vehicles.block.custom.entity.TownSignBlockEntity;
+import net.tlotd.roads_n_vehicles.item.custom.TownSignBlockItem;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-import java.util.Objects;
+public class TownSignBlock extends SignBlock implements EntityBlock {
 
-public class TownSignBlock extends SignBlock {
+    public static final BooleanProperty LOCKED = BooleanProperty.create("locked");
+    public static final BooleanProperty FANCY = BooleanProperty.create("fancy");
 
-    public static final IntProperty TOWN = IntProperty.of("town", 0, 127);
-    public static final BooleanProperty FANCY = BooleanProperty.of("fancy");
-    public static final BooleanProperty CUSTOM = BooleanProperty.of("custom");
-
-    private int getDefaultSkinFor(String uuid, boolean formerTLOTD) {
-        return switch (uuid) {
-            case "212aa6f5-69a9-47d9-9ad5-19b359744edf" -> 1;
-            case "67148bd0-1a00-4bca-9d9e-ec246afbcf51" -> 2;
-            case "53c68d22-726b-4a37-b92d-8d7c4670a87d" -> 3;
-            case "ebcc701d-5e03-4e57-9279-1dd595f6a4d4" -> formerTLOTD ? 7 : 0; //ISSO_21_
-            case "08c6cfba-40cd-43e2-a929-764e9fadc442" -> formerTLOTD ? 9 : 0; //Polarfoxtm
-            case "d3018dca-9a16-43f0-8d72-19b93e33fa6b" -> 10;
-            case "125cda9f-1a5b-40c5-b3a9-02c7988940f6" -> 13;
-            case "75fcce95-16a1-417b-801d-04ebb925d56b" -> 15;
-            case "8365d4fc-c514-4c2e-a4e5-cf39fb26b0f0" -> 19;
-            default -> 0;
-        };
-    }
-
-    private boolean hasDefaultFancy(String uuid, boolean formerTLOTD) {
-        return switch (uuid) {
-            case "67148bd0-1a00-4bca-9d9e-ec246afbcf51"-> true;
-            default -> false;
-        };
-    }
-
-    public TownSignBlock(Settings settings) {
-        super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false).with(TOWN, 0).with(FANCY, false).with(CUSTOM, false));
+    public TownSignBlock(BlockBehaviour.Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(LOCKED, false).setValue(FANCY, false).setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
     }
 
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        int town = 0;
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
         boolean fancy = false;
-        boolean formerTLOTD = false;
-        PlayerEntity player = ctx.getPlayer();
-        ServerWorld world = null;
-        boolean custom = false;
-        int customTextureId;
-        if (player != null && !ctx.getWorld().isClient && player.getServer() != null) {
-            world = player.getServer().getOverworld();
+        if (context.getPlayer() != null) {
+            fancy = context.getPlayer().isCrouching();
         }
-        if (world != null) {
-            if (CompatModsCheck.TLOTD) {
-                custom = TlotdAPI.hasCustomTexture(ctx.getWorld().getServer(), Objects.requireNonNull(ctx.getPlayer()).getUuid());
-                customTextureId = TlotdAPI.getCustomTexture(ctx.getWorld().getServer(), Objects.requireNonNull(ctx.getPlayer()).getUuid());
-                formerTLOTD = TlotdAPI.formerTlotdRewards(player.getServer());
-            } else {
-                CustomTextureManager manager = CustomTextureManager.get(player.getServer());
-                custom = manager.hasTexture(player.getUuid());
-                customTextureId = manager.getTexture(player.getUuid());
-            }
-            if (custom) {
-                town = customTextureId;
-            } else {
-                town = getDefaultSkinFor(player.getUuidAsString(), formerTLOTD);
-                if (player.isSneaking() && (hasDefaultFancy(player.getUuidAsString(), formerTLOTD))) {
-                    fancy = true;
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection()).setValue(WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).is(Fluids.WATER)).setValue(FANCY, fancy);
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING, WATERLOGGED, LOCKED, FANCY);
+    }
+
+    private static final VoxelShape Z_SHAPE = Block.box(-2, 0, 7, 18, 14, 9);
+    private static final VoxelShape X_SHAPE = Block.box(7, 0, -2, 9, 14, 18);
+
+    public @NotNull VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        return getVoxelShape(blockState, Z_SHAPE, Z_SHAPE, X_SHAPE, X_SHAPE, Z_SHAPE);
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new TownSignBlockEntity(pos, state);
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult blockHitResult) {
+        ItemStack stack = player.getItemInHand(hand);
+        if (stack.is(Items.HONEYCOMB) && !state.getValue(LOCKED)) {
+            if (!level.isClientSide) {
+                level.setBlock(pos, state.setValue(LOCKED, true), 3);
+                if (!player.isCreative()) {
+                    stack.shrink(1);
                 }
+                player.awardStat(Stats.ITEM_USED.get(Items.HONEYCOMB));
+                level.playSound(null, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.PLAYERS, 1.0F, 1.0F);
             }
+            return InteractionResult.sidedSuccess(level.isClientSide);
         }
-        return this.getDefaultState()
-                .with(FACING, ctx.getHorizontalPlayerFacing())
-                .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).isOf(Fluids.WATER))
-                .with(TOWN, town)
-                .with(FANCY, fancy)
-                .with(CUSTOM, custom);
-    }
-
-    @Override
-    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING, WATERLOGGED, TOWN, FANCY, CUSTOM);
-    }
-
-    public static final VoxelShape X_SHAPE = Block.createCuboidShape(7, 0, -2, 9, 14, 18);
-    public static final VoxelShape Z_SHAPE = Block.createCuboidShape(-2, 0, 7, 18, 14, 9);
-
-    @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return switch (state.get(FACING)) {
-            case EAST, WEST -> X_SHAPE;
-            default -> Z_SHAPE;
-        };
-    }
-
-    public static final Identifier DEFAULT_FONT_ID = new Identifier("minecraft", "default");
-    public static final Identifier PLAYERS_FONT_ID = new Identifier("roads-n-vehicles", "players");
-    public static final Identifier MODS_FONT_ID = new Identifier("roads-n-vehicles", "mods");
-
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        if (Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("block.roads-n-vehicles.town_sign.tooltip").formatted(Formatting.GRAY));
-            tooltip.add(Text.translatable("block.roads-n-vehicles.town_sign.tooltip_2").formatted(Formatting.GRAY));
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable("block.roads-n-vehicles.town_sign.ponder", Text.translatable("key.keyboard.shift").formatted(Formatting.WHITE)).formatted(Formatting.DARK_GRAY));
-            Style style = this.getName().getStyle();
-            tooltip.add(Text.translatable("block.roads-n-vehicles.town_sign.tooltip_shift").formatted(Formatting.GRAY));
-            tooltip.add(Text.literal("\uE000").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" TLOTD - Worldspawn").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.literal("\uE001").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Isla_Nublar - Drachenheide").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.literal("\uE002").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" EinsDarki - Little Tokyo").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            if (CompatModsCheck.TLOTD) {
-                if (TlotdAPI.formerTlotdRewardsClient()) {
-                    tooltip.add(Text.literal("\uE006").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" ISSO_21_ - Löwenburg").setStyle(style.withFont(DEFAULT_FONT_ID))));
-                    tooltip.add(Text.literal("\uE008").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Polarfoxtm - Zorkcrad").setStyle(style.withFont(DEFAULT_FONT_ID))));
-                }
-            }
-            tooltip.add(Text.literal("\uE009").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Salsafox - New California Republic").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.literal("\uE00E").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" akashic_system - Firmament").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.literal("\uE012").setStyle(style.withFont(PLAYERS_FONT_ID)).append(Text.literal(" Jakx444 - New Haven").setStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Text.translatable("block.roads-n-vehicles.town_sign.tooltip_custom").formatted(Formatting.GRAY));
-            MinecraftClient client = MinecraftClient.getInstance();
-            if (client.player != null && client.getServer() != null) {
-                if (CompatModsCheck.TLOTD) {
-                    if (!TlotdAPI.getClientTextures().isEmpty()) {
-                        TlotdAPI.getClientTextures().forEach((uuid, entry) -> tooltip.add(Text.literal("\uE000 ").setStyle(style.withFont(MODS_FONT_ID)).append(Text.literal(entry.getPlayerName()).setStyle(style.withFont(DEFAULT_FONT_ID)))));
-                    } else {
-                        tooltip.add(Text.literal("...").formatted(Formatting.DARK_GRAY));
+        if (stack.is(Items.NAME_TAG) && stack.hasCustomHoverName()) {
+            if (!level.isClientSide) {
+                BlockEntity be = level.getBlockEntity(pos);
+                if (be instanceof TownSignBlockEntity sign) {
+                    String raw = stack.getHoverName().getString();
+                    String normalized = TownSignBlockItem.normalize(raw);
+                    if (state.getValue(LOCKED) || normalized.equals(sign.getText())) {
+                        level.playSound(null, pos, SoundEvents.WAXED_SIGN_INTERACT_FAIL, SoundSource.PLAYERS, 1.0F, 1.0F);
+                        return InteractionResult.PASS;
                     }
-                } else {
-                    if (!ClientTextureCache.TEXTURES.isEmpty()) {
-                        ClientTextureCache.TEXTURES.forEach((uuid, entry) -> tooltip.add(Text.literal("\uE001 ").setStyle(style.withFont(MODS_FONT_ID)).append(Text.literal(entry.playerName).setStyle(style.withFont(DEFAULT_FONT_ID)))));
-                    } else {
-                        tooltip.add(Text.literal("...").formatted(Formatting.DARK_GRAY));
-                    }
+                    sign.setText(normalized);
+                    player.awardStat(Stats.ITEM_USED.get(Items.NAME_TAG));
+                    level.playSound(null, pos, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 0.5f, 1.0f);
                 }
             }
-        } else {
-            tooltip.add(Text.translatable("block.roads-n-vehicles.town_sign.tooltip").formatted(Formatting.GRAY));
-            tooltip.add(Text.translatable("block.roads-n-vehicles.town_sign.tooltip_2").formatted(Formatting.GRAY));
-            tooltip.add(Text.literal(""));
-            tooltip.add(Text.translatable("block.roads-n-vehicles.town_sign.ponder", Text.translatable("key.keyboard.shift").formatted(Formatting.GRAY)).formatted(Formatting.DARK_GRAY));
+            return InteractionResult.sidedSuccess(level.isClientSide);
         }
-        super.appendTooltip(stack, world, tooltip, options);
+        return InteractionResult.PASS;
     }
 }

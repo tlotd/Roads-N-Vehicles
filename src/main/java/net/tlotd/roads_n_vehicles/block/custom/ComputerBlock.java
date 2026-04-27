@@ -1,148 +1,64 @@
 package net.tlotd.roads_n_vehicles.block.custom;
 
-import net.minecraft.block.*;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.BlockRotation;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.tlotd.api.TlotdAPI;
-import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
-public class ComputerBlock extends Block {
+public class ComputerBlock extends SignBlock {
 
-    public static final IntProperty SCREEN = IntProperty.of("screen", 0, 127);
-    public static final BooleanProperty MENU = BooleanProperty.of("menu");
-    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
+    public static final IntegerProperty SCREEN = IntegerProperty.create("screen", 0, 127);
+    public static final BooleanProperty MENU = BooleanProperty.create("menu");
 
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState()
-                .with(FACING, ctx.getHorizontalPlayerFacing())
-                .with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).isOf(Fluids.WATER))
-                .with(SCREEN, 0)
-                .with(MENU, false);
+    public ComputerBlock(BlockBehaviour.Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(SCREEN, 0).setValue(MENU, false).setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
     }
 
     @Override
-    public FluidState getFluidState(BlockState state) {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
+        BlockPos blockPos = blockPlaceContext.getClickedPos();
+        Direction direction = blockPlaceContext.getHorizontalDirection();
+        FluidState fluidState = blockPlaceContext.getLevel().getFluidState(blockPos);
+        assert blockPlaceContext.getPlayer() != null;
+        return this.defaultBlockState().setValue(SCREEN, 0).setValue(MENU, false).setValue(FACING, direction).setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (state.get(WATERLOGGED)) {
-            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-        }
-
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-    }
-
-    @Override
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
-    }
-
-    @Override
-    public void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, WATERLOGGED, SCREEN, MENU);
     }
 
-    public ComputerBlock(Settings settings) {
-        super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false).with(SCREEN, 0).with(MENU, false));
-    }
+    private static final VoxelShape WEST_SHAPE = Shapes.or(
+            Block.box(0, 0, 0, 12, 13, 16),
+            Block.box(12.5, 0, 0, 16, 1, 16)
+    );
+    private static final VoxelShape NORTH_SHAPE = Shapes.or(
+            Block.box(0, 0, 0, 16, 13, 12),
+            Block.box(0, 0, 12.5, 16, 1, 16)
+    );
+    private static final VoxelShape EAST_SHAPE = Shapes.or(
+            Block.box(4, 0, 0, 16, 13, 16),
+            Block.box(0, 0, 0, 3.5, 1, 16)
+    );
+    private static final VoxelShape SOUTH_SHAPE = Shapes.or(
+            Block.box(0, 0, 4, 16, 13, 16),
+            Block.box(0, 0, 0, 16, 1, 3.5)
+    );
 
-    public static final VoxelShape NORTH_SHAPE = VoxelShapes.union(
-            Block.createCuboidShape(0, 0, 0, 16, 13, 12),
-            Block.createCuboidShape(0, 0, 12.5, 16, 1, 16));
-    public static final VoxelShape WEST_SHAPE = VoxelShapes.union(
-            Block.createCuboidShape(0, 0, 0, 12, 13, 16),
-            Block.createCuboidShape(12.5, 0, 0, 16, 1, 16));
-    public static final VoxelShape SOUTH_SHAPE = VoxelShapes.union(
-            Block.createCuboidShape(0, 0, 4, 16, 13, 16),
-            Block.createCuboidShape(0, 0, 0, 16, 1, 3.5));
-    public static final VoxelShape EAST_SHAPE = VoxelShapes.union(
-            Block.createCuboidShape(4, 0, 0, 16, 13, 16),
-            Block.createCuboidShape(0, 0, 0, 3.5, 1, 16));
-
-    @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return switch (state.get(FACING)) {
-            case EAST -> EAST_SHAPE;
-            case SOUTH -> SOUTH_SHAPE;
-            case WEST -> WEST_SHAPE;
-            default -> NORTH_SHAPE;
-        };
-    }
-
-    @Override
-    public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
-    }
-
-    @Override
-    public MutableText getName() {
-        return Text.translatable("block.tlotd.computer");
-    }
-
-    @Override
-    public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        if (CompatModsCheck.TLOTD) {
-            return Registries.ITEM.get(new Identifier("tlotd", "computer")).getDefaultStack();
-        } else return Items.SMOOTH_QUARTZ.getDefaultStack();
-    }
-
-    private void TurnOffBlocks(World world, BlockPos pos) {
-        if (world.getBlockState(pos.north()).isIn(TagKey.of(RegistryKeys.BLOCK, new Identifier("tlotd", "computer_accessories")))) {
-            world.setBlockState(pos.north(), world.getBlockState(pos.north()).with(BooleanProperty.of("on"), false));
-        }
-        if (world.getBlockState(pos.east()).isIn(TagKey.of(RegistryKeys.BLOCK, new Identifier("tlotd", "computer_accessories")))) {
-            world.setBlockState(pos.east(), world.getBlockState(pos.east()).with(BooleanProperty.of("on"), false));
-        }
-        if (world.getBlockState(pos.south()).isIn(TagKey.of(RegistryKeys.BLOCK, new Identifier("tlotd", "computer_accessories")))) {
-            world.setBlockState(pos.south(), world.getBlockState(pos.south()).with(BooleanProperty.of("on"), false));
-        }
-        if (world.getBlockState(pos.west()).isIn(TagKey.of(RegistryKeys.BLOCK, new Identifier("tlotd", "computer_accessories")))) {
-            world.setBlockState(pos.west(), world.getBlockState(pos.west()).with(BooleanProperty.of("on"), false));
-        }
-    }
-
-    @Override
-    public void onBroken(WorldAccess world, BlockPos pos, BlockState state) {
-        super.onBroken(world, pos, state);
-        TurnOffBlocks((World) world, pos);
-    }
-
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!CompatModsCheck.TLOTD) return ActionResult.PASS;
-        if (world.isClient) return ActionResult.SUCCESS;
-        world.setBlockState(pos, TlotdAPI.handleComputerUse(state, world, pos, player, hand));
-        return ActionResult.SUCCESS;
+    public @NotNull VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        return getVoxelShape(blockState, NORTH_SHAPE, SOUTH_SHAPE, WEST_SHAPE, EAST_SHAPE, NORTH_SHAPE);
     }
 }

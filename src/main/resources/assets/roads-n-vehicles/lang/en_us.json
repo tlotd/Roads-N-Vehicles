@@ -66,11 +66,13 @@
   "block.roads-n-vehicles.iron_rod": "Iron Rod",
 
   "block.roads-n-vehicles.town_sign": "Town Sign",
-  "block.roads-n-vehicles.town_sign.tooltip": "Applies custom models",
-  "block.roads-n-vehicles.town_sign.tooltip_2": "for a few select towns",
-  "block.roads-n-vehicles.town_sign.ponder": "Hold [%1$s] for a list",
-  "block.roads-n-vehicles.town_sign.tooltip_shift": "Works for:",
-  "block.roads-n-vehicles.town_sign.tooltip_custom": "Or any command defined:",
+  "block.roads-n-vehicles.town_sign.ponder": "Hold [%1$s] for an explanation",
+  "block.roads-n-vehicles.town_sign.ponder_1": "Town name and area name can",
+  "block.roads-n-vehicles.town_sign.ponder_2": "be customized by renaming the",
+  "block.roads-n-vehicles.town_sign.ponder_3": "Sign in the following pattern:",
+  "block.roads-n-vehicles.town_sign.ponder_4": "Town name",
+  "block.roads-n-vehicles.town_sign.ponder_5": "Area name",
+  "block.roads-n-vehicles.town_sign.tooltip": "Current sign will display:",
 
   "block.roads-n-vehicles.coat_of_arms": "Coat of Arms",
   "block.roads-n-vehicles.coat_of_arms.tooltip": "Applies custom models",
@@ -80,11 +82,16 @@
   "block.roads-n-vehicles.coat_of_arms.tooltip_custom": "Or any command defined:",
 
   "block.roads-n-vehicles.license_plate": "License Plate",
-  "block.roads-n-vehicles.license_plate.tooltip": "Applies custom models",
-  "block.roads-n-vehicles.license_plate.tooltip_2": "for a few select players",
-  "block.roads-n-vehicles.license_plate.ponder": "Hold [%1$s] for a list",
-  "block.roads-n-vehicles.license_plate.tooltip_shift": "Works for:",
-  "block.roads-n-vehicles.license_plate.tooltip_custom": "Or any command defined:",
+  "block.roads-n-vehicles.license_plate.ponder": "Hold [%1$s] for an explanation",
+  "block.roads-n-vehicles.license_plate.ponder_1": "Can be customized by renaming",
+  "block.roads-n-vehicles.license_plate.ponder_2": "the plate. Different bracketed",
+  "block.roads-n-vehicles.license_plate.ponder_3": "phrases create different symbols.",
+  "block.roads-n-vehicles.license_plate.ponder_4": "Valid are all international vehicle",
+  "block.roads-n-vehicles.license_plate.ponder_5": "registration codes of EU countries.",
+  "block.roads-n-vehicles.license_plate.ponder_6": "[UK]NA{EMPTY}ME 42",
+  "block.roads-n-vehicles.license_plate.ponder_7": "\uE123NA\uE12AME 42",
+  "block.roads-n-vehicles.license_plate.dashes": "---------",
+  "block.roads-n-vehicles.license_plate.tooltip": "Current plate will display:",
 
   "block.roads-n-vehicles.round_sign": "Round Sign",
 
@@ -187,6 +194,8 @@
   "block.roads-n-vehicles.rockfall_right_sign": "Rockfall Sign (Right)",
   "block.roads-n-vehicles.aircraft_left_sign": "Aircraft Sign (Left)",
   "block.roads-n-vehicles.aircraft_right_sign": "Aircraft Sign (Right)",
+  "block.roads-n-vehicles.airship_left_sign": "Airship Sign (Left)",
+  "block.roads-n-vehicles.airship_right_sign": "Airship Sign (Right)",
   "block.roads-n-vehicles.slipperiness_sign": "Slipperiness Sign",
   "block.roads-n-vehicles.icy_road_sign": "Icy Road Sign",
   "block.roads-n-vehicles.gritty_road_edge_sign": "Gritty Road Edge Sign",
@@ -335,6 +344,8 @@
   "item.roads-n-vehicles.car_body_firecharge": "Car Body - Firecharge",
   "item.roads-n-vehicles.muscle_car_stallion": "Muscle Car - Stallion",
   "item.roads-n-vehicles.muscle_car_firecharge": "Muscle Car - Firecharge",
+
+  "item.roads-n-vehicles.muscle_car.broken.tooltip": "DECORATIVE FOR NOW (NO CONTROLS YET)",
 
   "entity.roads-n-vehicles.muscle_car": "Muscle Car"
 }

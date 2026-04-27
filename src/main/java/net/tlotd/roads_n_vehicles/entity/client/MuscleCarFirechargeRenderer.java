@@ -1,20 +1,41 @@
 package net.tlotd.roads_n_vehicles.entity.client;
 
-import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.util.Identifier;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.resources.ResourceLocation;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
-import net.tlotd.roads_n_vehicles.entity.custom.MuscleCarEntity;
+import net.tlotd.roads_n_vehicles.entity.custom.FirechargeEntity;
 
-public class MuscleCarFirechargeRenderer extends MobEntityRenderer<MuscleCarEntity, MuscleCarFirechargeModel<MuscleCarEntity>> {
-    private static final Identifier TEXTURE = new Identifier(TLOTDRoadsnVehicles.MOD_ID, "textures/entity/muscle_car_firecharge/black.png");
+public class MuscleCarFirechargeRenderer extends EntityRenderer<FirechargeEntity> {
 
-    public MuscleCarFirechargeRenderer(EntityRendererFactory.Context context) {
-        super(context, new MuscleCarFirechargeModel<>(context.getPart(ModModelLayers.MUSCLE_CAR_FIRECHARGE)), 1);
+    private final MuscleCarFirechargeModel<FirechargeEntity> model;
+
+    public MuscleCarFirechargeRenderer(EntityRendererProvider.Context context) {
+        super(context);
+        this.model = new MuscleCarFirechargeModel<>(context.bakeLayer(ModModelLayers.MUSCLE_CAR_FIRECHARGE));
     }
 
     @Override
-    public Identifier getTexture(MuscleCarEntity entity) {
-        return TEXTURE;
+    public void render(FirechargeEntity entity, float yaw, float tickDelta,
+                       PoseStack matrices, MultiBufferSource vertexConsumers, int light) {
+        matrices.pushPose();
+        matrices.translate(0.0D, 1.5D, 0.0D);
+        matrices.mulPose(Axis.YP.rotationDegrees(180.0F - yaw));
+        matrices.scale(-1.0F, -1.0F, 1.0F);
+        VertexConsumer buffer = vertexConsumers.getBuffer(model.renderType(getTextureLocation(entity)));
+        model.renderToBuffer(matrices, buffer, light, OverlayTexture.NO_OVERLAY,
+                1.0F, 1.0F, 1.0F, 1.0F);
+        matrices.popPose();
+        super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(FirechargeEntity entity) {
+        return new ResourceLocation(TLOTDRoadsnVehicles.MOD_ID, "textures/entity/muscle_car/firecharge.png");
     }
 }

@@ -1,0 +1,40 @@
+{
+    "providers": [
+        {
+            "type": "reference",
+            "id": "minecraft:include/space"
+        },
+        {
+            "type": "bitmap",
+            "file": "roads-n-vehicles:font/license_plate_characters.png",
+            "height": 16,
+            "ascent": 12,
+            "chars": [
+                "\uE000\uE001\uE002\uE003\uE004\uE005\uE006\uE007",
+                "\uE008\uE009\uE00A\uE00B\uE00C\uE00D\uE00E\uE00F",
+                "\uE010\uE011\uE012\uE013\uE014\uE015\uE016\uE017",
+                "\uE018\uE019\uE01A\uE01B\uE01C\uE01D\uE01E\uE01F",
+                "\uE020\uE021\uE022\uE023\uE024\uE025\uE026\uE027",
+                "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+                "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+                "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "roads-n-vehicles:font/license_plate_symbols.png",
+            "height": 16,
+            "ascent": 12,
+            "chars": [
+                "\uE100\uE101\uE102\uE103\uE104\uE105\uE106\uE107",
+                "\uE108\uE109\uE10A\uE10B\uE10C\uE10D\uE10E\uE10F",
+                "\uE110\uE111\uE112\uE113\uE114\uE115\uE116\uE117",
+                "\uE118\uE119\uE11A\uE11B\uE11C\uE11D\uE11E\uE11F",
+                "\uE120\uE121\uE122\uE123\uE124\uE125\uE126\uE127",
+                "\uE128\uE129\uE12A\uE12B\uE12C\uE12D\uE12E\uE12F",
+                "\uE130\uE131\uE132\uE133\uE134\uE135\uE136\uE137",
+                "\uE138\uE139\uE13A\uE13B\uE13C\uE13D\uE13E\uE13F"
+            ]
+        }
+    ]
+}

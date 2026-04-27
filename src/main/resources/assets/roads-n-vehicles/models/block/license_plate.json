@@ -1,8 +1,8 @@
 {
 	"credit": "Made by Isla_Nublar for the TLOTD Mod (https://tlotd.net)",
 	"textures": {
-		"particle": "roads-n-vehicles:block/license_plate/default",
-		"license_plate": "roads-n-vehicles:block/license_plate/default"
+		"particle": "roads-n-vehicles:block/license_plate",
+		"license_plate": "roads-n-vehicles:block/license_plate"
 	},
 	"elements": [
 		{
