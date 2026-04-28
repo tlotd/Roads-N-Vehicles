@@ -6,6 +6,9 @@
   "sounds.roads-n-vehicles.entity_car_idle": "Auto brummt",
   "sounds.roads-n-vehicles.entity_car_horn": "Autohupe ertöhnt",
 
+  "entity.roads-n-vehicles.muscle_car_stallion": "Auto - Stallion",
+  "entity.roads-n-vehicles.muscle_car_firecharge": "Auto - Firecharge",
+
   "block.roads-n-vehicles.asphalt": "Asphalt",
 
   "block.roads-n-vehicles.asphalt_line_marking_arrow": "Asphaltpfeil",
@@ -38,17 +41,29 @@
 
   "block.roads-n-vehicles.asphalt_double_line_marking_straight": "Doppelte Asphaltlinienmarkierung",
   "block.roads-n-vehicles.asphalt_double_line_marking_corner": "Doppelte Asphalteckmarkierung",
+  "block.roads-n-vehicles.asphalt_double_line_marking_t-junction": "Doppelte Asphaltkreuzungsmarkierung",
+  "block.roads-n-vehicles.asphalt_double_line_marking_cross": "Doppelte Asphaltkreuzmarkierung",
   "block.roads-n-vehicles.asphalt_double_yellow_line_marking_straight": "Doppelte Gelbe Asphaltlinienmarkierung",
   "block.roads-n-vehicles.asphalt_double_yellow_line_marking_corner": "Doppelte Gelbe Asphalteckmarkierung",
+  "block.roads-n-vehicles.asphalt_double_yellow_line_marking_t-junction": "Doppelte Gelbe Asphaltkreuzungsmarkierung",
+  "block.roads-n-vehicles.asphalt_double_yellow_line_marking_cross": "Doppelte Gelbe Asphaltkreuzmarkierung",
   "block.roads-n-vehicles.asphalt_double_red_line_marking_straight": "Doppelte Rote Asphaltlinienmarkierung",
   "block.roads-n-vehicles.asphalt_double_red_line_marking_corner": "Doppelte Rote Asphalteckmarkierung",
+  "block.roads-n-vehicles.asphalt_double_red_line_marking_t-junction": "Doppelte Rote Asphaltkreuzungsmarkierung",
+  "block.roads-n-vehicles.asphalt_double_red_line_marking_cross": "Doppelte Rote Asphaltkreuzmarkierung",
+
+  "block.roads-n-vehicles.manhole_cover": "Gullydeckel",
+
+  "block.roads-n-vehicles.iron_rod": "Eisenstange",
 
   "block.roads-n-vehicles.town_sign": "Ortsschild",
-  "block.roads-n-vehicles.town_sign.tooltip": "Wendet ein spezielles Model für",
-  "block.roads-n-vehicles.town_sign.tooltip_2": "ein paar ausgewählte Städte an",
-  "block.roads-n-vehicles.town_sign.ponder": "Halte [%1$s] gedrückt für eine Liste",
-  "block.roads-n-vehicles.town_sign.tooltip_shift": "Klappt für:",
-  "block.roads-n-vehicles.town_sign.tooltip_custom": "Oder jene Befehlsdefinierte",
+  "block.roads-n-vehicles.town_sign.ponder": "Halte [%1$s] gedrückt für eine Erklärung",
+  "block.roads-n-vehicles.town_sign.ponder_1": "Stadtname und Gebietsname können",
+  "block.roads-n-vehicles.town_sign.ponder_2": "durch umbennenen des Schilds in",
+  "block.roads-n-vehicles.town_sign.ponder_3": "folgender Form angepasst werden:",
+  "block.roads-n-vehicles.town_sign.ponder_4": "Stadtname",
+  "block.roads-n-vehicles.town_sign.ponder_5": "Gebietsname",
+  "block.roads-n-vehicles.town_sign.tooltip": "Momentanes Schild wird anzeigen:",
 
   "block.roads-n-vehicles.coat_of_arms": "Ortswappen",
   "block.roads-n-vehicles.coat_of_arms.tooltip": "Wendet ein spezielles Model für",
@@ -58,11 +73,16 @@
   "block.roads-n-vehicles.coat_of_arms.tooltip_custom": "Oder jene Befehlsdefinierte",
 
   "block.roads-n-vehicles.license_plate": "Nummernschild",
-  "block.roads-n-vehicles.license_plate.tooltip": "Wendet ein spezielles Model für",
-  "block.roads-n-vehicles.license_plate.tooltip_2": "ein paar ausgewählte Spieler an",
-  "block.roads-n-vehicles.license_plate.ponder": "Halte [%1$s] gedrückt für eine Liste",
-  "block.roads-n-vehicles.license_plate.tooltip_shift": "Klappt für:",
-  "block.roads-n-vehicles.license_plate.tooltip_custom": "Oder jene Befehlsdefinierte",
+  "block.roads-n-vehicles.license_plate.ponder": "Halte [%1$s] gedrückt für eine Erklärung",
+  "block.roads-n-vehicles.license_plate.ponder_1": "Kann durch Umbenennen des Kennzeichens",
+  "block.roads-n-vehicles.license_plate.ponder_2": "angepasst werden. Verschiedene Ausdrücke",
+  "block.roads-n-vehicles.license_plate.ponder_3": "in Klammern ergeben unterschiedliche Symbole.",
+  "block.roads-n-vehicles.license_plate.ponder_4": "Zulässig sind alle internationalen",
+  "block.roads-n-vehicles.license_plate.ponder_5": "Kfz-Kennzeichen von EU-Ländern.",
+  "block.roads-n-vehicles.license_plate.ponder_6": "[D]NA{EMPTY}ME 42",
+  "block.roads-n-vehicles.license_plate.ponder_7": "\uE108NA\uE12AME 42",
+  "block.roads-n-vehicles.license_plate.dashes": "---------",
+  "block.roads-n-vehicles.license_plate.tooltip": "Momentanes Schild wird anzeigen:",
 
   "block.roads-n-vehicles.round_sign": "Rundschild",
 
@@ -100,7 +120,11 @@
 
   "block.roads-n-vehicles.no_vehicles_sign": "Verbot für Fahrzeuge aller Art Schild",
   "block.roads-n-vehicles.no_entry_sign": "Verbot der Einfahrt Schild",
-
+  "block.roads-n-vehicles.motor_vehicles_prohibited_sign": "Verbot für Krafträder und mehrspurige Kraftfahrzeuge",
+  "block.roads-n-vehicles.no_overtaking_sign": "Überholverbot für Kraftfahrzeuge aller Art",
+  "block.roads-n-vehicles.no_heavy_overtaking_sign": "Überholverbot für schwere Kraftfahrzeuge",
+  "block.roads-n-vehicles.end_no_overtaking_sign": "Ende des Überholverbotes für Kraftfahrzeuge aller Art",
+  "block.roads-n-vehicles.end_no_heavy_overtaking_sign": "Ende des Überholverbots für schwere Kraftfahrzeuge",
   "block.roads-n-vehicles.no_stopping_sign": "Absolutes Halteverbotsschild",
   "block.roads-n-vehicles.no_parking_sign": "Eingeschränktes Halteverbotsschild",
 
@@ -151,6 +175,23 @@
   "block.roads-n-vehicles.wild_animals_left_sign": "Wildwechselschild - Links",
   "block.roads-n-vehicles.wild_animals_right_sign": "Wildwechselschild - Rechts",
   "block.roads-n-vehicles.wild_dinosaurs_sign": "Wildsaurierschild",
+
+  "block.roads-n-vehicles.traffic_signals_sign": "Lichtzeichenanlagenschild",
+  "block.roads-n-vehicles.pedestrian_crossing_left_warning_sign": "Fußgängerüberwegswarnschild - Links",
+  "block.roads-n-vehicles.pedestrian_crossing_right_warning_sign": "Fußgängerüberwegswarnschild - Rechts",
+  "block.roads-n-vehicles.crosswind_left_sign": "Seitenwindschild - Links",
+  "block.roads-n-vehicles.crosswind_right_sign": "Seitenwindschild - Rechts",
+  "block.roads-n-vehicles.rockfall_left_sign": "Steinschlagschild - Links",
+  "block.roads-n-vehicles.rockfall_right_sign": "Steinschlagschild - Rechts",
+  "block.roads-n-vehicles.aircraft_left_sign": "Flugbetriebsschild - Links",
+  "block.roads-n-vehicles.aircraft_right_sign": "Flugbetriebsschild - Rechts",
+  "block.roads-n-vehicles.airship_left_sign": "Luftschiffbetriebsschild - Links",
+  "block.roads-n-vehicles.airship_right_sign": "Luftschiffbetriebsschild - Rechts",
+  "block.roads-n-vehicles.slipperiness_sign": "Schleudergefahr-Schild",
+  "block.roads-n-vehicles.icy_road_sign": "Eisglätteschild",
+  "block.roads-n-vehicles.gritty_road_edge_sign": "Splittschild",
+  "block.roads-n-vehicles.traffic_jams_sign": "Stauschild",
+  "block.roads-n-vehicles.riverbank_sign": "Uferschild",
 
   "block.roads-n-vehicles.square_sign": "Rechtecksschild",
   "block.roads-n-vehicles.direction_sign_left_curve": "Richtungstafel in Kurven - Links",
@@ -203,6 +244,30 @@
   "block.roads-n-vehicles.us_route_7_sign": "US Route 7 Schild",
   "block.roads-n-vehicles.us_route_8_sign": "US Route 8 Schild",
   "block.roads-n-vehicles.us_route_9_sign": "US Route 9 Schild",
+
+  "block.roads-n-vehicles.small_route_number_sign": "Kleines Straßennummernschild",
+  "block.roads-n-vehicles.small_route_number_1_sign": "Kleines Bundesstraße 1 Schild",
+  "block.roads-n-vehicles.small_route_number_2_sign": "Kleines Bundesstraße 2 Schild",
+  "block.roads-n-vehicles.small_route_number_3_sign": "Kleines Bundesstraße 3 Schild",
+  "block.roads-n-vehicles.small_route_number_4_sign": "Kleines Bundesstraße 4 Schild",
+  "block.roads-n-vehicles.small_route_number_5_sign": "Kleines Bundesstraße 5 Schild",
+  "block.roads-n-vehicles.small_route_number_6_sign": "Kleines Bundesstraße 6 Schild",
+  "block.roads-n-vehicles.small_route_number_7_sign": "Kleines Bundesstraße 7 Schild",
+  "block.roads-n-vehicles.small_route_number_8_sign": "Kleines Bundesstraße 8 Schild",
+  "block.roads-n-vehicles.small_route_number_9_sign": "Kleines Bundesstraße 9 Schild",
+  "block.roads-n-vehicles.small_route_number_1_highway_sign": "Kleines Autobahn 1 Schild",
+  "block.roads-n-vehicles.small_route_number_2_highway_sign": "Kleines Autobahn 2 Schild",
+  "block.roads-n-vehicles.small_route_number_3_highway_sign": "Kleines Autobahn 3 Schild",
+  "block.roads-n-vehicles.small_route_number_4_highway_sign": "Kleines Autobahn 4 Schild",
+  "block.roads-n-vehicles.small_route_number_5_highway_sign": "Kleines Autobahn 5 Schild",
+  "block.roads-n-vehicles.small_route_number_6_highway_sign": "Kleines Autobahn 6 Schild",
+  "block.roads-n-vehicles.small_route_number_7_highway_sign": "Kleines Autobahn 7 Schild",
+  "block.roads-n-vehicles.small_route_number_8_highway_sign": "Kleines Autobahn 8 Schild",
+  "block.roads-n-vehicles.small_route_number_9_highway_sign": "Kleines Autobahn 9 Schild",
+
+  "block.roads-n-vehicles.horizontal_sign": "Horizontales Schild",
+  "block.roads-n-vehicles.one-way_street_sign_left": "Einbahnstraßenschild - Linksweisend",
+  "block.roads-n-vehicles.one-way_street_sign_right": "Einbahnstraßenschild - Rechtsweisend",
 
   "block.roads-n-vehicles.vertical_sign": "Verticales Schild",
   "block.roads-n-vehicles.guiding_beacon_sign_left": "Leitbake - Links",
@@ -270,6 +335,8 @@
   "item.roads-n-vehicles.car_body_firecharge": "Karosserie - Firecharge",
   "item.roads-n-vehicles.muscle_car_stallion": "Auto - Stallion",
   "item.roads-n-vehicles.muscle_car_firecharge": "Auto - Firecharge",
+
+  "item.roads-n-vehicles.muscle_car.broken.tooltip": "NUR DEKORATIV (NOCH KEINE STEUERUNG)",
 
   "entity.roads-n-vehicles.muscle_car": "Auto"
 }

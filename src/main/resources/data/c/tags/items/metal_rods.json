@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:iron_rods",
+      "required": false
+    },
+    {
+      "id": "#c:steel_rods",
+      "required": false
+    }
+  ]
+}

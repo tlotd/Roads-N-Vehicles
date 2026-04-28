@@ -1,3 +1,6 @@
 {
-  "parent": "roads-n-vehicles:block/license_plate"
+  "parent": "roads-n-vehicles:block/license_plate",
+	"textures": {
+		"license_plate": "roads-n-vehicles:block/license_plate_inventory"
+	}
 }

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "tag": "roads-n-vehicles:guardrails"
-  },
-  "result": { "id": "roads-n-vehicles:guardrail_inner_corner" }
-}

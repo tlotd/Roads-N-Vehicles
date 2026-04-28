@@ -21,6 +21,9 @@
 		],
 		"client": [
 			"net.tlotd.roads_n_vehicles.TLOTDRoadsnVehiclesClient"
+		],
+		"jade": [
+			"net.tlotd.roads_n_vehicles.compat.jade.TLOTDRoadsnVehiclesJadeIntegration"
 		]
 	},
 	"mixins": [
@@ -33,17 +36,14 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"tlotd": ">=0.4.1"
-	},
-	"breaks": {
-		"tlotd": "<0.4.1"
+		"tlotd": ">=0.4.3"
 	},
 	"custom": {
 		"modmenu": {
 			"parent": {
 				"id": "tlotd",
 				"name": "TLOTD",
-				"description": "Compatible with versions >=0.4.1 of our main mod: TLOTD.",
+				"description": "Compatible with all versions of our main mod: TLOTD.",
 				"icon": "assets/roads-n-vehicles/tlotd_icon.png"
 			},
 			"links": {

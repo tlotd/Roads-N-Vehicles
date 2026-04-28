@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "roads-n-vehicles:block/iron_rod"
+    },
+    "axis=z": {
+      "model": "roads-n-vehicles:block/iron_rod",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "roads-n-vehicles:block/iron_rod",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

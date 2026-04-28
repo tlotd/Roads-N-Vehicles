@@ -1,7 +1,0 @@
-{
-	"parent": "roads-n-vehicles:block/license_plate",
-	"textures": {
-		"particle": "roads-n-vehicles:block/license_plate/nighthawk241199",
-		"license_plate": "roads-n-vehicles:block/license_plate/nighthawk241199"
-	}
-}

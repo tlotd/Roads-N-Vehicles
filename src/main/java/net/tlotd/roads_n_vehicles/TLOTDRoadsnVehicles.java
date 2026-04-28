@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.tlotd.roads_n_vehicles.block.ModBlocks;
 import net.tlotd.roads_n_vehicles.item.ModItemGroups;
 import net.tlotd.roads_n_vehicles.item.ModItems;
+import net.tlotd.roads_n_vehicles.sound.ModSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +18,7 @@ public class TLOTDRoadsnVehicles implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModSounds.registerSounds();
 		//ModCommands.registerCommands();
 		//ModSounds.registerSounds();
 		//FabricDefaultAttributeRegistry.register(ModEntities.MUSCLE_CAR_STALLION, MuscleCarEntity.createMuscleCarAttributes());

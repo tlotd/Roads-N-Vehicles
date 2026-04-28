@@ -5,12 +5,10 @@
 	"injectors": {
 		"defaultRequire": 1
 	},
-	"client": [
-		"client.CustomCreativeTabMixin",
-		"client.CreativeInventoryScreenAccessor",
-		"client.HandledScreenAccessor"
-	],
 	"overwrites": {
 		"requireAnnotations": true
-	}
+	},
+	"client": [
+		"client.CapeLayerMixin"
+	]
 }

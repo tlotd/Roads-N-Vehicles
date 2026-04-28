@@ -1,8 +1,0 @@
-{
-	"parent": "roads-n-vehicles:block/town_sign",
-	"texture_size": [32, 32],
-	"textures": {
-		"1": "roads-n-vehicles:block/town_sign/new_california_republic",
-		"2": "roads-n-vehicles:block/town_sign/new_california_republic_end"
-	}
-}

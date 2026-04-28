@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "asphalt",
+  "key": {
+    "#": {
+      "tag": "roads-n-vehicles:asphalt_slabs"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:asphalt"
+  },
+  "show_notification": true
+}

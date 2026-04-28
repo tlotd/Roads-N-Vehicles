@@ -1,0 +1,6 @@
+{
+	"parent": "roads-n-vehicles:block/small_route_number_sign",
+	"textures": {
+		"1": "roads-n-vehicles:block/small_route_number_sign/5_highway"
+	}
+}

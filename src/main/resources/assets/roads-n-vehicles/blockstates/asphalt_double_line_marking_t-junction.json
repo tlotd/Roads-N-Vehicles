@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "roads-n-vehicles:block/asphalt_double_line_marking_t-junction"},
+    "facing=east": {"model": "roads-n-vehicles:block/asphalt_double_line_marking_t-junction","y": 90},
+    "facing=south": {"model": "roads-n-vehicles:block/asphalt_double_line_marking_t-junction","y": 180},
+    "facing=west": {"model": "roads-n-vehicles:block/asphalt_double_line_marking_t-junction","y": 270}
+  }
+}

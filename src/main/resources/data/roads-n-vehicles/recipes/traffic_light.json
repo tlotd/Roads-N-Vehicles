@@ -1,0 +1,41 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:not",
+      "value": {
+        "condition": "fabric:all_mods_loaded",
+        "values": [
+          "tlotd"
+        ]
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "tag": "c:iron_ingots"
+    },
+    "L": {
+      "item": "minecraft:redstone_lamp"
+    },
+    "R": {
+      "item": "minecraft:red_stained_glass"
+    },
+    "Y": {
+      "item": "minecraft:yellow_stained_glass"
+    },
+    "G": {
+      "item": "minecraft:green_stained_glass"
+    }
+  },
+  "pattern": [
+    "ILR",
+    "ILY",
+    "ILG"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:traffic_light"
+  },
+  "show_notification": true
+}

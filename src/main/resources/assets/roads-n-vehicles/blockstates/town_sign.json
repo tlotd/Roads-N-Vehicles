@@ -1,58 +1,13 @@
 {
   "variants": {
-    "custom=false,facing=north,town=0": {"model": "roads-n-vehicles:block/town_sign","y": 180},
-    "custom=false,facing=east,town=0": {"model": "roads-n-vehicles:block/town_sign","y": 270},
-    "custom=false,facing=south,town=0": {"model": "roads-n-vehicles:block/town_sign"},
-    "custom=false,facing=west,town=0": {"model": "roads-n-vehicles:block/town_sign","y": 90},
+    "facing=north,fancy=false": {"model": "roads-n-vehicles:block/town_sign","y": 180},
+    "facing=east,fancy=false": {"model": "roads-n-vehicles:block/town_sign","y": 270},
+    "facing=south,fancy=false": {"model": "roads-n-vehicles:block/town_sign"},
+    "facing=west,fancy=false": {"model": "roads-n-vehicles:block/town_sign","y": 90},
 
-    "custom=false,facing=north,town=1": {"model": "roads-n-vehicles:block/town_sign_1","y": 180},
-    "custom=false,facing=east,town=1": {"model": "roads-n-vehicles:block/town_sign_1","y": 270},
-    "custom=false,facing=south,town=1": {"model": "roads-n-vehicles:block/town_sign_1"},
-    "custom=false,facing=west,town=1": {"model": "roads-n-vehicles:block/town_sign_1","y": 90},
-
-    "custom=false,facing=north,town=2,fancy=false": {"model": "roads-n-vehicles:block/town_sign_2","y": 180},
-    "custom=false,facing=east,town=2,fancy=false": {"model": "roads-n-vehicles:block/town_sign_2","y": 270},
-    "custom=false,facing=south,town=2,fancy=false": {"model": "roads-n-vehicles:block/town_sign_2"},
-    "custom=false,facing=west,town=2,fancy=false": {"model": "roads-n-vehicles:block/town_sign_2","y": 90},
-
-    "custom=false,facing=north,town=2,fancy=true": {"model": "roads-n-vehicles:block/town_sign_2_fancy","y": 180},
-    "custom=false,facing=east,town=2,fancy=true": {"model": "roads-n-vehicles:block/town_sign_2_fancy","y": 270},
-    "custom=false,facing=south,town=2,fancy=true": {"model": "roads-n-vehicles:block/town_sign_2_fancy"},
-    "custom=false,facing=west,town=2,fancy=true": {"model": "roads-n-vehicles:block/town_sign_2_fancy","y": 90},
-
-    "custom=false,facing=north,town=3": {"model": "roads-n-vehicles:block/town_sign_3","y": 180},
-    "custom=false,facing=east,town=3": {"model": "roads-n-vehicles:block/town_sign_3","y": 270},
-    "custom=false,facing=south,town=3": {"model": "roads-n-vehicles:block/town_sign_3"},
-    "custom=false,facing=west,town=3": {"model": "roads-n-vehicles:block/town_sign_3","y": 90},
-
-    "custom=false,facing=north,town=7": {"model": "roads-n-vehicles:block/town_sign_7","y": 180},
-    "custom=false,facing=east,town=7": {"model": "roads-n-vehicles:block/town_sign_7","y": 270},
-    "custom=false,facing=south,town=7": {"model": "roads-n-vehicles:block/town_sign_7"},
-    "custom=false,facing=west,town=7": {"model": "roads-n-vehicles:block/town_sign_7","y": 90},
-
-    "custom=false,facing=north,town=9": {"model": "roads-n-vehicles:block/town_sign_9","y": 180},
-    "custom=false,facing=east,town=9": {"model": "roads-n-vehicles:block/town_sign_9","y": 270},
-    "custom=false,facing=south,town=9": {"model": "roads-n-vehicles:block/town_sign_9"},
-    "custom=false,facing=west,town=9": {"model": "roads-n-vehicles:block/town_sign_9","y": 90},
-
-    "custom=false,facing=north,town=10": {"model": "roads-n-vehicles:block/town_sign_10","y": 180},
-    "custom=false,facing=east,town=10": {"model": "roads-n-vehicles:block/town_sign_10","y": 270},
-    "custom=false,facing=south,town=10": {"model": "roads-n-vehicles:block/town_sign_10"},
-    "custom=false,facing=west,town=10": {"model": "roads-n-vehicles:block/town_sign_10","y": 90},
-
-    "custom=false,facing=north,town=13": {"model": "roads-n-vehicles:block/town_sign_13","y": 180},
-    "custom=false,facing=east,town=13": {"model": "roads-n-vehicles:block/town_sign_13","y": 270},
-    "custom=false,facing=south,town=13": {"model": "roads-n-vehicles:block/town_sign_13"},
-    "custom=false,facing=west,town=13": {"model": "roads-n-vehicles:block/town_sign_13","y": 90},
-
-    "custom=false,facing=north,town=15": {"model": "roads-n-vehicles:block/town_sign_15","y": 180},
-    "custom=false,facing=east,town=15": {"model": "roads-n-vehicles:block/town_sign_15","y": 270},
-    "custom=false,facing=south,town=15": {"model": "roads-n-vehicles:block/town_sign_15"},
-    "custom=false,facing=west,town=15": {"model": "roads-n-vehicles:block/town_sign_15","y": 90},
-
-    "custom=false,facing=north,town=19": {"model": "roads-n-vehicles:block/town_sign_19","y": 180},
-    "custom=false,facing=east,town=19": {"model": "roads-n-vehicles:block/town_sign_19","y": 270},
-    "custom=false,facing=south,town=19": {"model": "roads-n-vehicles:block/town_sign_19"},
-    "custom=false,facing=west,town=19": {"model": "roads-n-vehicles:block/town_sign_19","y": 90}
+    "facing=north,fancy=true": {"model": "roads-n-vehicles:block/town_sign_fancy","y": 180},
+    "facing=east,fancy=true": {"model": "roads-n-vehicles:block/town_sign_fancy","y": 270},
+    "facing=south,fancy=true": {"model": "roads-n-vehicles:block/town_sign_fancy"},
+    "facing=west,fancy=true": {"model": "roads-n-vehicles:block/town_sign_fancy","y": 90}
   }
 }

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "tag": "roads-n-vehicles:signs"
-  },
-  "result": { "id": "roads-n-vehicles:speed_limit_us_65_sign" }
-}
