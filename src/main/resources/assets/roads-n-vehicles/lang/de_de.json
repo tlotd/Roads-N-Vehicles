@@ -121,12 +121,17 @@
   "block.roads-n-vehicles.no_vehicles_sign": "Verbot für Fahrzeuge aller Art",
   "block.roads-n-vehicles.no_entry_sign": "Verbot der Einfahrt",
   "block.roads-n-vehicles.motor_vehicles_prohibited_sign": "Verbot für Kraftfahrzeuge",
+  "block.roads-n-vehicles.pedestrians_prohibited_sign": "Verbot für Fußgänger",
   "block.roads-n-vehicles.no_overtaking_sign": "Überholverbot für Kraftfahrzeuge aller Art",
   "block.roads-n-vehicles.no_heavy_overtaking_sign": "Überholverbot für schwere Kraftfahrzeuge",
   "block.roads-n-vehicles.end_no_overtaking_sign": "Ende des Überholverbotes für Kraftfahrzeuge aller Art",
   "block.roads-n-vehicles.end_no_heavy_overtaking_sign": "Ende des Überholverbots für schwere Kraftfahrzeuge",
   "block.roads-n-vehicles.no_stopping_sign": "Absolutes Halteverbot",
   "block.roads-n-vehicles.no_parking_sign": "Eingeschränktes Halteverbot",
+
+  "block.roads-n-vehicles.sidewalk_sign": "Fußgänger",
+  "block.roads-n-vehicles.bus_lane_sign": "Busspur",
+  "block.roads-n-vehicles.snow_chains_required_sign": "Schneeketten vorgeschrieben",
 
   "block.roads-n-vehicles.go_straight_sign": "Vorgeschriebene Fahrtrichtung - Geradeaus",
   "block.roads-n-vehicles.go_left_sign": "Vorgeschriebene Fahrtrichtung - Hier Links",
@@ -196,6 +201,7 @@
   "block.roads-n-vehicles.square_sign": "Rechtecksschild",
   "block.roads-n-vehicles.direction_sign_left_curve": "Richtungstafel in Kurven - Links",
   "block.roads-n-vehicles.direction_sign_right_curve": "Richtungstafel in Kurven - Rechts",
+  "block.roads-n-vehicles.tunnel_sign": "Tunnel",
   "block.roads-n-vehicles.no_through_road_sign": "Sackgasse",
   "block.roads-n-vehicles.pedestrian_crossing_left_sign": "Fußgängerüberwegsschild - Links",
   "block.roads-n-vehicles.pedestrian_crossing_right_sign": "Fußgängerüberwegsschild - Rechts",
@@ -267,7 +273,7 @@
 
   "block.roads-n-vehicles.horizontal_sign": "Horizontales Schild",
   "block.roads-n-vehicles.one-way_street_sign_left": "Einbahnstraße - Linksweisend",
-  "block.roads-n-vehicles.one-way_street_sign_right": "Einbahnstraßed - Rechtsweisend",
+  "block.roads-n-vehicles.one-way_street_sign_right": "Einbahnstraße - Rechtsweisend",
 
   "block.roads-n-vehicles.vertical_sign": "Vertikales Schild",
   "block.roads-n-vehicles.guiding_beacon_sign_left": "Leitbake - Links",
@@ -300,6 +306,9 @@
   "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light_4": "Leitbaken mit goldenem Blinklicht [Verzögerung 3]",
 
   "block.roads-n-vehicles.traffic_cone": "Leitkegel",
+
+  "block.roads-n-vehicles.speed_camera": "Blitzer",
+  "block.roads-n-vehicles.police_lights": "Polizeilichter",
 
   "block.roads-n-vehicles.traffic_light": "Ampel",
   "block.roads-n-vehicles.yellow_traffic_light": "Gelbe Ampel",

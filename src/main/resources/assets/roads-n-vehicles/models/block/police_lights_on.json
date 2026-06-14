@@ -1,0 +1,8 @@
+{
+	"parent": "roads-n-vehicles:block/police_lights",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "roads-n-vehicles:block/police_lights_on",
+		"particle": "roads-n-vehicles:block/police_lights_on"
+	}
+}

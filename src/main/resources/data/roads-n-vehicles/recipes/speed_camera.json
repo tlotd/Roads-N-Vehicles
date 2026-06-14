@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:metal_ingots"
+    },
+    "T": {
+      "item": "minecraft:tinted_glass"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "O": {
+      "item": "minecraft:orange_stained_glass"
+    }
+  },
+  "pattern": [
+    "#T#",
+    "#R#",
+    "#O#"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:speed_camera"
+  },
+  "show_notification": true
+}

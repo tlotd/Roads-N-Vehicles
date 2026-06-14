@@ -15,8 +15,18 @@ public abstract class AbstractClientPlayerEntityMixin {
     private void overrideCapeTexture(CallbackInfoReturnable<ResourceLocation> cir) {
         if (!CompatModsCheck.TLOTD) {
             AbstractClientPlayer player = (AbstractClientPlayer)(Object)this;
-            ResourceLocation cape =
-                    CapeManager.getCape(player.getStringUUID());
+            ResourceLocation cape = CapeManager.getCape(player.getStringUUID());
+            if (cape != null) {
+                cir.setReturnValue(cape);
+            }
+        }
+    }
+
+    @Inject(method = "getElytraTextureLocation", at = @At("HEAD"), cancellable = true)
+    private void overrideElytraTexture(CallbackInfoReturnable<ResourceLocation> cir) {
+        if (!CompatModsCheck.TLOTD) {
+            AbstractClientPlayer player = (AbstractClientPlayer)(Object)this;
+            ResourceLocation cape = CapeManager.getCape(player.getStringUUID());
             if (cape != null) {
                 cir.setReturnValue(cape);
             }

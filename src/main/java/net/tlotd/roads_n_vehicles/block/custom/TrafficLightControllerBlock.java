@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TrafficLightControllerBlock extends net.minecraft.world.level.block.Block {
+public class TrafficLightControllerBlock extends Block {
 
     public static final IntegerProperty STAGE = IntegerProperty.create("stage", 0, 4);
 
@@ -27,34 +27,26 @@ public class TrafficLightControllerBlock extends net.minecraft.world.level.block
     }
 
     @Override
-    public net.minecraft.world.level.block.state.BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
+    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
         return this.defaultBlockState().setValue(STAGE, 0);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<net.minecraft.world.level.block.Block, net.minecraft.world.level.block.state.BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(STAGE);
     }
 
     @Override
-    public void neighborChanged(net.minecraft.world.level.block.state.BlockState state, Level level, BlockPos pos, net.minecraft.world.level.block.Block block, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
         if (level.isClientSide()) return;
         int power = level.getBestNeighborSignal(pos);
         int lightState = mapPowerToLight(power);
         for (int i = 1; i <= 10; i++) {
             BlockPos checkPos = pos.above(i);
-            net.minecraft.world.level.block.state.BlockState checkState = level.getBlockState(checkPos);
+            BlockState checkState = level.getBlockState(checkPos);
             if (checkState.getBlock() instanceof TrafficLightBlock) {
-                level.setBlock(
-                        checkPos,
-                        checkState.setValue(TrafficLightBlock.STAGE, lightState),
-                        net.minecraft.world.level.block.Block.UPDATE_ALL
-                );
-                level.setBlock(
-                        pos,
-                        state.setValue(TrafficLightControllerBlock.STAGE, lightState),
-                        net.minecraft.world.level.block.Block.UPDATE_ALL
-                );
+                level.setBlock(checkPos, checkState.setValue(TrafficLightBlock.STAGE, lightState), Block.UPDATE_ALL);
+                level.setBlock(pos, state.setValue(TrafficLightControllerBlock.STAGE, lightState), Block.UPDATE_ALL);
                 break;
             }
         }

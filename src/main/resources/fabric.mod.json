@@ -39,7 +39,10 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"tlotd": ">=0.4.3"
+		"tlotd": ">=0.4.4"
+	},
+	"breaks": {
+		"tlotd": "<0.4.4"
 	},
 	"custom": {
 		"modmenu": {

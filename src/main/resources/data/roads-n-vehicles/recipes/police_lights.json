@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:metal_ingots"
+    },
+    "B": {
+      "item": "minecraft:blue_stained_glass"
+    },
+    "R": {
+      "item": "minecraft:red_stained_glass"
+    },
+    "L": {
+      "item": "minecraft:redstone_lamp"
+    },
+    "D": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "B#R",
+    "LDL"
+  ],
+  "result": {
+    "item": "roads-n-vehicles:police_lights"
+  },
+  "show_notification": true
+}

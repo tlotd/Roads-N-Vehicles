@@ -18,7 +18,7 @@ fabricApi {
 }
 
 dependencies {
-	modCompileOnly files("libs/tlotd-0.4.2+1.20.1-api.jar")
+	modCompileOnly files("libs/tlotd-0.4.4+1.20.1-api.jar")
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings loom.officialMojangMappings()
