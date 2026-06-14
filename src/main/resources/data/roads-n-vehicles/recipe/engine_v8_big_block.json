@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "c:metal_blocks"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "P#P",
+    "PPP"
+  ],
+  "result": {
+    "id": "roads-n-vehicles:engine_v8_big_block"
+  },
+  "show_notification": true
+}

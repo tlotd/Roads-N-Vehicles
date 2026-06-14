@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "roads-n-vehicles:asphalt_blocks"
+  },
+  "result": {
+    "count": 1,
+    "id": "roads-n-vehicles:asphalt_yellow_line_marking_straight"
+  }
+}

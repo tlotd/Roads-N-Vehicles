@@ -15,6 +15,8 @@ import net.tlotd.roads_n_vehicles.block.custom.SignBlock;
 import net.tlotd.roads_n_vehicles.item.custom.LicensePlateBlockItem;
 import net.tlotd.roads_n_vehicles.item.custom.TownSignBlockItem;
 
+import static net.minecraft.world.level.block.Blocks.litBlockEmission;
+
 public class ModBlocks {
 
     public static final Block ASPHALT = registerBlock("asphalt",
@@ -91,11 +93,11 @@ public class ModBlocks {
     public static final Block ASPHALT_DOUBLE_RED_LINE_MARKING_CROSS = registerBlock("asphalt_double_red_line_marking_cross",
             new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).speedFactor(1.25F)));
 
-    //public static final Block MANHOLE_COVER = registerBlock("manhole_cover",
-    //        new ManholeCoverBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).speedFactor(1.25F), BlockSetType.POLISHED_BLACKSTONE));
+    public static final Block MANHOLE_COVER = registerBlock("manhole_cover",
+            new ManholeCoverBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).speedFactor(1.25F), BlockSetType.POLISHED_BLACKSTONE));
 
-    //public static final Block IRON_ROD = registerBlock("iron_rod",
-    //        new ModRodBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block IRON_ROD = registerBlock("iron_rod",
+            new ModRodBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block GUARDRAIL = registerBlock("guardrail",
             new GuardrailBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block GUARDRAIL_OUTER_CORNER = registerBlock("guardrail_outer_corner",
@@ -113,6 +115,9 @@ public class ModBlocks {
 
     public static final Block LICENSE_PLATE = registerLicensePlateBlock("license_plate",
             new LicensePlateBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+
+    public static final Block POLICE_LIGHTS = registerBlock("police_lights",
+            new PoliceLightsBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).lightLevel(litBlockEmission(15)).noOcclusion()));
 
     public static final Block ROUND_SIGN = registerBlock("round_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
@@ -184,6 +189,8 @@ public class ModBlocks {
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block MOTOR_VEHICLES_PROHIBITED_SIGN = registerBlock("motor_vehicles_prohibited_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PEDESTRIANS_PROHIBITED_SIGN = registerBlock("pedestrians_prohibited_sign",
+            new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block NO_OVERTAKING_SIGN = registerBlock("no_overtaking_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block NO_HEAVY_OVERTAKING_SIGN = registerBlock("no_heavy_overtaking_sign",
@@ -195,6 +202,12 @@ public class ModBlocks {
     public static final Block NO_STOPPING_SIGN = registerBlock("no_stopping_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block NO_PARKING_SIGN = registerBlock("no_parking_sign",
+            new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block SIDEWALK_SIGN = registerBlock("sidewalk_sign",
+            new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block BUS_LANE_SIGN = registerBlock("bus_lane_sign",
+            new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block SNOW_CHAINS_REQUIRED_SIGN = registerBlock("snow_chains_required_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block GO_STRAIGHT_SIGN = registerBlock("go_straight_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
@@ -328,6 +341,8 @@ public class ModBlocks {
     public static final Block DIRECTION_SIGN_LEFT_CURVE = registerBlock("direction_sign_left_curve",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block DIRECTION_SIGN_RIGHT_CURVE = registerBlock("direction_sign_right_curve",
+            new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block TUNNEL_SIGN = registerBlock("tunnel_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block NO_THROUGH_ROAD_SIGN = registerBlock("no_through_road_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
@@ -507,6 +522,9 @@ public class ModBlocks {
     public static final Block TRAFFIC_CONE = registerBlock("traffic_cone",
             new TrafficConeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(2.0F, 3.0F)));
 
+    public static final Block FIRE_HYDRANT = registerBlock("fire_hydrant",
+            new FireHydrantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).requiresCorrectToolForDrops().strength(2.0F, 3.0F)));
+
     public static final Block PORTABLE_TRAFFIC_DELINEATOR = registerBlock("portable_traffic_delineator_with_amber_flashing_light",
             new PortableTrafficDelineatorBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(2.0F, 3.0F)));
     public static final Block PORTABLE_TRAFFIC_DELINEATOR_2 = registerBlock("portable_traffic_delineator_with_amber_flashing_light_2",
@@ -523,8 +541,8 @@ public class ModBlocks {
     public static final Block TRAFFIC_LIGHT_CONTROLLER = registerBlock("traffic_light_controller",
             new TrafficLightControllerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F)));
 
-    public static final Block FIRE_HYDRANT = registerBlock("fire_hydrant",
-            new FireHydrantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).requiresCorrectToolForDrops().strength(2.0F, 3.0F)));
+    public static final Block SPEED_CAMERA = registerBlock("speed_camera",
+            new SpeedCameraBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GREEN).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
 
     public static final Block TELEVISION = registerBlockWithoutItem("television",
             new TelevisionBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops().strength(2.0F, 2.0F)));

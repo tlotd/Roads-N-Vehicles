@@ -81,9 +81,9 @@ public class ModItemGroups {
                         output.accept(ModBlocks.ASPHALT_DOUBLE_RED_LINE_MARKING_T_JUNCTION);
                         output.accept(ModBlocks.ASPHALT_DOUBLE_RED_LINE_MARKING_CROSS);
 
-                        //output.accept(ModBlocks.MANHOLE_COVER);
+                        output.accept(ModBlocks.MANHOLE_COVER);
 
-                        //output.accept(ModBlocks.IRON_ROD);
+                        output.accept(ModBlocks.IRON_ROD);
                         output.accept(ModBlocks.GUARDRAIL);
                         output.accept(ModBlocks.GUARDRAIL_OUTER_CORNER);
                         output.accept(ModBlocks.GUARDRAIL_INNER_CORNER);
@@ -129,12 +129,16 @@ public class ModItemGroups {
                         output.accept(ModBlocks.NO_VEHICLES_SIGN);
                         output.accept(ModBlocks.NO_ENTRY_SIGN);
                         output.accept(ModBlocks.MOTOR_VEHICLES_PROHIBITED_SIGN);
+                        output.accept(ModBlocks.PEDESTRIANS_PROHIBITED_SIGN);
                         output.accept(ModBlocks.NO_OVERTAKING_SIGN);
                         output.accept(ModBlocks.NO_HEAVY_OVERTAKING_SIGN);
                         output.accept(ModBlocks.END_NO_OVERTAKING_SIGN);
                         output.accept(ModBlocks.END_NO_HEAVY_OVERTAKING_SIGN);
                         output.accept(ModBlocks.NO_STOPPING_SIGN);
                         output.accept(ModBlocks.NO_PARKING_SIGN);
+                        output.accept(ModBlocks.SIDEWALK_SIGN);
+                        output.accept(ModBlocks.BUS_LANE_SIGN);
+                        output.accept(ModBlocks.SNOW_CHAINS_REQUIRED_SIGN);
 
                         output.accept(ModBlocks.GO_STRAIGHT_SIGN);
                         output.accept(ModBlocks.GO_LEFT_SIGN);
@@ -203,6 +207,7 @@ public class ModItemGroups {
                         output.accept(ModBlocks.SQUARE_SIGN);
                         output.accept(ModBlocks.DIRECTION_SIGN_LEFT_CURVE);
                         output.accept(ModBlocks.DIRECTION_SIGN_RIGHT_CURVE);
+                        output.accept(ModBlocks.TUNNEL_SIGN);
                         output.accept(ModBlocks.NO_THROUGH_ROAD_SIGN);
                         output.accept(ModBlocks.PEDESTRIAN_CROSSING_LEFT_SIGN);
                         output.accept(ModBlocks.PEDESTRIAN_CROSSING_RIGHT_SIGN);
@@ -307,6 +312,7 @@ public class ModItemGroups {
                         output.accept(ModItems.SUSPENSION);
                         output.accept(ModItems.CHASSIS);
                         output.accept(ModBlocks.LICENSE_PLATE);
+                        output.accept(ModBlocks.POLICE_LIGHTS);
                         output.accept(ModItems.CAR_BODY_STALLION);
                         output.accept(ModItems.CAR_BODY_FIRECHARGE);
                         output.accept(ModItems.MUSCLE_CAR_STALLION);
@@ -318,11 +324,11 @@ public class ModItemGroups {
                         output.accept(ModBlocks.PORTABLE_TRAFFIC_DELINEATOR_4);
 
                         output.accept(ModBlocks.TRAFFIC_CONE);
+                        output.accept(ModBlocks.FIRE_HYDRANT);
                         output.accept(ModBlocks.TRAFFIC_LIGHT);
                         output.accept(ModBlocks.YELLOW_TRAFFIC_LIGHT);
                         output.accept(ModBlocks.TRAFFIC_LIGHT_CONTROLLER);
-
-                        output.accept(ModBlocks.FIRE_HYDRANT);
+                        output.accept(ModBlocks.SPEED_CAMERA);
                     }).build());
 
     public static void registerItemGroups(){

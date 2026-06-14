@@ -89,12 +89,12 @@ public class CoatOfArmsBlock extends SignBlock {
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
-            tooltip.add(Component.translatable("block.roads-n-vehicles.town_sign.tooltip").withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.translatable("block.roads-n-vehicles.town_sign.tooltip_2").withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip").withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_2").withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.literal(""));
-            tooltip.add(Component.translatable("block.roads-n-vehicles.town_sign.ponder", Component.translatable("key.keyboard.shift").withStyle(ChatFormatting.WHITE)).withStyle(ChatFormatting.DARK_GRAY));
+            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.ponder", Component.translatable("key.keyboard.shift").withStyle(ChatFormatting.WHITE)).withStyle(ChatFormatting.DARK_GRAY));
             Style style = this.getName().getStyle();
-            tooltip.add(Component.translatable("block.roads-n-vehicles.town_sign.tooltip_shift").withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_shift").withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.literal("\uE000").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" TLOTD - Worldspawn").withStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Component.literal("\uE001").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" Isla_Nublar - Drachenheide").withStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Component.literal("\uE002").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" EinsDarki - Little Tokyo").withStyle(style.withFont(DEFAULT_FONT_ID))));
@@ -106,10 +106,10 @@ public class CoatOfArmsBlock extends SignBlock {
             tooltip.add(Component.literal("\uE00E").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" akashic_system - Firmament").withStyle(style.withFont(DEFAULT_FONT_ID))));
             tooltip.add(Component.literal("\uE012").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" Jakx444 - New Haven").withStyle(style.withFont(DEFAULT_FONT_ID))));
         } else {
-            tooltip.add(Component.translatable("block.roads-n-vehicles.town_sign.tooltip").withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.translatable("block.roads-n-vehicles.town_sign.tooltip_2").withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip").withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_2").withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.literal(""));
-            tooltip.add(Component.translatable("block.roads-n-vehicles.town_sign.ponder",Component.translatable("key.keyboard.shift").withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_GRAY));
+            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.ponder",Component.translatable("key.keyboard.shift").withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_GRAY));
         }
         super.appendHoverText(stack, context, tooltip, flag);
     }

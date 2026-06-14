@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "roads-n-vehicles:metal_rods"
+    },
+    {
+      "tag": "c:metal_ingots"
+    },
+    {
+      "tag": "c:metal_ingots"
+    },
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": {
+    "id": "roads-n-vehicles:town_sign"
+  }
+}

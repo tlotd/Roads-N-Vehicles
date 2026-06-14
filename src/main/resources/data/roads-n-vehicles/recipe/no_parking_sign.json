@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "roads-n-vehicles:signs"
+  },
+  "result": {
+    "count": 1,
+    "id": "roads-n-vehicles:no_parking_sign"
+  }
+}

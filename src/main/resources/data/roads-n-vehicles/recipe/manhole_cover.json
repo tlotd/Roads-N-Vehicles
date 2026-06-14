@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "asphalt",
+  "key": {
+    "#": {
+      "tag": "roads-n-vehicles:asphalt_blocks"
+    },
+    "M": {
+      "tag": "c:metal_ingots"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "#M#",
+    "MSM",
+    "#M#"
+  ],
+  "result": {
+    "count": 8,
+    "id": "roads-n-vehicles:manhole_cover"
+  },
+  "show_notification": true
+}

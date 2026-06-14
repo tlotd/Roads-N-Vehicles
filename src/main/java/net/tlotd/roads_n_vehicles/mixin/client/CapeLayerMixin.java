@@ -14,13 +14,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(CapeLayer.class)
 public abstract class CapeLayerMixin {
-    @Redirect(
-            method = "render",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/resources/PlayerSkin;capeTexture()Lnet/minecraft/resources/ResourceLocation;"
-            )
-    )
+    @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/resources/PlayerSkin;capeTexture()Lnet/minecraft/resources/ResourceLocation;"))
     private ResourceLocation overrideCapeTexture(PlayerSkin skin, PoseStack poseStack, MultiBufferSource buffer, int light, AbstractClientPlayer player, float f, float g, float h, float j, float k, float l) {
         if (!CompatModsCheck.TLOTD) {
             ResourceLocation custom = CapeManager.getCape(player.getStringUUID());

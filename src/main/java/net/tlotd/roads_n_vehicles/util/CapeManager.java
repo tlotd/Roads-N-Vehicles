@@ -24,7 +24,7 @@ public class CapeManager {
         private static final long CACHE_TTL = TimeUnit.MINUTES.toMillis(10);
         private static final ResourceLocation NO_CAPE = ResourceLocation.fromNamespaceAndPath("tlotd", "no_cape");
         private static final ExecutorService EXECUTOR = Executors.newCachedThreadPool();
-        private static final String BASE_URL = "https://tlotd.net/minecraft/capes/";
+        private static final String BASE_URL = "https://tlotd.net/api/minecraft/cape/";
 
         public static ResourceLocation getCape(String uuid) {
             if (uuid == null || uuid.isEmpty()) return null;
@@ -47,11 +47,11 @@ public class CapeManager {
             EXECUTOR.submit(() -> fetchCape(uuid));
         }
         private static void fetchCape(String uuid) {
-            String url = BASE_URL + uuid + ".png";
+            String url = BASE_URL + uuid;
             try (InputStream stream = new URL(url).openStream()) {
                 NativeImage image = NativeImage.read(stream);
                 AbstractTexture texture = new DynamicTexture(image);
-                ResourceLocation id = ResourceLocation.fromNamespaceAndPath("test", "cape/" + uuid.replace("-", ""));
+                ResourceLocation id = ResourceLocation.fromNamespaceAndPath("tlotd", "cape/" + uuid.replace("-", ""));
                 MC.execute(() -> {
                     try {
                         MC.getTextureManager().register(id, texture);
@@ -77,4 +77,4 @@ public class CapeManager {
             CACHE_TIME.clear();
             PENDING.clear();
         }
-    }
+}

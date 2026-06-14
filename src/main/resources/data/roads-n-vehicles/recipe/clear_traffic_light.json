@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "roads-n-vehicles:yellow_traffic_light"
+  },
+  "result": {
+    "count": 1,
+    "id": "roads-n-vehicles:traffic_light"
+  }
+}

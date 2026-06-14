@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "lit=false,part=center,facing=north": {"model": "roads-n-vehicles:block/police_lights","y": 180},
+    "lit=false,part=center,facing=east": {"model": "roads-n-vehicles:block/police_lights","y": 270},
+    "lit=false,part=center,facing=south": {"model": "roads-n-vehicles:block/police_lights"},
+    "lit=false,part=center,facing=west": {"model": "roads-n-vehicles:block/police_lights","y": 90},
+    "lit=true,part=center,facing=north": {"model": "roads-n-vehicles:block/police_lights_on","y": 180},
+    "lit=true,part=center,facing=east": {"model": "roads-n-vehicles:block/police_lights_on","y": 270},
+    "lit=true,part=center,facing=south": {"model": "roads-n-vehicles:block/police_lights_on"},
+    "lit=true,part=center,facing=west": {"model": "roads-n-vehicles:block/police_lights_on","y": 90},
+    "part=left": {"model": "roads-n-vehicles:block/police_lights_end"},
+    "part=right": {"model": "roads-n-vehicles:block/police_lights_end"}
+  }
+}

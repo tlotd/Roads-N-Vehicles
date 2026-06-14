@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "asphalt",
+  "key": {
+    "#": {
+      "item": "minecraft:gravel"
+    },
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "B": {
+      "item": "minecraft:black_dye"
+    }
+  },
+  "pattern": [
+    "#C#",
+    "CBC",
+    "#C#"
+  ],
+  "result": {
+    "count": 8,
+    "id": "roads-n-vehicles:asphalt"
+  },
+  "show_notification": true
+}

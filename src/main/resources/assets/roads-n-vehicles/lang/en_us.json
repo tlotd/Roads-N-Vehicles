@@ -130,12 +130,17 @@
   "block.roads-n-vehicles.no_vehicles_sign": "No Vehicles Sign",
   "block.roads-n-vehicles.no_entry_sign": "No Entry Sign",
   "block.roads-n-vehicles.motor_vehicles_prohibited_sign": "Motor Vehicles Prohibited Sign",
+  "block.roads-n-vehicles.pedestrians_prohibited_sign": "Pedestrians Prohibited Sign",
   "block.roads-n-vehicles.no_overtaking_sign": "No Overtaking Sign",
   "block.roads-n-vehicles.no_heavy_overtaking_sign": "No Heavy Overtaking Sign",
   "block.roads-n-vehicles.end_no_overtaking_sign": "End No Overtaking Sign",
   "block.roads-n-vehicles.end_no_heavy_overtaking_sign": "End No Heavy Overtaking Sign",
   "block.roads-n-vehicles.no_stopping_sign": "No Stopping Sign",
   "block.roads-n-vehicles.no_parking_sign": "No Parking Sign",
+
+  "block.roads-n-vehicles.sidewalk_sign": "Sidewalk Sign",
+  "block.roads-n-vehicles.bus_lane_sign": "Bus Lane Sign",
+  "block.roads-n-vehicles.snow_chains_required_sign": "Snow Chains Required Sign",
 
   "block.roads-n-vehicles.go_straight_sign": "Go Straight Sign",
   "block.roads-n-vehicles.go_left_sign": "Go Left Sign",
@@ -205,6 +210,7 @@
   "block.roads-n-vehicles.square_sign": "Square Sign",
   "block.roads-n-vehicles.direction_sign_left_curve": "Direction Sign Left Curve",
   "block.roads-n-vehicles.direction_sign_right_curve": "Direction Sign Right Curve",
+  "block.roads-n-vehicles.tunnel_sign": "Tunnel Sign",
   "block.roads-n-vehicles.no_through_road_sign": "No Through Road Sign",
   "block.roads-n-vehicles.pedestrian_crossing_left_sign": "Pedestrian Crossing Sign (Left)",
   "block.roads-n-vehicles.pedestrian_crossing_right_sign": "Pedestrian Crossing Sign (Right)",
@@ -309,6 +315,9 @@
   "block.roads-n-vehicles.portable_traffic_delineator_with_amber_flashing_light_4": "Portable Traffic Delineator with Amber Flashing Light [Delay 3]",
 
   "block.roads-n-vehicles.traffic_cone": "Traffic Cone",
+
+  "block.roads-n-vehicles.police_lights": "Police Lights",
+  "block.roads-n-vehicles.speed_camera": "Speed Camera",
 
   "block.roads-n-vehicles.traffic_light": "Traffic Light",
   "block.roads-n-vehicles.yellow_traffic_light": "Yellow Traffic Light",

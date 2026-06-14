@@ -21,15 +21,15 @@ public class ManholeCoverBlock extends TrapDoorBlock {
     }
 
     @Override
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        return blockState.getValue(HALF) == Half.TOP ? OPEN_TOP_SHAPE_MANHOLE : OPEN_BOTTOM_SHAPE_MANHOLE;
+    }
+
+    @Override
     public VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         if (!blockState.getValue(OPEN)) {
             return blockState.getValue(HALF) == Half.TOP ? OPEN_TOP_SHAPE_MANHOLE : OPEN_BOTTOM_SHAPE_MANHOLE;
         }
         else return Block.box(0F, 0F, 0F, 0F, 0F, 0F);
-    }
-
-    @Override
-    public VoxelShape getVisualShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-        return blockState.getValue(HALF) == Half.TOP ? OPEN_TOP_SHAPE_MANHOLE : OPEN_BOTTOM_SHAPE_MANHOLE;
     }
 }
