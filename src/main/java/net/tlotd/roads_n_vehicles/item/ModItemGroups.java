@@ -205,6 +205,18 @@ public class ModItemGroups {
                         output.accept(ModBlocks.TRAFFIC_JAMS_SIGN);
                         output.accept(ModBlocks.RIVERBANK_SIGN);
 
+                        output.accept(ModBlocks.SMALL_SQUARE_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_LEFT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_RIGHT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_LEFT_STRAIGHT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_LEFT_STRAIGHT_NOT_RIGHT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_RIGHT_STRAIGHT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_RIGHT_STRAIGHT_NOT_LEFT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_LEFT_NOT_STRAIGHT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_LEFT_NOT_RIGHT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_RIGHT_NOT_STRAIGHT_SIGN);
+                        output.accept(ModBlocks.PRIORITY_ROAD_RIGHT_NOT_LEFT_SIGN);
+
                         output.accept(ModBlocks.SQUARE_SIGN);
                         output.accept(ModBlocks.DIRECTION_SIGN_LEFT_CURVE);
                         output.accept(ModBlocks.DIRECTION_SIGN_RIGHT_CURVE);

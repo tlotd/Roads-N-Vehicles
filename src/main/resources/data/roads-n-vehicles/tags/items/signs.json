@@ -115,6 +115,18 @@
     "roads-n-vehicles:traffic_jams_sign",
     "roads-n-vehicles:riverbank_sign",
 
+    "roads-n-vehicles:small_square_sign",
+    "roads-n-vehicles:priority_road_left_sign",
+    "roads-n-vehicles:priority_road_right_sign",
+    "roads-n-vehicles:priority_road_left_straight_sign",
+    "roads-n-vehicles:priority_road_left_straight_not_right_sign",
+    "roads-n-vehicles:priority_road_right_straight_sign",
+    "roads-n-vehicles:priority_road_right_straight_not_left_sign",
+    "roads-n-vehicles:priority_road_left_not_straight_sign",
+    "roads-n-vehicles:priority_road_left_not_right_sign",
+    "roads-n-vehicles:priority_road_right_not_straight_sign",
+    "roads-n-vehicles:priority_road_right_not_left_sign",
+
     "roads-n-vehicles:square_sign",
     "roads-n-vehicles:direction_sign_left_curve",
     "roads-n-vehicles:direction_sign_right_curve",

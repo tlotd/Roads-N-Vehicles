@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "tag": "roads-n-vehicles:signs"
+  },
+  "result": "roads-n-vehicles:priority_road_right_not_left_sign"
+}

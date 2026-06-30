@@ -207,6 +207,18 @@
   "block.roads-n-vehicles.traffic_jams_sign": "Traffic Jams Sign",
   "block.roads-n-vehicles.riverbank_sign": "Riverbank Sign",
 
+  "block.roads-n-vehicles.small_square_sign": "Small Square Sign",
+  "block.roads-n-vehicles.priority_road_left_sign": "Priority Road Left Sign",
+  "block.roads-n-vehicles.priority_road_right_sign": "Priority Road Right Sign",
+  "block.roads-n-vehicles.priority_road_left_straight_sign": "Priority Road Left & Straight Sign",
+  "block.roads-n-vehicles.priority_road_left_straight_not_right_sign": "Priority Road Left & Straight not Right Sign",
+  "block.roads-n-vehicles.priority_road_right_straight_sign": "Priority Road Right & Straight Sign",
+  "block.roads-n-vehicles.priority_road_right_straight_not_left_sign": "Priority Road Right & Straight not Left Sign",
+  "block.roads-n-vehicles.priority_road_left_not_straight_sign": "Priority Road Left not Straight Sign",
+  "block.roads-n-vehicles.priority_road_left_not_right_sign": "Priority Road Left not Right Sign",
+  "block.roads-n-vehicles.priority_road_right_not_straight_sign": "Priority Road Right not Straight Sign",
+  "block.roads-n-vehicles.priority_road_right_not_left_sign": "Priority Road Right not Left Sign",
+
   "block.roads-n-vehicles.square_sign": "Square Sign",
   "block.roads-n-vehicles.direction_sign_left_curve": "Direction Sign Left Curve",
   "block.roads-n-vehicles.direction_sign_right_curve": "Direction Sign Right Curve",
