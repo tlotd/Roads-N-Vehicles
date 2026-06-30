@@ -198,6 +198,18 @@
   "block.roads-n-vehicles.traffic_jams_sign": "Stau",
   "block.roads-n-vehicles.riverbank_sign": "Ufer",
 
+  "block.roads-n-vehicles.small_square_sign": "Kleines Rechtecksschild",
+  "block.roads-n-vehicles.priority_road_left_sign": "Abbiegende Vorfahrtsstaße - Links",
+  "block.roads-n-vehicles.priority_road_right_sign": "Abbiegende Vorfahrtsstaße - Rechts",
+  "block.roads-n-vehicles.priority_road_left_straight_sign": "Abbiegende Vorfahrtsstaße - Links & Geradeaus",
+  "block.roads-n-vehicles.priority_road_left_straight_not_right_sign": "Abbiegende Vorfahrtsstaße - Links & Geradeaus nicht Rechts",
+  "block.roads-n-vehicles.priority_road_right_straight_sign": "Abbiegende Vorfahrtsstaße - Rechts & Geradeaus",
+  "block.roads-n-vehicles.priority_road_right_straight_not_left_sign": "Abbiegende Vorfahrtsstaße - Rechts & Geradeaus nicht Links",
+  "block.roads-n-vehicles.priority_road_left_not_straight_sign": "Abbiegende Vorfahrtsstaße - Links nicht Geradeaus",
+  "block.roads-n-vehicles.priority_road_left_not_right_sign": "Abbiegende Vorfahrtsstaße - Links nicht Rechts",
+  "block.roads-n-vehicles.priority_road_right_not_straight_sign": "Abbiegende Vorfahrtsstaße - Rechts nicht Geradeaus",
+  "block.roads-n-vehicles.priority_road_right_not_left_sign": "Abbiegende Vorfahrtsstaße - Rechts nicht Links",
+
   "block.roads-n-vehicles.square_sign": "Rechtecksschild",
   "block.roads-n-vehicles.direction_sign_left_curve": "Richtungstafel in Kurven - Links",
   "block.roads-n-vehicles.direction_sign_right_curve": "Richtungstafel in Kurven - Rechts",

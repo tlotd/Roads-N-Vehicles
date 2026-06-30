@@ -34,6 +34,8 @@ public class CapeManager {
                 if (now - CACHE_TIME.getOrDefault(uuid, 0L) < CACHE_TTL) {
                     return cached == NO_CAPE ? null : cached;
                 }
+                CAPE_CACHE.remove(uuid);
+                CACHE_TIME.remove(uuid);
             }
             requestCape(uuid);
             return null;

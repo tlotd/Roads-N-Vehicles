@@ -336,6 +336,29 @@ public class ModBlocks {
     public static final Block RIVERBANK_SIGN = registerBlock("riverbank_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
 
+    public static final Block SMALL_SQUARE_SIGN = registerBlock("small_square_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_LEFT_SIGN = registerBlock("priority_road_left_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_RIGHT_SIGN = registerBlock("priority_road_right_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_LEFT_STRAIGHT_SIGN = registerBlock("priority_road_left_straight_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_LEFT_STRAIGHT_NOT_RIGHT_SIGN = registerBlock("priority_road_left_straight_not_right_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_RIGHT_STRAIGHT_SIGN = registerBlock("priority_road_right_straight_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_RIGHT_STRAIGHT_NOT_LEFT_SIGN = registerBlock("priority_road_right_straight_not_left_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_LEFT_NOT_STRAIGHT_SIGN = registerBlock("priority_road_left_not_straight_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_LEFT_NOT_RIGHT_SIGN = registerBlock("priority_road_left_not_right_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_RIGHT_NOT_STRAIGHT_SIGN = registerBlock("priority_road_right_not_straight_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+    public static final Block PRIORITY_ROAD_RIGHT_NOT_LEFT_SIGN = registerBlock("priority_road_right_not_left_sign",
+            new SmallSquareSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
+
     public static final Block SQUARE_SIGN = registerBlock("square_sign",
             new SignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().strength(2.0F, 3.0F).sound(SoundType.METAL).noOcclusion()));
     public static final Block DIRECTION_SIGN_LEFT_CURVE = registerBlock("direction_sign_left_curve",

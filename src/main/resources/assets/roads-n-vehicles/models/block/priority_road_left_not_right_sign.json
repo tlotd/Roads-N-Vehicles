@@ -1,0 +1,6 @@
+{
+	"parent": "roads-n-vehicles:block/small_square_sign",
+	"textures": {
+		"1": "roads-n-vehicles:block/small_square_sign/priority_road_left_not_right"
+	}
+}
