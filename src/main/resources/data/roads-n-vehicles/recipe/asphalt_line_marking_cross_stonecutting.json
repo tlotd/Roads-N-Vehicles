@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "tag": "roads-n-vehicles:asphalt_blocks"
-  },
+  "ingredient": "#roads-n-vehicles:asphalt_blocks",
   "result": {
     "count": 1,
     "id": "roads-n-vehicles:asphalt_line_marking_cross"
