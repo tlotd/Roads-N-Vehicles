@@ -3,9 +3,7 @@
   "category": "building",
   "group": "asphalt",
   "key": {
-    "#": {
-      "tag": "roads-n-vehicles:asphalt_slabs"
-    }
+    "#": "#roads-n-vehicles:asphalt_slabs"
   },
   "pattern": [
     "#",

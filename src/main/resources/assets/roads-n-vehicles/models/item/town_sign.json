@@ -1,6 +1,0 @@
-{
-	"parent": "roads-n-vehicles:block/town_sign",
-	"textures": {
-		"sign": "roads-n-vehicles:block/town_sign_inventory"
-	}
-}

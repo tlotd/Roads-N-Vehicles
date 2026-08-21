@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.tlotd.roads_n_vehicles.block.enum_property.PoliceLightsPart;
@@ -39,8 +40,8 @@ public class PoliceLightsBlock extends SignBlock {
     }
 
     @Override
-    public void neighborChanged(BlockState blockState, Level level, BlockPos blockPos, Block block, BlockPos blockPos2, boolean bl) {
-        if (!level.isClientSide) {
+    protected void neighborChanged(BlockState blockState, Level level, BlockPos blockPos, Block block, @Nullable Orientation orientation, boolean bl) {
+        if (!level.isClientSide()) {
             boolean bl2 = blockState.getValue(LIT);
             if (bl2 != level.hasNeighborSignal(blockPos) && blockState.getValue(PART).equals(PoliceLightsPart.CENTER)) {
                 if (bl2) {
@@ -82,7 +83,7 @@ public class PoliceLightsBlock extends SignBlock {
 
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        if (level.isClientSide) {
+        if (level.isClientSide()) {
             return;
         }
         Direction facing = state.getValue(FACING);
@@ -102,13 +103,9 @@ public class PoliceLightsBlock extends SignBlock {
     }
 
     @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if (state.is(newState.getBlock())) {
-            super.onRemove(state, level, pos, newState, movedByPiston);
-            return;
-        }
-        destroyOtherParts(level, pos, state);
-        super.onRemove(state, level, pos, newState, movedByPiston);
+    protected void affectNeighborsAfterRemoval(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, boolean bl) {
+        destroyOtherParts(serverLevel, blockPos, blockState);
+        super.affectNeighborsAfterRemoval(blockState, serverLevel, blockPos, bl);
     }
 
     private void destroyOtherParts(Level level, BlockPos pos, BlockState state) {

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "roads-n-vehicles:block/right_of_way_sign"
+  }
+}

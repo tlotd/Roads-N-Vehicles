@@ -13,6 +13,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.redstone.Orientation;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -36,12 +38,12 @@ public class TrafficLightControllerBlock extends Block {
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+    protected void neighborChanged(BlockState blockState, Level level, BlockPos blockPos, Block block, @Nullable Orientation orientation, boolean bl) {
         if (level.isClientSide()) return;
-        int power = level.getBestNeighborSignal(pos);
+        int power = level.getBestNeighborSignal(blockPos);
         int lightState = mapPowerToLight(power);
         for (int i = 1; i <= 10; i++) {
-            BlockPos checkPos = pos.above(i);
+            BlockPos checkPos = blockPos.above(i);
             BlockState checkState = level.getBlockState(checkPos);
             if (checkState.getBlock() instanceof TrafficLightBlock) {
                 level.setBlock(
@@ -50,8 +52,8 @@ public class TrafficLightControllerBlock extends Block {
                         Block.UPDATE_ALL
                 );
                 level.setBlock(
-                        pos,
-                        state.setValue(TrafficLightControllerBlock.STAGE, lightState),
+                        blockPos,
+                        blockState.setValue(TrafficLightControllerBlock.STAGE, lightState),
                         Block.UPDATE_ALL
                 );
                 break;
@@ -65,17 +67,5 @@ public class TrafficLightControllerBlock extends Block {
         if (power <= 7) return 2;
         if (power <= 11) return 3;
         return 4;
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.empty());
-        tooltip.add(Component.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_2").withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.literal(" ").append(Component.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_3")).withStyle(ChatFormatting.BLUE));
-        tooltip.add(Component.literal(" ").append(Component.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_4")).withStyle(ChatFormatting.BLUE));
-        tooltip.add(Component.literal(" ").append(Component.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_5")).withStyle(ChatFormatting.BLUE));
-        tooltip.add(Component.literal(" ").append(Component.translatable("block.roads-n-vehicles.traffic_light_controller.tooltip_6")).withStyle(ChatFormatting.BLUE));
-        super.appendHoverText(stack, context, tooltip, flag);
     }
 }

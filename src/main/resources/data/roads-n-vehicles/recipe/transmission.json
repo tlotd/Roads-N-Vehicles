@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:metal_ingots"
-    },
-    "I": {
-      "item": "minecraft:stick"
-    },
-    "B": {
-      "item": "minecraft:black_dye"
-    }
+    "#": "#c:metal_ingots",
+    "I": "minecraft:stick",
+    "B": "minecraft:black_dye"
   },
   "pattern": [
     " B ",

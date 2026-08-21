@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "roads-n-vehicles:block/give_way_to_oncoming_traffic_sign"
+  }
+}

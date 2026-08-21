@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "tag": "c:iron_ingots"
-    },
-    "W": {
-      "item": "minecraft:water_bucket"
-    },
-    "R": {
-      "item": "minecraft:red_dye"
-    }
+    "I": "#c:iron_ingots",
+    "W": "minecraft:water_bucket",
+    "R": "minecraft:red_dye"
   },
   "pattern": [
     "RWR",

@@ -3,15 +3,9 @@
   "category": "building",
   "group": "asphalt",
   "key": {
-    "#": {
-      "tag": "roads-n-vehicles:asphalt_blocks"
-    },
-    "M": {
-      "tag": "c:metal_ingots"
-    },
-    "S": {
-      "item": "minecraft:stone"
-    }
+    "#": "#roads-n-vehicles:asphalt_blocks",
+    "M": "#c:metal_ingots",
+    "S": "minecraft:stone"
   },
   "pattern": [
     "#M#",

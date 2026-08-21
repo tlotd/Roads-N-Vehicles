@@ -1,0 +1,8 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "minecraft:item/generated",
+  "textures": {
+    "layer0": "roads-n-vehicles:item/game_cartridge_1"
+  }
+}

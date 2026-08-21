@@ -16,7 +16,7 @@ public class ManholeCoverBlock extends TrapDoorBlock {
     protected static final VoxelShape OPEN_TOP_SHAPE_MANHOLE = Block.box(0.0F, 15.0F, 0.0F, 16.0F, 16.0F, 16.0F);
     protected static final VoxelShape OPEN_BOTTOM_SHAPE_MANHOLE = Block.box(0.0F, 7.0F, 0.0F, 16.0F, 8.0F, 16.0F);
 
-    public ManholeCoverBlock(BlockBehaviour.Properties properties, BlockSetType blockSetType) {
+    public ManholeCoverBlock(BlockSetType blockSetType, Properties properties) {
         super(blockSetType, properties);
     }
 

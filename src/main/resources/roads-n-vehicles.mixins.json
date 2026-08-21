@@ -9,7 +9,6 @@
 		"requireAnnotations": true
 	},
 	"client": [
-		"client.CapeLayerMixin",
-		"client.ElytraLayerMixin"
+		"client.SkinManagerMixin"
 	]
 }

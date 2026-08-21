@@ -2,6 +2,8 @@ package net.tlotd.roads_n_vehicles;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.resources.ResourceLocation;
+
 import net.tlotd.roads_n_vehicles.block.ModBlocks;
 import net.tlotd.roads_n_vehicles.item.ModItemGroups;
 import net.tlotd.roads_n_vehicles.item.ModItems;
@@ -38,5 +40,9 @@ public class TLOTDRoadsnVehicles implements ModInitializer {
 		//					ModBlocks.TELEVISION_GAME, ModBlocks.COMPUTER_ON, 1)
 		//	);
 		//}
+	}
+
+	public static ResourceLocation id(String path) {
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
 	}
 }

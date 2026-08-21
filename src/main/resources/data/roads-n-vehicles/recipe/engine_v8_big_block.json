@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:metal_blocks"
-    },
-    "P": {
-      "item": "minecraft:piston"
-    }
+    "#": "#c:metal_blocks",
+    "P": "minecraft:piston"
   },
   "pattern": [
     "PPP",

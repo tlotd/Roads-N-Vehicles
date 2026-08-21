@@ -13,21 +13,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "I": {
-      "tag": "c:iron_ingots"
-    },
-    "L": {
-      "item": "minecraft:redstone_lamp"
-    },
-    "R": {
-      "item": "minecraft:red_stained_glass"
-    },
-    "Y": {
-      "item": "minecraft:yellow_stained_glass"
-    },
-    "G": {
-      "item": "minecraft:green_stained_glass"
-    }
+    "I": "#c:iron_ingots",
+    "L": "minecraft:redstone_lamp",
+    "R": "minecraft:red_stained_glass",
+    "Y": "minecraft:yellow_stained_glass",
+    "G": "minecraft:green_stained_glass"
   },
   "pattern": [
     "ILR",

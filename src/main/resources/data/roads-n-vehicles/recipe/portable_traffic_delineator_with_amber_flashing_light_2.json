@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "tag": "roads-n-vehicles:portable_traffic_delineators"
-  },
+  "ingredient": "#roads-n-vehicles:portable_traffic_delineators",
   "result": {
     "count": 1,
     "id": "roads-n-vehicles:portable_traffic_delineator_with_amber_flashing_light_2"

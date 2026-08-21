@@ -4,79 +4,147 @@ import com.mojang.blaze3d.platform.NativeImage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.core.ClientAsset;
 import net.minecraft.resources.ResourceLocation;
 
 import java.io.InputStream;
+import java.net.URI;
 import java.net.URL;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class CapeManager {
+public final class CapeManager {
 
-        private static final Minecraft MC = Minecraft.getInstance();
-        private static final Map<String, ResourceLocation> CAPE_CACHE = new ConcurrentHashMap<>();
-        private static final Map<String, Long> CACHE_TIME = new ConcurrentHashMap<>();
-        private static final Set<String> PENDING = ConcurrentHashMap.newKeySet();
-        private static final long CACHE_TTL = TimeUnit.MINUTES.toMillis(10);
-        private static final ResourceLocation NO_CAPE = ResourceLocation.fromNamespaceAndPath("tlotd", "no_cape");
-        private static final ExecutorService EXECUTOR = Executors.newCachedThreadPool();
-        private static final String BASE_URL = "https://tlotd.net/api/minecraft/cape/";
+    private static final Minecraft MC = Minecraft.getInstance();
 
-        public static ResourceLocation getCape(String uuid) {
-            if (uuid == null || uuid.isEmpty()) return null;
-            long now = System.currentTimeMillis();
-            ResourceLocation cached = CAPE_CACHE.get(uuid);
-            if (cached != null) {
-                if (now - CACHE_TIME.getOrDefault(uuid, 0L) < CACHE_TTL) {
-                    return cached == NO_CAPE ? null : cached;
-                }
-                CAPE_CACHE.remove(uuid);
-                CACHE_TIME.remove(uuid);
-            }
-            requestCape(uuid);
+    private static final Map<String, ClientAsset.Texture> CAPE_CACHE =
+            new ConcurrentHashMap<>();
+
+    private static final Map<String, Long> CACHE_TIME =
+            new ConcurrentHashMap<>();
+
+    private static final Set<String> PENDING =
+            ConcurrentHashMap.newKeySet();
+
+    private static final long CACHE_TTL =
+            TimeUnit.MINUTES.toMillis(10);
+
+    private static final String BASE_URL =
+            "https://tlotd.net/api/minecraft/cape/";
+
+    private static final ExecutorService EXECUTOR =
+            Executors.newCachedThreadPool();
+
+    private CapeManager() {
+    }
+
+    /**
+     * Returns the cached custom cape, or null if it hasn't been downloaded yet.
+     *
+     * If it isn't cached, an asynchronous download is started.
+     */
+    public static ClientAsset.Texture getCape(UUID uuid) {
+        if (uuid == null) {
             return null;
         }
 
-        public static void requestCape(String uuid) {
-            if (uuid == null || uuid.isEmpty()) return;
-            if (PENDING.contains(uuid)) return;
-            if (CAPE_CACHE.containsKey(uuid)) return;
-            PENDING.add(uuid);
-            EXECUTOR.submit(() -> fetchCape(uuid));
-        }
-        private static void fetchCape(String uuid) {
-            String url = BASE_URL + uuid;
-            try (InputStream stream = new URL(url).openStream()) {
-                NativeImage image = NativeImage.read(stream);
-                AbstractTexture texture = new DynamicTexture(image);
-                ResourceLocation id = ResourceLocation.fromNamespaceAndPath("tlotd", "cape/" + uuid.replace("-", ""));
-                MC.execute(() -> {
-                    try {
-                        MC.getTextureManager().register(id, texture);
-                        CAPE_CACHE.put(uuid, id);
-                        CACHE_TIME.put(uuid, System.currentTimeMillis());
-                    } catch (Exception e) {
-                        CAPE_CACHE.put(uuid, NO_CAPE);
-                        CACHE_TIME.put(uuid, System.currentTimeMillis());
-                    } finally {
-                        PENDING.remove(uuid);
-                    }
-                });
+        String uuidString = uuid.toString();
+        long now = System.currentTimeMillis();
 
-            } catch (Exception e) {
-                CAPE_CACHE.put(uuid, NO_CAPE);
-                CACHE_TIME.put(uuid, System.currentTimeMillis());
-                PENDING.remove(uuid);
+        ClientAsset.Texture cached = CAPE_CACHE.get(uuidString);
+
+        if (cached != null) {
+            if (now - CACHE_TIME.getOrDefault(uuidString, 0L) < CACHE_TTL) {
+                return cached;
             }
+
+            CAPE_CACHE.remove(uuidString);
+            CACHE_TIME.remove(uuidString);
         }
 
-        public static void clearCache() {
-            CAPE_CACHE.clear();
-            CACHE_TIME.clear();
-            PENDING.clear();
+        requestCape(uuid);
+
+        return null;
+    }
+
+    public static void requestCape(UUID uuid) {
+        if (uuid == null) {
+            return;
         }
+
+        String uuidString = uuid.toString();
+
+        if (PENDING.contains(uuidString)) {
+            return;
+        }
+
+        if (CAPE_CACHE.containsKey(uuidString)) {
+            return;
+        }
+
+        PENDING.add(uuidString);
+
+        EXECUTOR.submit(() -> fetchCape(uuid));
+    }
+
+    private static void fetchCape(UUID uuid) {
+        String uuidString = uuid.toString();
+        String url = BASE_URL + uuidString;
+
+        try (InputStream stream = URI.create(url).toURL().openStream()) {
+
+            NativeImage image = NativeImage.read(stream);
+
+            ResourceLocation id =
+                    ResourceLocation.fromNamespaceAndPath(
+                            "tlotd",
+                            "cape/" + uuidString.replace("-", "")
+                    );
+
+            ClientAsset.DownloadedTexture texture =
+                    new ClientAsset.DownloadedTexture(id, url);
+
+            MC.execute(() -> {
+                try {
+                    DynamicTexture dynamicTexture =
+                            new DynamicTexture(
+                                    texture.texturePath()::toString,
+                                    image
+                            );
+
+                    MC.getTextureManager().register(
+                            texture.texturePath(),
+                            dynamicTexture
+                    );
+
+                    CAPE_CACHE.put(uuidString, texture);
+                    CACHE_TIME.put(
+                            uuidString,
+                            System.currentTimeMillis()
+                    );
+
+                } catch (Exception e) {
+                    image.close();
+                    e.printStackTrace();
+                } finally {
+                    PENDING.remove(uuidString);
+                }
+            });
+
+        } catch (Exception e) {
+            PENDING.remove(uuidString);
+            e.printStackTrace();
+        }
+    }
+
+    public static void clearCache() {
+        CAPE_CACHE.clear();
+        CACHE_TIME.clear();
+        PENDING.clear();
+    }
 }

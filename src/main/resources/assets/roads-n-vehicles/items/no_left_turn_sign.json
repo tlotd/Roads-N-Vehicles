@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "roads-n-vehicles:block/no_left_turn_sign"
+  }
+}

@@ -1,8 +1,6 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": {
-    "tag": "roads-n-vehicles:signs"
-  },
+  "ingredient": "#roads-n-vehicles:signs",
   "result": {
     "count": 1,
     "id": "roads-n-vehicles:announcement_beacon_motorway_sign_triple_striped"

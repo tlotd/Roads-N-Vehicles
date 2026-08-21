@@ -1,9 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "count": 1,
-  "ingredient": {
-    "tag": "roads-n-vehicles:signs"
-  },
+  "ingredient": "#roads-n-vehicles:signs",
   "result": {
     "count": 1,
     "id": "roads-n-vehicles:snow_chains_required_sign"

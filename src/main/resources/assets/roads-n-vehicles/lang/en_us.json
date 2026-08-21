@@ -366,7 +366,7 @@
   "item.roads-n-vehicles.muscle_car_stallion": "Muscle Car - Stallion",
   "item.roads-n-vehicles.muscle_car_firecharge": "Muscle Car - Firecharge",
 
-  "item.roads-n-vehicles.muscle_car.broken.tooltip": "DECORATIVE FOR NOW (NO CONTROLS YET)",
+  "item.roads-n-vehicles.muscle_car.broken.tooltip": "DOES NOTHING (NO ENTITIES IN THIS VERSION)",
 
   "entity.roads-n-vehicles.muscle_car": "Muscle Car"
 }

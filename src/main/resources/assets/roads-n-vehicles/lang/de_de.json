@@ -357,7 +357,7 @@
   "item.roads-n-vehicles.muscle_car_stallion": "Auto - Stallion",
   "item.roads-n-vehicles.muscle_car_firecharge": "Auto - Firecharge",
 
-  "item.roads-n-vehicles.muscle_car.broken.tooltip": "NUR DEKORATIV (NOCH KEINE STEUERUNG)",
+  "item.roads-n-vehicles.muscle_car.broken.tooltip": "MACHT NICHTS (KEINE ENTITIES IN DIESER VERSION)",
 
   "entity.roads-n-vehicles.muscle_car": "Auto"
 }

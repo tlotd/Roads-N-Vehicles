@@ -1,12 +1,11 @@
 package net.tlotd.roads_n_vehicles.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
+import net.minecraft.network.chat.FontDescription;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -16,8 +15,8 @@ import net.tlotd.roads_n_vehicles.compat.CompatModsCheck;
 
 public class ModItemGroups {
 
-    public static final ResourceLocation DEFAULT_FONT_ID = ResourceLocation.fromNamespaceAndPath("minecraft", "default");
-    public static final ResourceLocation MODS_FONT_ID = ResourceLocation.fromNamespaceAndPath("roads-n-vehicles", "mods");
+    public static final FontDescription.Resource DEFAULT_FONT_ID = new FontDescription.Resource(ResourceLocation.fromNamespaceAndPath("minecraft", "default"));
+    public static final FontDescription.Resource MODS_FONT_ID = new FontDescription.Resource(ResourceLocation.fromNamespaceAndPath("roads-n-vehicles", "mods"));
 
     public static final CreativeModeTab TLOTD_4_ROADS_N_VEHICLES_GROUP = Registry.register(
             BuiltInRegistries.CREATIVE_MODE_TAB,
@@ -29,8 +28,7 @@ public class ModItemGroups {
                     .title(
                             Component.literal("\uE001 ")
                                     .withStyle(style ->
-                                            style.withFont(MODS_FONT_ID)
-                                                    .withColor(ChatFormatting.WHITE)
+                                            style.withFont(MODS_FONT_ID).withColor(ChatFormatting.WHITE)
                                     )
                                     .append(
                                             Component.translatable(
@@ -345,21 +343,5 @@ public class ModItemGroups {
 
     public static void registerItemGroups(){
         TLOTDRoadsnVehicles.LOGGER.info("Registering Item Groups for " + TLOTDRoadsnVehicles.MOD_ID);
-        if (CompatModsCheck.TLOTD) {
-            ResourceKey<CreativeModeTab> TLOTD_1_MATERIALS_GROUP =
-                    ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(),
-                            ResourceLocation.fromNamespaceAndPath("tlotd", "1_materials"));
-            ItemGroupEvents.modifyEntriesEvent(TLOTD_1_MATERIALS_GROUP)
-                    .register(output -> {
-                        output.addAfter(
-                                BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("tlotd", "vhs_cassette_9")),
-                                ModItems.VHS_CASSETTE_1
-                        );
-                        output.addAfter(
-                                BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("tlotd", "game_cartridge_3")),
-                                ModItems.GAME_CARTRIDGE_1
-                        );
-                    });
-        }
     }
 }

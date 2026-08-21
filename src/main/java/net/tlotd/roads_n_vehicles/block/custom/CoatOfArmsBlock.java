@@ -59,14 +59,14 @@ public class CoatOfArmsBlock extends SignBlock {
         int customTextureId = 0;
         Player player = context.getPlayer();
         ServerLevel world = null;
-        if (player != null && !context.getLevel().isClientSide() && player.getServer() != null) {
-            world = player.getServer().getLevel(Level.OVERWORLD);
+        if (player != null && !context.getLevel().isClientSide() && context.getLevel().getServer() != null) {
+            world = context.getLevel().getServer().getLevel(Level.OVERWORLD);
         }
         if (world != null) {
             if (CompatModsCheck.TLOTD) {
                 custom = TlotdAPI.hasCustomTexture(world.getServer(), player.getUUID());
                 customTextureId = TlotdAPI.getCustomTexture(world.getServer(), player.getUUID());
-                formerTLOTD = TlotdAPI.formerTlotdRewards(player.getServer());
+                formerTLOTD = TlotdAPI.formerTlotdRewards(context.getLevel().getServer());
             }
             if (custom) {
                 coat_of_arms = customTextureId;
@@ -80,37 +80,5 @@ public class CoatOfArmsBlock extends SignBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, WATERLOGGED, COAT_OF_ARMS, CUSTOM);
-    }
-
-    public static final ResourceLocation DEFAULT_FONT_ID = ResourceLocation.fromNamespaceAndPath("minecraft", "default");
-    public static final ResourceLocation PLAYERS_FONT_ID = ResourceLocation.fromNamespaceAndPath("roads-n-vehicles", "players");
-    public static final ResourceLocation MODS_FONT_ID = ResourceLocation.fromNamespaceAndPath("roads-n-vehicles", "mods");
-
-    @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        if (Screen.hasShiftDown()) {
-            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip").withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_2").withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.literal(""));
-            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.ponder", Component.translatable("key.keyboard.shift").withStyle(ChatFormatting.WHITE)).withStyle(ChatFormatting.DARK_GRAY));
-            Style style = this.getName().getStyle();
-            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_shift").withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.literal("\uE000").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" TLOTD - Worldspawn").withStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Component.literal("\uE001").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" Isla_Nublar - Drachenheide").withStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Component.literal("\uE002").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" EinsDarki - Little Tokyo").withStyle(style.withFont(DEFAULT_FONT_ID))));
-            if (CompatModsCheck.TLOTD && TlotdAPI.formerTlotdRewardsClient()) {
-                tooltip.add(Component.literal("\uE006").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" ISSO_21_ - Löwenburg").withStyle(style.withFont(DEFAULT_FONT_ID))));
-                tooltip.add(Component.literal("\uE008").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" Polarfoxtm - Zorkcrad").withStyle(style.withFont(DEFAULT_FONT_ID))));
-            }
-            tooltip.add(Component.literal("\uE009").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" Salsafox - New California Republic").withStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Component.literal("\uE00E").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" akashic_system - Firmament").withStyle(style.withFont(DEFAULT_FONT_ID))));
-            tooltip.add(Component.literal("\uE012").withStyle(style.withFont(PLAYERS_FONT_ID)).append(Component.literal(" Jakx444 - New Haven").withStyle(style.withFont(DEFAULT_FONT_ID))));
-        } else {
-            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip").withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.tooltip_2").withStyle(ChatFormatting.GRAY));
-            tooltip.add(Component.literal(""));
-            tooltip.add(Component.translatable("block.roads-n-vehicles.coat_of_arms.ponder",Component.translatable("key.keyboard.shift").withStyle(ChatFormatting.GRAY)).withStyle(ChatFormatting.DARK_GRAY));
-        }
-        super.appendHoverText(stack, context, tooltip, flag);
     }
 }

@@ -3,15 +3,9 @@
   "category": "building",
   "group": "asphalt",
   "key": {
-    "#": {
-      "item": "minecraft:gravel"
-    },
-    "C": {
-      "item": "minecraft:cobblestone"
-    },
-    "B": {
-      "item": "minecraft:black_dye"
-    }
+    "#": "minecraft:gravel",
+    "C": "minecraft:cobblestone",
+    "B": "minecraft:black_dye"
   },
   "pattern": [
     "#C#",

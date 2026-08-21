@@ -23,7 +23,7 @@
 			"net.tlotd.roads_n_vehicles.TLOTDRoadsnVehiclesClient"
 		],
 		"fabric-datagen": [
-			"net.tlotd.roads_n_vehicles.RoadsnVehiclesDataGenerator"
+			"net.tlotd.roads_n_vehicles.TLOTDRoadsnVehiclesDataGenerator"
 		],
 		"jade": [
 			"net.tlotd.roads_n_vehicles.compat.jade.TLOTDRoadsnVehiclesJadeIntegration"
@@ -33,8 +33,8 @@
 		"roads-n-vehicles.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.18.6",
-		"minecraft": "~1.21.1",
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.10",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "tag": "c:metal_ingots"
-    },
-    "S": {
-      "item": "minecraft:slime_ball"
-    }
+    "#": "#c:metal_ingots",
+    "S": "minecraft:slime_ball"
   },
   "pattern": [
     "#",

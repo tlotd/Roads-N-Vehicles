@@ -10,12 +10,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "C": {
-      "item": "tlotd:game_cartridge"
-    },
-    "#": {
-      "tag": "roads-n-vehicles:cars"
-    }
+    "C": "tlotd:game_cartridge",
+    "#": "#roads-n-vehicles:cars"
   },
   "pattern": [
     "#",

@@ -3,9 +3,6 @@ plugins {
 	id 'maven-publish'
 }
 
-version = project.mod_version
-group = project.maven_group
-
 repositories {
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
@@ -23,7 +20,7 @@ fabricApi {
 }
 
 dependencies {
-	modCompileOnly files("libs/tlotd-0.4.1+1.21.1-api.jar")
+	modCompileOnly files("libs/tlotd-0.4.1+1.21.10-api.jar")
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings loom.officialMojangMappings()
@@ -31,8 +28,8 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	modImplementation "maven.modrinth:jade:15.10.5+fabric"
-	modImplementation "maven.modrinth:jei:19.27.0.340"
+	modImplementation "maven.modrinth:nvQzSEkH:nCbsPtPw"
+	modImplementation "maven.modrinth:u6dRKJwZ:8yGN172x"
 }
 
 processResources {
