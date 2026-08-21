@@ -4,7 +4,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
@@ -27,7 +27,7 @@ public class ModItems {
     public static final Item CAR_BODY_FIRECHARGE = registerItem("car_body_firecharge", Item::new, new Item.Properties().stacksTo(1));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties properties) {
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
+        Identifier id = Identifier.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, id);
         Item item = factory.apply(properties.setId(key));
         return Registry.register(BuiltInRegistries.ITEM, key, item);

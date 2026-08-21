@@ -4,7 +4,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -582,7 +582,7 @@ public class ModBlocks {
             ComputerBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).requiresCorrectToolForDrops().strength(2.0F, 2.0F).lightLevel((blockStatex) -> 10));
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
+        Identifier id = Identifier.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
         Block block = factory.apply(properties.setId(blockKey));
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
@@ -592,7 +592,7 @@ public class ModBlocks {
     }
 
     private static Block registerTownSignBlock(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
+        Identifier id = Identifier.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
         Block block = factory.apply(properties.setId(blockKey));
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
@@ -602,7 +602,7 @@ public class ModBlocks {
     }
 
     private static Block registerLicensePlateBlock(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
+        Identifier id = Identifier.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
         Block block = factory.apply(properties.setId(blockKey));
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
@@ -612,7 +612,7 @@ public class ModBlocks {
     }
 
     private static Block registerBlockWithoutItem(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
+        Identifier id = Identifier.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, name);
         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
         Block block = factory.apply(properties.setId(blockKey));
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);

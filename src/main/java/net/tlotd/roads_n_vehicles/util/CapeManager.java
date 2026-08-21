@@ -2,14 +2,12 @@ package net.tlotd.roads_n_vehicles.util;
 
 import com.mojang.blaze3d.platform.NativeImage;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.core.ClientAsset;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.io.InputStream;
 import java.net.URI;
-import java.net.URL;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -69,7 +67,7 @@ public final class CapeManager {
         String url = BASE_URL + uuidString;
         try (InputStream stream = URI.create(url).toURL().openStream()) {
             NativeImage image = NativeImage.read(stream);
-            ResourceLocation id = ResourceLocation.fromNamespaceAndPath("tlotd", "cape/" + uuidString.replace("-", ""));
+            Identifier id = Identifier.fromNamespaceAndPath("tlotd", "cape/" + uuidString.replace("-", ""));
             ClientAsset.DownloadedTexture texture = new ClientAsset.DownloadedTexture(id, url);
             MC.execute(() -> {
                 try {
@@ -84,6 +82,7 @@ public final class CapeManager {
                     PENDING.remove(uuidString);
                 }
             });
+
         } catch (Exception e) {
             PENDING.remove(uuidString);
             e.printStackTrace();

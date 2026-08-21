@@ -2,7 +2,7 @@ package net.tlotd.roads_n_vehicles.compat.jade;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
@@ -31,7 +31,7 @@ public enum TrafficLightComponentProvider implements IBlockComponentProvider {
     }
 
     @Override
-    public ResourceLocation getUid() {
-        return ResourceLocation.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, "traffic_light");
+    public Identifier getUid() {
+        return Identifier.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, "traffic_light");
     }
 }

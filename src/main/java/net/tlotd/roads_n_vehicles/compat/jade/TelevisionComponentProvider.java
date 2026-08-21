@@ -1,6 +1,6 @@
 package net.tlotd.roads_n_vehicles.compat.jade;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.tlotd.roads_n_vehicles.TLOTDRoadsnVehicles;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
@@ -16,7 +16,7 @@ public enum TelevisionComponentProvider implements IBlockComponentProvider {
 //            Optional<TlotdAPI.TelevisionSignal> currentEntry = getAllTelevisionSignals().stream().filter(e -> e.onBlock() == accessor.getBlock() && e.channel() == accessor.getBlockState().get(CHANNEL)).findFirst();
 //            Item vhs = ModItems.VHS_CASSETTE_1;
 //            if (currentEntry.isPresent()) {
-//                ResourceLocation signalId = currentEntry.get().signalItem();
+//                Identifier signalId = currentEntry.get().signalItem();
 //                vhs = BuiltInRegistries.ITEM.get(signalId);
 //            }
 //            IElementHelper elements = tooltip.getElementHelper();
@@ -27,7 +27,7 @@ public enum TelevisionComponentProvider implements IBlockComponentProvider {
 //            Optional<TlotdAPI.VideoGame> currentEntry = getAllVideoGames().stream().filter(e -> e.tvBlock() == accessor.getBlock() && e.gameID() == accessor.getBlockState().get(CHANNEL)).findFirst();
 //            Item game = ModItems.GAME_CARTRIDGE_1;
 //            if (currentEntry.isPresent()) {
-//                ResourceLocation signalId = currentEntry.get().signalItem();
+//                Identifier signalId = currentEntry.get().signalItem();
 //                game = BuiltInRegistries.ITEM.get(signalId);
 //            }
 //            IElementHelper elements = tooltip.getElementHelper();
@@ -41,7 +41,7 @@ public enum TelevisionComponentProvider implements IBlockComponentProvider {
     }
 
     @Override
-    public ResourceLocation getUid() {
-        return ResourceLocation.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, "television");
+    public Identifier getUid() {
+        return Identifier.fromNamespaceAndPath(TLOTDRoadsnVehicles.MOD_ID, "television");
     }
 }
